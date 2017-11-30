@@ -1,0 +1,16 @@
+version: '2'
+services:
+  primary:
+    image: reg-5.i.cz:5000/postgres
+    hostname: primary
+    ports:
+    - "5432:5432"
+#   TODO: acces rights for user postgress, selinux !!
+#    volumes:
+#    - /app/pg_logs:/var/lib/pgsql/data/pg_log
+#   TODO: FATAL:  database system identifier differs between the primary and standby
+#  standby:
+#    image: reg-5.i.cz:5000/standby
+#    hostname: standby
+#    ports:
+#    - "5433:5432"
