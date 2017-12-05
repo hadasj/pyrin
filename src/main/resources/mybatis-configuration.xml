@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC '-//mybatis.org//DTD Config 3.0//EN' 'http://mybatis.org/dtd/mybatis-3-config.dtd'>
+<configuration>
+    <settings>
+        <setting name="cacheEnabled" value="false" />
+        <setting name="localCacheScope" value="STATEMENT" />
+        <setting name="defaultExecutorType" value="REUSE" />
+        <setting name="logImpl" value="SLF4J" />
+    </settings>
+    <mappers>
+        <mapper class="cz.i.dao.DimensionMapper"/>
+        <mapper class="cz.i.dao.FactMapper"/>
+    </mappers>
+</configuration>
