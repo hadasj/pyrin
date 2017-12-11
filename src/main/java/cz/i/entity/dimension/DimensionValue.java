@@ -11,6 +11,7 @@ public class DimensionValue extends CodedEntity {
 
     private Dimension dimension;
     private List<DimensionValue> links;
+    private List<DimensionValue> children;
 
     public Dimension getDimension() {
         return dimension;
@@ -26,5 +27,13 @@ public class DimensionValue extends CodedEntity {
 
     public void setLinks(List<DimensionValue> links) {
         this.links = links;
+    }
+
+    @Override
+    public String toString() {
+        String string = "id=" + getId() + ", code=" + getCode() + ", alias=" + getAlias();
+        if (dimension != null)
+            string +=  ", dimension={" + dimension.toString() + "}";
+        return string;
     }
 }

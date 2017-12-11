@@ -21,9 +21,9 @@ import cz.i.entity.dimension.Dimension;
  * @author jan.hadas@i.cz
  */
 @RestController
-public class Controller {
+public class DimensionController {
 
-    private static final Logger LOG = LoggerFactory.getLogger(Controller.class);
+    private static final Logger LOG = LoggerFactory.getLogger(DimensionController.class);
 
     @Autowired
     private DimensionMapper dimensionMapper;
@@ -34,13 +34,13 @@ public class Controller {
 
         if (id != null) {
             LOG.info("Searching dimension by id: {}", id);
-            dimensions = asList(dimensionMapper.selectDimensionById(id));
+            dimensions = asList(dimensionMapper.oneById(id));
         } else if (!StringUtils.isEmpty(code)) {
             LOG.info("Searching dimension by code: {}", code);
-            dimensions = asList(dimensionMapper.selectDimensionByCode(code));
+            dimensions = asList(dimensionMapper.oneByCode(code));
         } else {
             LOG.info("Searching all dimsions..");
-            dimensions = dimensionMapper.selectAllDimensions();
+            dimensions = dimensionMapper.all();
         }
 
         LOG.info("Found dimensions: {}", dimensions);
@@ -50,18 +50,18 @@ public class Controller {
     @RequestMapping(value = "/dimension", method = RequestMethod.POST)
     public void insertEntity(@RequestBody Dimension dimension) {
         LOG.info("Insert new dimension: {}", dimension);
-        dimensionMapper.insertDimension(dimension);
+        dimensionMapper.insert(dimension);
     }
 
     @RequestMapping(value = "/dimension", method = RequestMethod.PUT)
     public void update(@RequestBody Dimension dimension) {
         LOG.info("update dimension: {}", dimension);
-        dimensionMapper.updateDimension(dimension);
+        dimensionMapper.update(dimension);
     }
 
     @RequestMapping(value = "/dimension", method = RequestMethod.DELETE)
     public void delete(@RequestBody Dimension dimension) {
         LOG.info("delete dimension: {}", dimension);
-        dimensionMapper.deleteDimension(dimension);
+        dimensionMapper.delete(dimension);
     }
 }

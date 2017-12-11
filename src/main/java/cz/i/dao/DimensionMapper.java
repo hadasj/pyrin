@@ -17,22 +17,21 @@ import cz.i.entity.dimension.Dimension;
  * @author jan.hadas@i.cz
  */
 public interface DimensionMapper {
-
     @Select("select * from DIMENSION order by id")
-    List<Dimension> selectAllDimensions();
+    List<Dimension> all();
 
     @Select("select * from DIMENSION where id = #{id,jdbcType=INTEGER}")
-    Dimension selectDimensionById(@Param("id") Long id);
+    Dimension oneById(@Param("id") Long id);
 
     @Select("select * from DIMENSION where code = #{code,jdbcType=VARCHAR}")
-    Dimension selectDimensionByCode(@Param("code") String code);
+    Dimension oneByCode(@Param("code") String code);
 
-    @Insert("insert into DIMENSION(CODE, ALIAS, MODE, STRUCTURE) values(#{code}, #{alias}, #{mode}, #{structure})")
-    void insertDimension(Dimension dimension);
+    @Insert("insert into DIMENSION(ID, CODE, ALIAS, MODE, STRUCTURE) values(#{id}, #{code}, #{alias}, #{mode}, #{structure})")
+    void insert(Dimension dimension);
 
     @Update("update DIMENSION set CODE = #{code}, ALIAS = #{alias}, MODE=#{mode}, STRUCTURE=#{structure} where ID = #{id}")
-    void updateDimension(Dimension dimension);
+    void update(Dimension dimension);
 
     @Delete("delete from DIMENSION where ID = #{id}")
-    void deleteDimension(Dimension dimension);
+    void delete(Dimension dimension);
 }

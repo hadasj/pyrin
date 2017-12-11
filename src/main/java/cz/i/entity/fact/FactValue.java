@@ -1,5 +1,7 @@
 package cz.i.entity.fact;
 
+import java.util.List;
+
 import cz.i.entity.Entity;
 import cz.i.entity.dimension.Dimension;
 
@@ -9,6 +11,8 @@ import cz.i.entity.dimension.Dimension;
 public class FactValue extends Entity {
 
     private Dimension dimension;
+
+    private List values;
 
     public Dimension getDimension() {
         return dimension;

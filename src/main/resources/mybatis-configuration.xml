@@ -9,6 +9,7 @@
     </settings>
     <mappers>
         <mapper class="cz.i.dao.DimensionMapper"/>
+        <mapper class="cz.i.dao.DimensionValueMapper"/>
         <mapper class="cz.i.dao.FactMapper"/>
     </mappers>
 </configuration>
