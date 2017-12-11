@@ -11,6 +11,7 @@ public class Fact extends CodedEntity {
     private String name;
     private List<FactValue> values;
     private List<Fact> children;
+    private Fact parent;
 
     public String getName() {
         return name;
@@ -34,5 +35,13 @@ public class Fact extends CodedEntity {
 
     public void setChildren(List<Fact> children) {
         this.children = children;
+    }
+
+    public Fact getParent() {
+        return parent;
+    }
+
+    public void setParent(Fact parent) {
+        this.parent = parent;
     }
 }
