@@ -14,9 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import cz.i.dao.DimensionMapper;
 import cz.i.dao.FactMapper;
-import cz.i.entity.dimension.Dimension;
 import cz.i.entity.fact.Fact;
 
 /**
@@ -39,7 +37,7 @@ public class FactController {
             facts = asList(factMapper.oneById(id));
         } else if (!StringUtils.isEmpty(code)) {
             LOG.info("Searching fact by code: {}", code);
-            facts = asList(factMapper.oneByCode(code));
+            facts = factMapper.allByCode(code);
         } else {
             LOG.info("Searching all facts..");
             facts = factMapper.all();

@@ -15,6 +15,7 @@ import org.springframework.core.io.ClassPathResource;
 import cz.i.dao.DimensionMapper;
 import cz.i.dao.DimensionValueMapper;
 import cz.i.dao.FactMapper;
+import cz.i.dao.FactValueMapper;
 
 /**
  * @author jan.hadas@i.cz
@@ -59,5 +60,11 @@ public class MyBatisConfig {
     public FactMapper factMapper() throws Exception {
         SqlSessionTemplate sessionTemplate = new SqlSessionTemplate(sqlSessionFactory());
         return sessionTemplate.getMapper(FactMapper.class);
+    }
+
+    @Bean
+    public FactValueMapper factValueMapper() throws Exception {
+        SqlSessionTemplate sessionTemplate = new SqlSessionTemplate(sqlSessionFactory());
+        return sessionTemplate.getMapper(FactValueMapper.class);
     }
 }
