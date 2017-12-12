@@ -12,7 +12,9 @@ import org.apache.ibatis.annotations.Results;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 
+import cz.i.entity.dimension.DimensionValue;
 import cz.i.entity.fact.Fact;
+import cz.i.entity.fact.FactValue;
 
 /**
  * @author jan.hadas@i.cz
@@ -24,10 +26,21 @@ public interface FactMapper {
     @Select("select * from FACT where id = #{id} order by id")
     List<Fact> parentById(Long id);
 
+    @Select("select * from DIMENSION_VALUE where id = #{id,jdbcType=INTEGER}")
+    DimensionValue oneDimensionValueById(@Param("id") Long id);
+
+    @Results({
+        @Result(property = "valueValue", column = "VALUE_VALUE"),
+        @Result(property = "dimensionValue", column = "DIMENSION_VALUE_ID", javaType = DimensionValue.class, one = @One(select = "oneDimensionValueById"))
+    })
+    @Select("select * from FACT_VALUE where fact_id = #{factId} order by id")
+    List<FactValue> valuesByFactId(Long factId);
+
     @Results(value = {
         @Result(property = "id", column = "id", id = true),
         @Result(property = "children", column = "id", javaType = List.class, many = @Many(select = "childrenByParentId")),
-        @Result(property = "parent", column = "parent_id", javaType = Fact.class, one = @One(select = "parentById"))})
+        @Result(property = "parent", column = "parent_id", javaType = Fact.class, one = @One(select = "parentById")),
+        @Result(property = "values", column = "id", javaType = List.class, many = @Many(select = "valuesByFactId"))})
     @Select("select * from FACT order by id")
     List<Fact> all();
 
