@@ -1,10 +1,9 @@
-package cz.i.entity.fact;
+package cz.i.entity.model.fact;
 
 import cz.i.common.ValueType;
 import cz.i.entity.CodedEntity;
-import cz.i.entity.Entity;
-import cz.i.entity.dimension.Dimension;
-import cz.i.entity.dimension.DimensionValue;
+import cz.i.entity.model.dimension.Dimension;
+import cz.i.entity.model.dimension.DimensionValue;
 
 /**
  * @author jan.hadas@i.cz

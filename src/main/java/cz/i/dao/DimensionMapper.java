@@ -4,34 +4,38 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Options;
 import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.annotations.Result;
+import org.apache.ibatis.annotations.Results;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 
-import cz.i.common.DimensionMode;
-import cz.i.common.DimensionStructure;
-import cz.i.entity.dimension.Dimension;
+import cz.i.entity.db.dimension.DimensionDb;
 
 /**
  * @author jan.hadas@i.cz
  */
 public interface DimensionMapper {
-    @Select("select * from DIMENSION order by id")
-    List<Dimension> all();
+    @Results(@Result(property = "idExt", column = "ID_EXT"))
+    @Select("select * from DIMENSION order by id_ext, id")
+    List<DimensionDb> all();
 
+    @Results(@Result(property = "idExt", column = "ID_EXT"))
     @Select("select * from DIMENSION where id = #{id,jdbcType=INTEGER}")
-    Dimension oneById(@Param("id") Long id);
+    DimensionDb oneById(@Param("id") Long id);
 
+    @Results(@Result(property = "idExt", column = "ID_EXT"))
     @Select("select * from DIMENSION where code = #{code,jdbcType=VARCHAR}")
-    Dimension oneByCode(@Param("code") String code);
+    DimensionDb oneByCode(@Param("code") String code);
 
-    @Insert("insert into DIMENSION(ID, CODE, ALIAS, MODE, STRUCTURE) values(#{id}, #{code}, #{alias}, #{mode}, #{structure})")
-    void insert(Dimension dimension);
+    @Insert("insert into DIMENSION(ID_EXT, CODE, ALIAS, MODE, STRUCTURE, TYPE, TEXT_CS, TEXT_EN, TEXT_BG) " +
+        "values(#{idExt}, #{code}, #{alias}, #{mode}, #{structure}, #{type}, #{textCs}, #{textEn}, #{textBg})")
+    void insert(DimensionDb dimension);
 
-    @Update("update DIMENSION set CODE = #{code}, ALIAS = #{alias}, MODE=#{mode}, STRUCTURE=#{structure} where ID = #{id}")
-    void update(Dimension dimension);
+    @Update("update DIMENSION set ID_EXT = #{idExt}, CODE = #{code}, ALIAS = #{alias}, MODE = #{mode}, STRUCTURE = #{structure}, " +
+        "TYPE = #{type}, TEXT_CS = #{textCs}, TEXT_EN = #{textEn}, TEXT_BG = #{textBg} where ID = #{id}")
+    void update(DimensionDb dimension);
 
     @Delete("delete from DIMENSION where ID = #{id}")
-    void delete(Dimension dimension);
+    void delete(DimensionDb dimension);
 }

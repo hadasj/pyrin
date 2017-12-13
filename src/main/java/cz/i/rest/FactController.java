@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import cz.i.dao.FactMapper;
-import cz.i.entity.fact.Fact;
+import cz.i.entity.model.fact.Fact;
 
 /**
  * @author jan.hadas@i.cz

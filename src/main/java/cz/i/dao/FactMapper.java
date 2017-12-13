@@ -12,24 +12,28 @@ import org.apache.ibatis.annotations.Results;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 
-import cz.i.entity.dimension.DimensionValue;
-import cz.i.entity.fact.Fact;
-import cz.i.entity.fact.FactValue;
+import cz.i.entity.model.dimension.DimensionValue;
+import cz.i.entity.model.fact.Fact;
+import cz.i.entity.model.fact.FactValue;
 
 /**
  * @author jan.hadas@i.cz
  */
 public interface FactMapper {
+    @Results(@Result(property = "idExt", column = "ID_EXT"))
     @Select("select * from FACT where parent_id = #{parentId} order by id")
     List<Fact> childrenByParentId(Long parentId);
 
+    @Results(@Result(property = "idExt", column = "ID_EXT"))
     @Select("select * from FACT where id = #{id} order by id")
     List<Fact> parentById(Long id);
 
+    @Results(@Result(property = "idExt", column = "ID_EXT"))
     @Select("select * from DIMENSION_VALUE where id = #{id,jdbcType=INTEGER}")
     DimensionValue oneDimensionValueById(@Param("id") Long id);
 
     @Results({
+        @Result(property = "idExt", column = "ID_EXT"),
         @Result(property = "valueValue", column = "VALUE_VALUE"),
         @Result(property = "dimensionValue", column = "DIMENSION_VALUE_ID", javaType = DimensionValue.class, one = @One(select = "oneDimensionValueById"))
     })
@@ -38,6 +42,7 @@ public interface FactMapper {
 
     @Results(value = {
         @Result(property = "id", column = "id", id = true),
+        @Result(property = "idExt", column = "ID_EXT"),
         @Result(property = "children", column = "id", javaType = List.class, many = @Many(select = "childrenByParentId")),
         @Result(property = "parent", column = "parent_id", javaType = Fact.class, one = @One(select = "parentById")),
         @Result(property = "values", column = "id", javaType = List.class, many = @Many(select = "valuesByFactId"))})
@@ -46,6 +51,7 @@ public interface FactMapper {
 
     @Results(value = {
         @Result(property = "id", column = "id", id = true),
+        @Result(property = "idExt", column = "ID_EXT"),
         @Result(property = "children", column = "id", javaType = List.class, many = @Many(select = "childrenByParentId")),
         @Result(property = "parent", column = "parent_id", javaType = Fact.class, one = @One(select = "parentById"))})
     @Select("select * from FACT where id = #{id,jdbcType=INTEGER}")
@@ -53,15 +59,17 @@ public interface FactMapper {
 
     @Results(value = {
         @Result(property = "id", column = "id", id = true),
+        @Result(property = "idExt", column = "ID_EXT"),
         @Result(property = "children", column = "id", javaType = List.class, many = @Many(select = "childrenByParentId")),
         @Result(property = "parent", column = "parent_id", javaType = Fact.class, one = @One(select = "parentById"))})
     @Select("select * from FACT where code = #{code,jdbcType=VARCHAR} order by id")
     List<Fact> allByCode(@Param("code") String code);
 
-    @Insert("insert into FACT(CODE, ALIAS, NAME, PARENT_ID) values(#{code}, #{alias}, #{name}, #{parent.id})")
+    @Insert("insert into FACT(ID_EXT, CODE, ALIAS, NAME, PARENT_ID) " +
+        "values(#{idExt}, #{code}, #{alias}, #{name}, #{parent.id})")
     void insert(Fact fact);
 
-    @Update("update FACT set CODE = #{code}, ALIAS = #{alias}, NAME=#{name}, PARENT_ID=#{parent.id} where ID = #{id}")
+    @Update("update FACT set ID_EXT = #{idExt}, CODE = #{code}, ALIAS = #{alias}, NAME=#{name}, PARENT_ID=#{parent.id} where ID = #{id}")
     void update(Fact fact);
 
     @Delete("delete from FACT where ID = #{id}")

@@ -4,19 +4,17 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Many;
 import org.apache.ibatis.annotations.One;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Result;
 import org.apache.ibatis.annotations.Results;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
-import org.apache.ibatis.session.ResultHandler;
 
-import cz.i.entity.dimension.Dimension;
-import cz.i.entity.dimension.DimensionValue;
-import cz.i.entity.fact.Fact;
-import cz.i.entity.fact.FactValue;
+import cz.i.entity.model.dimension.Dimension;
+import cz.i.entity.model.dimension.DimensionValue;
+import cz.i.entity.model.fact.Fact;
+import cz.i.entity.model.fact.FactValue;
 
 /**
  * @author jan.hadas@i.cz
@@ -58,11 +56,11 @@ public interface FactValueMapper {
     @Select("select * from FACT_VALUE where code = #{code,jdbcType=VARCHAR} order by id")
     List<FactValue> allByCode(@Param("code") String code);
 
-    @Insert("insert into FACT_VALUE(CODE, ALIAS, DIMENSION_ID, FACT_ID, DIMENSION_VALUE_ID, VALUE_VALUE, TYPE) " +
-            "values(#{code}, #{alias}, #{dimension.id}, #{fact.id}, #{dimensionValue.id}, #{valueValue}, #{type})")
+    @Insert("insert into FACT_VALUE(ID_EXT, CODE, ALIAS, DIMENSION_ID, FACT_ID, DIMENSION_VALUE_ID, VALUE_VALUE, TYPE) " +
+            "values(#{idExt}, #{code}, #{alias}, #{dimension.id}, #{fact.id}, #{dimensionValue.id}, #{valueValue}, #{type})")
     int insert(FactValue factValue);
 
-    @Update("update FACT_VALUE set CODE = #{code}, ALIAS = #{alias}, DIMENSION_ID = #{dimension.id}, FACT_ID = #{fact.id}, " +
+    @Update("update FACT_VALUE set ID_EXT = #{idExt}, CODE = #{code}, ALIAS = #{alias}, DIMENSION_ID = #{dimension.id}, FACT_ID = #{fact.id}, " +
             "DIMENSION_VALUE_ID = #{dimensionValue.id}, VALUE_VALUE = #{valueValue}, TYPE = #{type} where ID = #{id}")
     int update(FactValue factValue);
 

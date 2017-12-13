@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 
 import cz.i.converter.FactValueConverter;
 import cz.i.dao.FactValueMapper;
-import cz.i.entity.fact.FactValue;
+import cz.i.entity.model.fact.FactValue;
 
 /**
  * @author jan.hadas@i.cz

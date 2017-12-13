@@ -5,6 +5,7 @@ package cz.i.entity;
  */
 public class Entity {
     private Long id;
+    private Long idExt;
 
     public Long getId() {
         return id;
@@ -12,5 +13,13 @@ public class Entity {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public Long getIdExt() {
+        return idExt;
+    }
+
+    public void setIdExt(Long idExt) {
+        this.idExt = idExt;
     }
 }

@@ -1,4 +1,4 @@
-package cz.i.entity.dimension;
+package cz.i.entity.model.dimension;
 
 import cz.i.common.DimensionMode;
 import cz.i.common.DimensionStructure;

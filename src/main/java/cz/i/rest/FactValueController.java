@@ -15,8 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import cz.i.dao.FactValueMapper;
-import cz.i.dao.FactValueResultHandler;
-import cz.i.entity.fact.FactValue;
+import cz.i.entity.model.fact.FactValue;
 import cz.i.service.FactValueCrudService;
 
 /**

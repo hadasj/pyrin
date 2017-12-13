@@ -14,10 +14,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import cz.i.dao.DimensionMapper;
 import cz.i.dao.DimensionValueMapper;
-import cz.i.entity.dimension.Dimension;
-import cz.i.entity.dimension.DimensionValue;
+import cz.i.entity.db.dimension.DimensionValueDb;
+import cz.i.entity.model.dimension.DimensionValue;
 
 /**
  * @author jan.hadas@i.cz
@@ -54,19 +53,19 @@ public class DimensionValueController {
     }
 
     @RequestMapping(value = "dimension-value", method = RequestMethod.POST)
-    public void insert(@RequestBody DimensionValue dimensionValue) {
+    public void insert(@RequestBody DimensionValueDb dimensionValue) {
         LOG.info("insert dimensionValue: {}", dimensionValue);
         dimensionValueMapper.insert(dimensionValue);
     }
 
     @RequestMapping(value = "dimension-value", method = RequestMethod.PUT)
-    public void update(@RequestBody DimensionValue dimensionValue) {
+    public void update(@RequestBody DimensionValueDb dimensionValue) {
         LOG.info("update dimensionValue: {}", dimensionValue);
         dimensionValueMapper.update(dimensionValue);
     }
 
     @RequestMapping(value = "dimension-value", method = RequestMethod.DELETE)
-    public void delete(@RequestBody DimensionValue dimensionValue) {
+    public void delete(@RequestBody DimensionValueDb dimensionValue) {
         LOG.info("delete dimensionValue: {}", dimensionValue);
         dimensionValueMapper.delete(dimensionValue);
     }

@@ -10,6 +10,7 @@
     <mappers>
         <mapper class="cz.i.dao.DimensionMapper"/>
         <mapper class="cz.i.dao.DimensionValueMapper"/>
+        <mapper class="cz.i.dao.DimensionValueLinkMapper"/>
         <mapper class="cz.i.dao.FactMapper"/>
         <mapper class="cz.i.dao.FactValueMapper"/>
     </mappers>

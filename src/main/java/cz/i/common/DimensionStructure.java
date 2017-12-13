@@ -5,5 +5,6 @@ package cz.i.common;
  */
 public enum DimensionStructure {
     FLAT,
-    TREE
+    TREE,
+    VIRTUAL
 }

@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import cz.i.dao.DimensionMapper;
-import cz.i.entity.dimension.Dimension;
+import cz.i.entity.db.dimension.DimensionDb;
 
 /**
  * @author jan.hadas@i.cz
@@ -29,8 +29,8 @@ public class DimensionController {
     private DimensionMapper dimensionMapper;
 
     @RequestMapping(value = "/dimension", method = RequestMethod.GET)
-    public List<Dimension> findAll(@RequestParam(required = false) Long id, @RequestParam(required = false) String code) {
-        List<Dimension> dimensions = null;
+    public List<DimensionDb> findAll(@RequestParam(required = false) Long id, @RequestParam(required = false) String code) {
+        List<DimensionDb> dimensions = null;
 
         if (id != null) {
             LOG.info("Searching dimension by id: {}", id);
@@ -48,19 +48,19 @@ public class DimensionController {
     }
 
     @RequestMapping(value = "/dimension", method = RequestMethod.POST)
-    public void insertEntity(@RequestBody Dimension dimension) {
+    public void insertEntity(@RequestBody DimensionDb dimension) {
         LOG.info("Insert new dimension: {}", dimension);
         dimensionMapper.insert(dimension);
     }
 
     @RequestMapping(value = "/dimension", method = RequestMethod.PUT)
-    public void update(@RequestBody Dimension dimension) {
+    public void update(@RequestBody DimensionDb dimension) {
         LOG.info("update dimension: {}", dimension);
         dimensionMapper.update(dimension);
     }
 
     @RequestMapping(value = "/dimension", method = RequestMethod.DELETE)
-    public void delete(@RequestBody Dimension dimension) {
+    public void delete(@RequestBody DimensionDb dimension) {
         LOG.info("delete dimension: {}", dimension);
         dimensionMapper.delete(dimension);
     }

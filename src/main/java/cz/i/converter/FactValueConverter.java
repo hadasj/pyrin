@@ -1,11 +1,12 @@
 package cz.i.converter;
 
 import java.math.BigDecimal;
+
 import org.springframework.stereotype.Component;
 
 import cz.i.common.ValueType;
-import cz.i.entity.dimension.Dimension;
-import cz.i.entity.fact.FactValue;
+import cz.i.entity.model.dimension.Dimension;
+import cz.i.entity.model.fact.FactValue;
 
 /**
  * @author jan.hadas@i.cz

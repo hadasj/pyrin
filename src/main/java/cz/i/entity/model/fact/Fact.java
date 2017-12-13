@@ -1,4 +1,4 @@
-package cz.i.entity.fact;
+package cz.i.entity.model.fact;
 
 import java.util.List;
 

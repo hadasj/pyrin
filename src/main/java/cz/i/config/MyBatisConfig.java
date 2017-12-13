@@ -13,6 +13,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.ClassPathResource;
 
 import cz.i.dao.DimensionMapper;
+import cz.i.dao.DimensionValueLinkMapper;
 import cz.i.dao.DimensionValueMapper;
 import cz.i.dao.FactMapper;
 import cz.i.dao.FactValueMapper;
@@ -54,6 +55,12 @@ public class MyBatisConfig {
     public DimensionValueMapper dimensionValueMapper() throws Exception {
         SqlSessionTemplate sessionTemplate = new SqlSessionTemplate(sqlSessionFactory());
         return sessionTemplate.getMapper(DimensionValueMapper.class);
+    }
+
+    @Bean
+    public DimensionValueLinkMapper dimensionValueLinkMapper() throws Exception {
+        SqlSessionTemplate sessionTemplate = new SqlSessionTemplate(sqlSessionFactory());
+        return sessionTemplate.getMapper(DimensionValueLinkMapper.class);
     }
 
     @Bean

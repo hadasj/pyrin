@@ -8,7 +8,7 @@ import org.apache.ibatis.session.ResultHandler;
 import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
 
-import cz.i.entity.fact.FactValue;
+import cz.i.entity.model.fact.FactValue;
 
 /**
  * @author jan.hadas@i.cz
