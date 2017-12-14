@@ -6,19 +6,19 @@ import cz.i.entity.db.CodedEntityDb;
  * @author jan.hadas@i.cz
  */
 public class FactDb extends CodedEntityDb {
-    private String factType;
     private String name;
     private Long parentId;
+    private Long factTypeId;
 
     /** children - FK PARENT_ID*/
     private FactDb metadata;
 
-    public String getFactType() {
-        return factType;
+    public Long getFactTypeId() {
+        return factTypeId;
     }
 
-    public void setFactType(String factType) {
-        this.factType = factType;
+    public void setFactTypeId(Long factTypeId) {
+        this.factTypeId = factTypeId;
     }
 
     public String getName() {

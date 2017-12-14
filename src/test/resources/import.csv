@@ -1,3 +1,32 @@
+@dimension
+###dimension of facts||||||||
+1|DFAC|fact|FLAT|SINGLE|DIMENSION_VALUE|Fact|Fakt|Факт
+||||||||
+###virtual dimensions||||||||
+501|DDTS|timestamp|VIRTUAL|SINGLE|LONG|Timestamp|Datum a čas|Дата и час
+502|DDAT|date|VIRTUAL|SINGLE|LONG|Date|Datum|Дата
+503|DUSR|user|VIRTUAL|SINGLE|STRING|User|Uživatel|Потребител
+504|DAMT|amount|VIRTUAL|SINGLE|BIG_DECIMAL|Amount|Množství|Номер
+||||||||
+###item specific dimensions||||||||
+1001|DCPV|cpv|TREE|SINGLE|DIMENSION_VALUE|CPV|CPV|ЦРВ
+1002|DEBK|ebk|FLAT|SINGLE|DIMENSION_VALUE|EBK|EBK|ЕБK
+1003|DCUR|currency|FLAT|SINGLE|DIMENSION_VALUE|Curency|Měna|Bалута
+1004|DFUN|funding|FLAT|SINGLE|DIMENSION_VALUE|Funding|Rozpočet|Бюджет
+1005|DITS|Item-status|FLAT|SINGLE|DIMENSION_VALUE|Item status|Stav údaje|Данни за състоянието
+||||||||
+###form specific dimensions||||||||
+1011|DPER|period|FLAT|SINGLE|DIMENSION_VALUE|Period|Období|Периодът
+1012|DFOT|form-type|FLAT|SINGLE|DIMENSION_VALUE|Form type|Typ formuláře|Тип формуляр
+1013|DFOS|form-state|FLAT|SINGLE|DIMENSION_VALUE|Form state|Stav formuláře|Статус на формуляра
+1014|DORG|org|TREE|SINGLE|DIMENSION_VALUE|Organization|Organizace|Организация
+||||||||
+###organization related dimensions||||||||
+1101|DORT|org-type|FLAT|SINGLE|DIMENSION_VALUE|Organization type|Typ organizace|Тип организация
+1102|DORC|org-category|FLAT|SINGLE|DIMENSION_VALUE|Organization category|Kategorie organizace|Категория на организацията
+1103|DORR|org-region|FLAT|SINGLE|DIMENSION_VALUE|Organization region|Region organizace|Регион на организацията
+
+
 
 @dimension_value
 ###cpv|||||||||||
@@ -773,3 +802,101 @@
 1|FBUF||1||Budget form|Rozpočtový formulář|Формуляр за бюджет||||
 11|FBUI||1||Budget item|Rozpočtová položka|бюджетна позиция||||
 21|FCRR||1||Currency rate|Kurz měny|валутен курс||||
+
+@fact
+### budget form||||
+1|1|budget_form|Bourgas, budget draft for 2018|
+2|1|budget_form|Bourgas, budget forecast for 2019|
+3|1|budget_form|National assembly, budget draft for 2018|
+||||
+### budget metadata||||
+101|0|fact_metadata||1
+102|0|fact_metadata||2
+103|0|fact_metadata||3
+||||
+### budget items||||
+201|11|budget_item|Notebooks for new employees|1
+202|11|budget_item|Monitors|1
+203|11|budget_item|ICZ Software licenses|2
+204|11|budget_item|Computer peripherials|2
+205|11|budget_item|Personal computers|3
+206|11|budget_item|UPS|3
+
+@fact_value
+###organization||||
+1|organization|1014|2520200|DIMENSION_VALUE
+2|organization|1014|2520200|DIMENSION_VALUE
+3|organization|1014|1010000|DIMENSION_VALUE
+||||
+###period||||
+1|period|1011|1|DIMENSION_VALUE
+2|period|1011|2|DIMENSION_VALUE
+3|period|1011|1|DIMENSION_VALUE
+||||
+###form type||||
+1|form_type|1012|2|DIMENSION_VALUE
+2|form_type|1012|1|DIMENSION_VALUE
+3|form_type|1012|2|DIMENSION_VALUE
+||||
+###form status||||
+1|form_status|1013|3|DIMENSION_VALUE
+2|form_status|1013|1|DIMENSION_VALUE
+3|form_status|1013|3|DIMENSION_VALUE
+||||
+###user||||
+101|user|503|svancard|STRING
+102|user|503|svancard|STRING
+103|user|503|georg|STRING
+||||
+###timestamp||||
+101|timestamp|501|now|TIMESTAMP
+102|timestamp|501|now|TIMESTAMP
+103|timestamp|501|now|TIMESTAMP
+||||
+###amount||||
+201|amount|504|60000|BIG_DECIMAL
+202|amount|504|32500|BIG_DECIMAL
+203|amount|504|125000|BIG_DECIMAL
+204|amount|504|2540|BIG_DECIMAL
+205|amount|504|45000|BIG_DECIMAL
+206|amount|504|13800|BIG_DECIMAL
+||||
+###currency||||
+201|currency|1003|2|DIMENSION_VALUE
+202|currency|1003|2|DIMENSION_VALUE
+203|currency|1003|2|DIMENSION_VALUE
+204|currency|1003|2|DIMENSION_VALUE
+205|currency|1003|2|DIMENSION_VALUE
+206|currency|1003|2|DIMENSION_VALUE
+||||
+###cpv||||
+201|cpv|1001|17912|DIMENSION_VALUE
+202|cpv|1001|17933|DIMENSION_VALUE
+203|cpv|1001|9528|DIMENSION_VALUE
+204|cpv|1001|13960|DIMENSION_VALUE
+205|cpv|1001|17920|DIMENSION_VALUE
+206|cpv|1001|13960|DIMENSION_VALUE
+||||
+###ebk||||
+201|ebk|1002|1|DIMENSION_VALUE
+202|ebk|1002|1|DIMENSION_VALUE
+203|ebk|1002|2|DIMENSION_VALUE
+204|ebk|1002|1|DIMENSION_VALUE
+205|ebk|1002|1|DIMENSION_VALUE
+206|ebk|1002|1|DIMENSION_VALUE
+||||
+###funding||||
+201|funding|1004|1|DIMENSION_VALUE
+202|funding|1004|1|DIMENSION_VALUE
+203|funding|1004|2|DIMENSION_VALUE
+204|funding|1004|1|DIMENSION_VALUE
+205|funding|1004|2|DIMENSION_VALUE
+206|funding|1004|3|DIMENSION_VALUE
+||||
+###item status||||
+201|item_status|1005|2|DIMENSION_VALUE
+202|item_status|1005|2|DIMENSION_VALUE
+203|item_status|1005|1|DIMENSION_VALUE
+204|item_status|1005|1|DIMENSION_VALUE
+205|item_status|1005|3|DIMENSION_VALUE
+206|item_status|1005|3|DIMENSION_VALUE

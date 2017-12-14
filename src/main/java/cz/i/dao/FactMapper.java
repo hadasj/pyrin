@@ -25,8 +25,8 @@ public interface FactMapper {
     List<FactDb> metadataByParentId(Long parentId);
 
     @Results(@Result(property = "idExt", column = "ID_EXT"))
-    @Select("select * from FACT where id_ext = #{idExt} order by id")
-    List<FactDb> parentByIdExt(Long idExt);
+    @Select("select * from FACT where id_ext = #{idExt}")
+    FactDb parentByIdExt(Long idExt);
 
     @Results(@Result(property = "idExt", column = "ID_EXT"))
     @Select("select * from DIMENSION_VALUE where id = #{id,jdbcType=INTEGER}")
@@ -62,8 +62,8 @@ public interface FactMapper {
     @Select("select * from FACT where code = #{code,jdbcType=VARCHAR} order by id")
     List<FactDb> allByCode(@Param("code") String code);
 
-    @Insert("insert into FACT(ID_EXT, CODE, ALIAS, NAME, FACT_TYPE, PARENT_ID) " +
-        "values(#{idExt}, #{code}, #{alias}, #{name}, #{factType}, #{parentId})")
+    @Insert("insert into FACT(ID_EXT, CODE, ALIAS, NAME, FACT_TYPE_ID, PARENT_ID) " +
+        "values(#{idExt}, #{code}, #{alias}, #{name}, #{factTypeId}, #{parentId})")
     void insert(FactDb fact);
 
     @Update("update FACT set ID_EXT = #{idExt}, CODE = #{code}, ALIAS = #{alias}, NAME=#{name}, PARENT_ID=#{parent.id} where ID = #{id}")

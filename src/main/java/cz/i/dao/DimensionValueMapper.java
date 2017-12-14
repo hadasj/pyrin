@@ -51,9 +51,17 @@ public interface DimensionValueMapper {
     @Results(value = {
         @Result(property = "idExt", column = "ID_EXT")
     })
-    @Select("select * from DIMENSION_VALUE where DIMENSION_ID in (select ID_EXT from dimension where code = #{dimensionCode}) " +
+    @Select("select * from DIMENSION_VALUE where DIMENSION_ID in (select ID from dimension where code = #{dimensionCode}) " +
         "and ID_EXT = #{valueIdExt}")
-    DimensionValueDb oneByDimensionAndIdExt(String dimensionCode, Long valueIdExt);
+    DimensionValueDb oneByDimensionCodeAndIdExt(@Param("dimensionCode") String dimensionCode,
+                                                @Param("valueIdExt") Long valueIdExt);
+
+    @Results(value = {
+        @Result(property = "idExt", column = "ID_EXT")
+    })
+    @Select("select * from DIMENSION_VALUE where DIMENSION_ID = #{dimensionId} and ID_EXT = #{valueIdExt}")
+    DimensionValueDb oneByDimensionIdAndIdExt(@Param("dimensionId") Long dimensionId,
+                                              @Param("valueIdExt") Long valueIdExt);
 
     @Results(value = {
         @Result(property = "idExt", column = "ID_EXT"),

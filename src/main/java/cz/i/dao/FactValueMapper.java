@@ -56,8 +56,8 @@ public interface FactValueMapper {
     @Select("select * from FACT_VALUE where code = #{code,jdbcType=VARCHAR} order by id")
     List<FactValueDb> allByCode(@Param("code") String code);
 
-    @Insert("insert into FACT_VALUE(ID_EXT, CODE, ALIAS, DIMENSION_ID, FACT_ID, DIMENSION_VALUE_ID, VALUE_VALUE, TYPE) " +
-            "values(#{idExt}, #{code}, #{alias}, #{dimension.id}, #{fact.id}, #{dimensionValue.id}, #{valueValue}, #{type})")
+    @Insert("insert into FACT_VALUE(ID_EXT, CODE, ALIAS, DIMENSION_ID, FACT_ID, DIMENSION_VALUE_ID, VALUE, VALUE_TYPE) " +
+            "values(#{idExt}, #{code}, #{alias}, #{dimensionId}, #{factId}, #{dimensionValueId}, #{value}, #{valueType})")
     int insert(FactValueDb factValue);
 
     @Update("update FACT_VALUE set ID_EXT = #{idExt}, CODE = #{code}, ALIAS = #{alias}, DIMENSION_ID = #{dimension.id}, FACT_ID = #{fact.id}, " +

@@ -1,5 +1,6 @@
 package cz.i.entity.db.fact;
 
+import cz.i.common.ValueType;
 import cz.i.entity.db.CodedEntityDb;
 
 /**
@@ -8,8 +9,9 @@ import cz.i.entity.db.CodedEntityDb;
 public class FactValueDb extends CodedEntityDb {
     private Long factId;
     private Long dimensionId;
+    private Long dimensionValueId;
     private String value;
-    private String valueType;
+    private ValueType valueType;
     //TODO: MULTI -> list of values
 
 
@@ -37,11 +39,19 @@ public class FactValueDb extends CodedEntityDb {
         this.value = value;
     }
 
-    public String getValueType() {
+    public ValueType getValueType() {
         return valueType;
     }
 
-    public void setValueType(String valueType) {
+    public void setValueType(ValueType valueType) {
         this.valueType = valueType;
+    }
+
+    public Long getDimensionValueId() {
+        return dimensionValueId;
+    }
+
+    public void setDimensionValueId(Long dimensionValueId) {
+        this.dimensionValueId = dimensionValueId;
     }
 }

@@ -56,20 +56,21 @@ create table FACT (
   CODE varchar(50),
   ALIAS varchar(50),
   NAME varchar(255),
-  FACT_TYPE varchar(5),
+  FACT_TYPE_ID int,
   PARENT_ID int,
   primary key (ID)
 );
+ALTER TABLE FACT ADD CONSTRAINT "F_FACT_TYPE_ID" FOREIGN KEY(FACT_TYPE_ID) REFERENCES DIMENSION_VALUE(ID);
 ALTER TABLE FACT ADD CONSTRAINT "F_FACT_PARENT_ID" FOREIGN KEY(PARENT_ID) REFERENCES FACT(ID);
 
 -- skutecna hodnota nebo odkaz na hodnotu z ciselniku
 create table FACT_VALUE (
   ID serial not null,
-  ID_EXT int not null,
+  ID_EXT int,
   CODE varchar(5),
   ALIAS varchar(50),
   DIMENSION_ID int,
-  FACT_ID int,
+  FACT_ID int not null,
   DIMENSION_VALUE_ID int,
   VALUE varchar(50),
   VALUE_TYPE varchar(15) not null

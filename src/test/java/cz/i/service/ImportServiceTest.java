@@ -8,13 +8,18 @@ import java.nio.file.Paths;
 
 import org.apache.ibatis.io.Resources;
 import org.junit.Before;
+import org.junit.Ignore;
+import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
 
 /**
  * @author jan.hadas@i.cz
  */
-//@SpringBootTest
-//@RunWith(SpringRunner.class)
+@SpringBootTest
+@RunWith(SpringRunner.class)
 public class ImportServiceTest {
 
     @Autowired
@@ -25,17 +30,10 @@ public class ImportServiceTest {
         // TODO clean DB
     }
 
-    //@Test
-    public void importDimensionsTest() throws IOException, URISyntaxException {
-        URL dimensions = Resources.getResourceURL("dimension.csv");
-        String csv = new String(Files.readAllBytes(Paths.get(dimensions.toURI())));
-
-        importService.importData(csv);
-    }
-
-    //@Test
-    public void importDimensionValuesTest() throws IOException, URISyntaxException {
-        URL dimensions = Resources.getResourceURL("dimension-value.csv");
+    @Ignore
+    @Test
+    public void importFactsTest() throws IOException, URISyntaxException {
+        URL dimensions = Resources.getResourceURL("import.csv");
         String csv = new String(Files.readAllBytes(Paths.get(dimensions.toURI())));
 
         importService.importData(csv);
