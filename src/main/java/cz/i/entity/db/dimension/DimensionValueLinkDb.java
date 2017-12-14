@@ -1,11 +1,11 @@
 package cz.i.entity.db.dimension;
 
-import cz.i.entity.Entity;
+import cz.i.entity.db.EntityDb;
 
 /**
  * @author jan.hadas@i.cz
  */
-public class DimensionValueLinkDb extends Entity {
+public class DimensionValueLinkDb extends EntityDb {
     private Long ownerId;
     private Long dimensionId;
     private Long valueId;

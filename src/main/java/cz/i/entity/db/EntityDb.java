@@ -1,9 +1,9 @@
-package cz.i.entity;
+package cz.i.entity.db;
 
 /**
  * @author jan.hadas@i.cz
  */
-public class Entity {
+public class EntityDb {
     private Long id;
     private Long idExt;
 

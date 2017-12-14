@@ -25,6 +25,10 @@ public interface DimensionMapper {
     DimensionDb oneById(@Param("id") Long id);
 
     @Results(@Result(property = "idExt", column = "ID_EXT"))
+    @Select("select * from DIMENSION where id_ext = #{idExt}")
+    DimensionDb oneByIdExt(Long idExt);
+
+    @Results(@Result(property = "idExt", column = "ID_EXT"))
     @Select("select * from DIMENSION where code = #{code,jdbcType=VARCHAR}")
     DimensionDb oneByCode(@Param("code") String code);
 

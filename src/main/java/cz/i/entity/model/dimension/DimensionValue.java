@@ -2,7 +2,7 @@ package cz.i.entity.model.dimension;
 
 import java.util.List;
 
-import cz.i.entity.CodedEntity;
+import cz.i.entity.model.CodedEntity;
 
 /**
  * @author jan.hadas@i.cz

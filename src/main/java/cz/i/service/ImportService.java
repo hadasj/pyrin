@@ -1,7 +1,10 @@
 package cz.i.service;
 
+import static cz.i.Util.parseLong;
+
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Function;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -18,6 +21,7 @@ import cz.i.dao.DimensionValueLinkMapper;
 import cz.i.dao.DimensionValueMapper;
 import cz.i.dao.FactMapper;
 import cz.i.dao.FactValueMapper;
+import cz.i.entity.db.EntityDb;
 import cz.i.entity.db.dimension.DimensionDb;
 import cz.i.entity.db.dimension.DimensionValueDb;
 import cz.i.entity.db.dimension.DimensionValueLinkDb;
@@ -119,29 +123,29 @@ public class ImportService {
 
     private DimensionDb createDimension(String[] columns) {
         DimensionDb dimension = new DimensionDb();
-        dimension.setIdExt(Long.parseLong(columns[0]));
+        dimension.setIdExt(parseLong(columns[0]));
         dimension.setCode(columns[1]);
         dimension.setAlias(columns[2]);
         dimension.setStructure(DimensionStructure.valueOf(columns[3]));
         dimension.setMode(DimensionMode.valueOf(columns[4]));
         dimension.setType(ValueType.valueOf(columns[5]));
+        dimension.setTextEn(columns[6]);
+        dimension.setTextCs(columns[7]);
+        dimension.setTextBg(columns[7]);
 
         return dimension;
     }
 
     private DimensionValueDb createDimensionValue(String[] columns) {
         DimensionValueDb dimensionValue = new DimensionValueDb();
-        dimensionValue.setIdExt(Long.parseLong(columns[0]));
+        dimensionValue.setIdExt(parseLong(columns[0]));
         dimensionValue.setCode(columns[1]);
         dimensionValue.setAlias(columns[2]);
-        if (!StringUtils.isEmpty(columns[3]))
-            dimensionValue.setDimensionId(Long.parseLong(columns[3]));
-        if (!StringUtils.isEmpty(columns[4]))
-            dimensionValue.setParentId(Long.parseLong(columns[4]));
+        dimensionValue.setDimensionId(getEntityByIdExt(columns[3], dimensionMapper::oneByIdExt));
+        dimensionValue.setParentId(getEntityByIdExt(columns[4], dimensionValueMapper::oneByIdExt));
         dimensionValue.setTextEn(columns[5]);
         dimensionValue.setTextCs(columns[6]);
         dimensionValue.setTextBg(columns[7]);
-
 
         return dimensionValue;
     }
@@ -149,11 +153,15 @@ public class ImportService {
     private List<DimensionValueLinkDb> createLinks(String[] columns, Long ownerId) {
         List<DimensionValueLinkDb> links = new ArrayList<>();
         for (int index = 8; index < columns.length; index +=2) {
-            if (!StringUtils.isEmpty(columns[index]) && !StringUtils.isEmpty(columns[index+1])) {
+            Long dimensionId = getEntityByIdExt(columns[index], dimensionMapper::oneByIdExt);
+            Long valueId = getEntityByIdExt(columns[index + 1], dimensionValueMapper::oneByIdExt);
+
+            if (dimensionId != null && valueId != null) {
                 DimensionValueLinkDb link = new DimensionValueLinkDb();
                 link.setOwnerId(ownerId);
-                link.setDimensionId(Long.parseLong(columns[index]));
-                link.setValueId(Long.parseLong(columns[index+1]));
+                link.setDimensionId(dimensionId);
+                link.setValueId(valueId);
+                links.add(link);
             }
         }
         return links;
@@ -161,7 +169,7 @@ public class ImportService {
 
     private FactDb createFact(String[] columns) {
         FactDb fact = new FactDb();
-        fact.setIdExt(Long.parseLong(columns[0]));
+        fact.setIdExt(parseLong(columns[0]));
         fact.setFactType(findFactType(columns));
         fact.setAlias(columns[2]);
         fact.setName(columns[3]);
@@ -172,19 +180,20 @@ public class ImportService {
 
     private FactValueDb createFactValue(String[] columns) {
         FactValueDb factValue = new FactValueDb();
-        factValue.setIdExt(Long.parseLong(columns[0]));
+        factValue.setIdExt(parseLong(columns[0]));
         factValue.setAlias(columns[1]);
-        factValue.setDimensionId(getFactValueDimension(columns));
+        factValue.setDimensionId(parseLong(columns[2]));
         factValue.setValue(columns[3]);
 
         return factValue;
     }
 
-    private Long getFactValueDimension(String[] columns) {
-        try {
-              return Long.parseLong(columns[2]);
-        } catch (NumberFormatException e) {
-            LOG.warn("FactValueDimensionIdExt: {} is not number", columns[2]);
+    private <E extends EntityDb>Long getEntityByIdExt(String idExt, Function<Long, E> entityByIdExt) {
+        Long parsedIdExt = parseLong(idExt);
+        if(parsedIdExt != null) {
+            EntityDb entity = entityByIdExt.apply(parsedIdExt);
+            if (entity != null)
+                return entity.getId();
         }
         return null;
     }

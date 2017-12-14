@@ -1,0 +1,775 @@
+
+@dimension_value
+###cpv|||||||||||
+17904|30000000-9  ||1001||Computer and office machinery, equipment and supplies, except furniture and software packages|Kancelářské a počítací stroje, zařízení a potřeby mimo nábytek a balíky programů|Компютърни и офис машини, оборудване и принадлежности, с изключение на мебели и софтуерни пакети||||
+17905|30210000-4  ||1001|17904|Data processing machines (hardware)|Stroje na zpracování dat (technické vybavení)|Машини за обработване на данни (хардуер)||||
+17912|30212000-8  ||1001|17905|Minicomputer hardware|Technické vybavení pro minipočítače|Хардуер за миникомпютри||||
+17914|30213000-5  ||1001|17905|Personal computers|Osobní počítače|Персонални компютри||||
+17920|30214000-2  ||1001|17905|Computer workstations|Pracovní stanice|Компютърни работни станции||||
+17921|30215000-9  ||1001|17905|Hardware for microcomputers|Mikropočítačové technické vybavení |Хардуер за микрокомпютри||||
+17923|30216000-6  ||1001|17905|Magnetic or optical readers|Magnetická nebo optická čtecí zařízení |Магнитни или оптични четящи устройства||||
+17930|30220000-7  ||1001|17904|Digital cartography equipment|Digitální kartografická zařízení |Оборудване за цифрова картография||||
+17931|30221000-4  ||1001|17930|Digital cadastral plans|Digitální katastrální mapy |Цифрови кадастрални планове||||
+17932|30230000-0  ||1001|17904|Computer equipment|Zařízení související s počítači|Компютърно оборудване||||
+17933|30231000-7  ||1001|17932|Computer screens and consoles|Počítačové monitory a konzoly|Компютърни екрани и конзоли||||
+17939|30232000-4  ||1001|17932|Peripherals|Periferní vybavení |Периферни устройства||||
+17948|30233000-1  ||1001|17932|Recorders and readers|Archivovací a čtecí zařízení |Записващи и четящи устройства||||
+16113|30234000-8  ||1001|17932|Carriers for storing information|Média pro ukládání dat |Носители за съхраняване на информация||||
+13947|30236000-2  ||1001|17932|Different types of computer hardware|Různé počítačové vybavení|Различни видове компютърен хардуер||||
+13960|30237000-9  ||1001|17932|Computer parts, accessories and accessories|Součásti, příslušenství a doplňky pro počítače |Части, аксесоари и принадлежности за компютри||||
+14007|30238000-6  ||1001|17932|Equipment for library automation|Zařízení pro automatizaci knihoven |Оборудване за автоматизиране на работа на библиотека||||
+12094|48000000-8  ||1001||Software packages and information systems|Balíky programů a informační systémy |Софтуерни пакети и информационни системи||||
+12095|48100000-9  ||1001|12094|Software packages for the industry|Balík programů určený pro specifické odvětví |Софтуерни пакети за индустрията||||
+12096|48110000-2  ||1001|12095|Sales packages (pos)|Balík programů pro prodejní místa (pos)|Софтуерни пакети за търговски обекти (pos)||||
+12097|48120000-5  ||1001|12095|Flight management software packages|Balík programů pro řízení letu |Софтуерни пакети за управление на полети||||
+12098|48121000-2  ||1001|12097|Software packages for air traffic control|Balík programů pro řízení leteckého provozu|Софтуерни пакети за контрол на въздушния трафик||||
+12099|48130000-8  ||1001|12095|Software packages for ground maintenance and with aviation tests|Balík programů pro pozemní podporu a zkoušky v letectví|Софтуерни пакети за наземна поддръжка и с тестове за авиацията||||
+12100|48131000-5  ||1001|12099|Software packages for ground maintenance for aviation|Balík programů pro pozemní podporu v letectví|Софтуерни пакети за наземна поддръжка за авиацията||||
+12101|48132000-2  ||1001|12099|Software packages with aviation tests|Balík programů pro zkoušky v letectví|Софтуерни пакети с тестове за авиацията||||
+12102|48140000-1  ||1001|12095|Software packages for the control of rail traffic|Balík programů pro řízení železniční dopravy |Софтуерни пакети за контрол на железопътния трафик||||
+12945|48150000-4  ||1001|12095|Software packages for management of technological processes|Balík programů pro řízení v průmyslových odvětvích |Софтуерни пакети за управление на технологични процеси||||
+14447|48151000-1  ||1001|12945|Computer control system|Počítačové řídící systémy|Система за компютърен контрол||||
+14448|48160000-7  ||1001|12095|Software packages for libraries|Balíky programů pro knihovny |Софтуерни пакети за библиотеки||||
+14449|48161000-4  ||1001|14448|System for managing libraries|Systémy pro správu knihoven|Система за управление на библиотеки||||
+14450|48170000-0  ||1001|12095|Software compliance packages|Balík programů pro dosažení souladu|Софтуерни пакети за съответствие||||
+14451|48180000-3  ||1001|12095|Medical software packages|Balík programů pro zdravotnictví |Медицински софтуерни пакети||||
+14452|48190000-6  ||1001|12095|Educational software packages|Balík programů pro oblast vzdělávání |Образователни софтуерни пакети||||
+14453|48200000-0  ||1001|12094|Software packages for internet and intranet work|Balíky programů pro výstavbu sítí, internet a intranet |Софтуерни пакети за работа в мрежи интернет и интранет||||
+14454|48210000-3  ||1001|14453|Networking software packages|Balík programů pro výstavbu sítí |Софтуерни пакети за работа в мрежа||||
+14455|48211000-0  ||1001|14454|Software packages for connecting platforms|Balík programů pro vzájemné propojování počítačových platforem |Софтуерни пакети за свързване на платформи||||
+14456|48212000-7  ||1001|14454|Multi-disk optical drive server programs with auto-disc replacement|Balík programů pro optický jukebox server|Сървърни програми за многодисково оптично устройство с автоматична смяна на дисковете||||
+14457|48213000-4  ||1001|14454|Software packages to increase the capacity of the operating system|Balík programů pro vylepšení operačního systému|Софтуерни пакети за повишаване на капацитета на операционната система||||
+14458|48214000-1  ||1001|14454|Software packages for a network operating system|Balík programů pro síťové operační systémy |Софтуерни пакети за мрежова операционна система||||
+14459|48215000-8  ||1001|14454|Software packages for network developers|Balík programů pro tvůrce sítí |Софтуерни пакети за мрежови програмисти||||
+14460|48216000-5  ||1001|14454|Software packages for emulation of terminals for networking|Balík programů pro terminálovou emulaci síťové konektivity |Софтуерни пакети за емулация на терминали за свързване в мрежа||||
+14461|48217000-2  ||1001|14454|Software packages for transaction processing|Balík programů pro provádění transakcí |Софтуерни пакети за обработка на транзакции||||
+14465|48218000-9  ||1001|14454|Software licenses for management of licenses|Balík programů pro správu licencí|Софтуерни пакети за управление на лицензи||||
+14466|48219000-6  ||1001|14454|Other types of software packages for networks|Různé balíky programů pro výstavbu sítí|Други видове софтуерни пакети за мрежи||||
+14475|48220000-6  ||1001|14453|Internet and intranet software packages|Balíky programů pro internet a intranet|Софтуерни пакети за интернет и интранет||||
+14476|48221000-3  ||1001|14475|Software packages for internet navigation|Balík programů pro prohlížení internetových stránek|Софтуерни пакети за интернет навигация||||
+14477|48222000-0  ||1001|14475|Software packages for network servers|Balík programů pro webové servery|Софтуерни пакети за мрежови сървъри||||
+14478|48223000-7  ||1001|14475|Software packages for e-mail|Balík programů pro elektronickou poštu |Софтуерни пакети за електронна поща||||
+14479|48224000-4  ||1001|14475|Software packages for editing web pages|Balík programů pro editaci webových stránek|Софтуерни пакети за редактиране на уeбcтраници||||
+14480|48300000-1  ||1001|12094|Software packages for document creation, drawing, image processing, planning and efficiency improvement|Balík programů pro tvorbu dokumentů, kreslení, tvorbu obrázků, plánování a produktivitu|Софтуерни пакети за създаване на документи, чертане, обработка на изображения, планиране и повишаване на ефективността||||
+14481|48310000-4  ||1001|14480|Software packages for document creation|Balík programů pro tvorbu dokumentů|Софтуерни пакети за създаване на документи||||
+14482|48311000-1  ||1001|14481|Software packages for document management|Balík programů pro správu dokumentů|Софтуерни пакети за управление на документи||||
+14484|48312000-8  ||1001|14481|Software packages for electronic publications|Balík programů pro elektronické publikování|Софтуерни пакети за електронни публикации||||
+14485|48313000-5  ||1001|14481|Optical character recognition (ocr) software packages|Balík programů pro optické rozpoznávání znaků (ocr)|Софтуерни пакети за оптично разпознаване на символи (ocr)||||
+14487|48314000-2  ||1001|14481|Software packages for voice recognition|Balík programů pro rozpoznávání hlasu|Софтуерни пакети за гласово разпознаване||||
+14488|48315000-9  ||1001|14481|Software packages for desktop publishing|Balík programů pro stolní typografii |Софтуерни пакети за настолна издателска дейност||||
+14489|48316000-6  ||1001|14481|Software packages for presentations|Balík programů pro tvorbu prezentací |Софтуерни пакети за презентации||||
+14490|48317000-3  ||1001|14481|Software packages for word processing|Balík programů pro zpracování textů|Софтуерни пакети за текстообработка||||
+14491|48318000-0  ||1001|14481|Software packages for scanners|Balík programů pro skenery |Софтуерни пакети за скенери||||
+14492|48319000-7  ||1001|14481|Spell checker programs|Programy pro kontrolu pravopisu|Програми за проверка на правопис||||
+14493|48320000-7  ||1001|14480|Software packages for drawing and image processing|Balík programů pro kreslení a tvorbu obrázků |Софтуерни пакети за чертане и обработка на изображения||||
+14494|48321000-4  ||1001|14493|Software packages for automated design with computer (cad)|Balík programů pro počítačovou projekci (cad)|Софтуерни пакети за автоматизирано проектиране с компютър (cad)||||
+14496|48322000-1  ||1001|14493|Software packages for graphical applications|Balík grafických programů|Софтуерни пакети за графични приложения||||
+14497|48323000-8  ||1001|14493|Software packages for automated production (cam)|Balík programů pro cam (počítačově podporovaná výroba) |Софтуерни пакети за автоматизирано производство (cam)||||
+14498|48324000-5  ||1001|14493|Software packages to create diagrams|Balík programů pro tvorbu grafů|Софтуерни пакети за създаване на диаграми||||
+14499|48325000-2  ||1001|14493|Software packages to create forms|Balík programů pro vytváření formulářů |Софтуерни пакети за създаване на формуляри||||
+14500|48326000-9  ||1001|14493|Software packages for cartography|Balík programů pro tvorbu map|Софтуерни пакети за картография||||
+14502|48327000-6  ||1001|14493|Software packages for drawing and drawing|Balík programů pro kreslení a malování |Софтуерни пакети за чертане и рисуване||||
+14503|48328000-3  ||1001|14493|Software packages for image processing|Balík programů pro zpracování obrazu |Софтуерни пакети за обработка на изображения||||
+14504|48329000-0  ||1001|14493|Image processing and archiving system|Zobrazovací a archivační systémy |Система за обработване на изображения и за архивиране||||
+14505|48330000-0  ||1001|14480|Software packages for planning and increasing efficiency|Balík programů pro plánování a produktivit |Софтуерни пакети за планиране и повишаване на ефективността||||
+14506|48331000-7  ||1001|14505|Software packages for project management|Balík programů pro management projektů |Софтуерни пакети за управление на проекти||||
+14507|48332000-4  ||1001|14505|Planning software packages|Balík programů pro plánování |Софтуерни пакети за планиране||||
+14508|48333000-1  ||1001|14505|Software packages for correspondence management|Balík programů pro správu kontaktů |Софтуерни пакети за управление на кореспонденция||||
+14509|48400000-2  ||1001|12094|Software packages for commercial and personal transactions|Balík programů pro obchodní transakce a soukromé podnikání |Софтуерни пакети за търговски и персонални транзакции||||
+14510|48410000-5  ||1001|14509|Software packages for investment management and tax returns|Balík programů pro správu investic a plánování daní|Софтуерни пакети за управление на инвестициите и изготвяне на данъчни декларации||||
+14511|48411000-2  ||1001|14510|Software packages for investment management|Balík programů pro správu investic |Софтуерни пакети за управление на инвестициите||||
+14512|48412000-9  ||1001|14510|Software packages for tax returns|Balík programů pro plánování daní|Софтуерни пакети за изготвяне на данъчни декларации||||
+14513|48420000-8  ||1001|14509|Software package management software packages and software package kits|Balík programů pro správu zařízení a sada balíků programů|Софтуерни пакети за управление на съоръжения и комплекти от софтуерни пакети||||
+14514|48421000-5  ||1001|14513|Software packages for facility management|Balík programů pro správu zařízení |Софтуерни пакети за управление на съоръжения||||
+14515|48422000-2  ||1001|14513|Sets of software packages|Sady balíků programů |Комплекти от софтуерни пакети||||
+14516|48430000-1  ||1001|14509|Software inventory management software packages|Balík programů pro správu inventárních soupisů |Софтуерни пакети за управление на инвентар||||
+14517|48440000-4  ||1001|14509|Software packages for financial analysis and accounting|Balík programů pro finanční analýzu a účetnictví |Софтуерни пакети за финансови анализи и счетоводство||||
+14518|48441000-1  ||1001|14517|Software packages for financial analysis|Balík programů pro finanční analýzu|Софтуерни пакети за финансови анализи||||
+14519|48442000-8  ||1001|14517|Software packages for financial systems|Balík programů pro finanční systémy|Софтуерни пакети за финансови системи||||
+10706|48443000-5  ||1001|14517|Software packages for accounting|Balík programů pro účetnictví|Софтуерни пакети за счетоводство||||
+10707|48444000-2  ||1001|14517|Accounting system|Účetní systémy |Счетоводна система||||
+9469|48445000-9  ||1001|14517|Software packages for customer relationship management|Balík programů pro řízení vztahů se zákazníky|Софтуерни пакети за управление на връзките с клиентите||||
+9470|48450000-7  ||1001|14509|Software packages for working time and human resources management|Balík programů pro měření a zúčtování pracovní doby a lidských zdrojů|Софтуерни пакети за управление на работното време и човешките ресурси||||
+9471|48451000-4  ||1001|9470|Enterprise resource planning software packages|Balík programů pro plánování podnikových zdrojů|Софтуерни пакети за планиране на ресурсите в предприятието||||
+9472|48460000-0  ||1001|14509|Analytical, research, mathematical software packages or software packages for forecasting|Balík programů pro analýzu, vědu, matematiku a prognózy|Аналитични, научноизследователски, математически софтуерни пакети или софтуерни пакети за прогнозиране||||
+9473|48461000-7  ||1001|9472|Analytical or research software packages|Balík programů pro analýzu a vědu|Аналитични или научноизследователски софтуерни пакети||||
+9474|48462000-4  ||1001|9472|Mathematical software packages or software packages for forecasting|Balík programů pro matematiku a prognózy |Математически софтуерни пакети или софтуерни пакети за прогнозиране||||
+9475|48463000-1  ||1001|9472|Statistical software packages|Balík programů pro statistiku|Статистически софтуерни пакети||||
+9476|48470000-3  ||1001|14509|Software packages for auctions|Balík programů pro aukce |Софтуерни пакети за търгове||||
+9477|48480000-6  ||1001|14509|Software packages for sales, marketing and economic intelligence (bi)|Balík programů pro prodej, marketing a business intelligence (analýza, plánování a rozhodování podniků)|Софтуерни пакети за продажби, маркетинг и икономическо разузнаване (bi)||||
+9478|48481000-3  ||1001|9477|Software packages for sales or marketing|Balík programů pro prodej a marketing|Софтуерни пакети за продажби или маркетинг||||
+9479|48482000-0  ||1001|9477|Software packages for economic intelligence (bi)|Balík programů pro business intelligence |Софтуерни пакети за икономическо разузнаване (bi)||||
+9480|48490000-9  ||1001|14509|Software delivery packages|Balík programů pro zadávání veřejných zakázek|Софтуерни пакети за доставки||||
+9481|48500000-3  ||1001|12094|Software packages for communication and multimedia|Balík programů pro komunikace a multimédia |Софтуерни пакети за комуникация и мултимедия||||
+9482|48510000-6  ||1001|9481|Software packages for communication|Balík programů pro komunikaci|Софтуерни пакети за комуникация||||
+9483|48511000-3  ||1001|9482|Desktop communication software packages|Balík programů pro stolní komunikační zařízení |Софтуерни пакети за настолна комуникация||||
+9484|48512000-0  ||1001|9482|Voice response software packages in interactive mode|Balík programů pro interaktivní hlasovou odezvu (ivr)|Софтуерни пакети за гласов отговор в интерактивен режим||||
+9485|48513000-7  ||1001|9482|Modem software packages|Balík programů pro modemy|Софтуерни пакети за модеми||||
+9486|48514000-4  ||1001|9482|Remote access software packages|Balík programů pro vzdálený přístup|Софтуерни пакети за отдалечен достъп||||
+9487|48515000-1  ||1001|9482|Software packages for video conferencing|Balík programů pro videokonference |Софтуерни пакети за видеоконференции||||
+9488|48516000-8  ||1001|9482|Software exchange packages|Balík programů pro výměnné systémy |Софтуерни пакети за обмен||||
+9489|48517000-5  ||1001|9482|Software packages for information technology (indexType)|Balík programů pro indexType|Софтуерни пакети за информационни технологии (ит)||||
+9490|48518000-2  ||1001|9482|Software packages for emulation|Balík emulačních programů|Софтуерни пакети за емулация||||
+9491|48519000-9  ||1001|9482|Memory allocation software packages|Balík programů pro správu pamětí |Софтуерни пакети за разпределение на паметта||||
+9492|48520000-9  ||1001|9481|Multimedia software packages|Balík multimediálních programů |Мултимедийни софтуерни пакети||||
+9493|48521000-6  ||1001|9492|Software packages for music or sound processing|Balík hudebních programů a programů pro editaci zvuku|Софтуерни пакети за обработка на музика или звук||||
+9494|48522000-3  ||1001|9492|Software packages for virtual keyboard|Balík programů pro virtuální klávesnici|Софтуерни пакети за виртуална клавиатура||||
+9495|48600000-4  ||1001|12094|Software packages for databases and operational software packages|Balík databázových a operačních programů |Софтуерни пакети за бази данни и операционни софтуерни пакети||||
+9496|48610000-7  ||1001|9495|Database systems|Databázové systémy |Системи от бази данни||||
+9497|48611000-4  ||1001|9496|Software packages for databases|Balík databázových programů|Софтуерни пакети за бази данни||||
+9498|48612000-1  ||1001|9496|Database management system|Systémy pro správu databází|Система за управление на бази данни||||
+9499|48613000-8  ||1001|9496|Electronic data management|Elektronická správa dat (edm)|Електронно управление на данни||||
+9500|48614000-5  ||1001|9496|Data collection system|Systémy k pořizování dat |Система за събиране на данни||||
+9501|48620000-0  ||1001|9495|Operating systems|Operační systémy |Операционни системи||||
+9502|48621000-7  ||1001|9501|Software packages representing a central computer operating system (mainframe)|Balík programů pro operační systémy hlavního počítače|Софтуерни пакети, представляващи операционна система за централен компютър (мейнфрейм)||||
+9503|48622000-4  ||1001|9501|Software packages representing the minicomputer operating system|Balík programů pro operační systém minipočítače|Софтуерни пакети, представляващи операционна система за миникомпютър||||
+9504|48623000-1  ||1001|9501|Software packages consisting of a microcomputer operating system|Balík programů pro operační systém mikropočítače |Софтуерни пакети, представляващи операционна система за микрокомпютър||||
+9505|48624000-8  ||1001|9501|Software packages representing a pc operating system|Balík programů pro operační systém osobního počítače (pc)|Софтуерни пакети, представляващи операционна система за персонален компютър (pc)||||
+9506|48625000-5  ||1001|9501|Operating systems for open computer systems|Operační systémy pro otevřené systémy|Операционни системи за отворени компютърни системи||||
+9507|48626000-2  ||1001|9501|Software packets for data grouping|Balík programů pro klastrování |Софтуерни пакети за групиране на данни||||
+9508|48627000-9  ||1001|9501|Software packages for real-time operating systems|Balík programů pro operační systémy pracující v reálném čase |Софтуерни пакети за операционни системи за управление в реално време||||
+9509|48628000-9  ||1001|9501|Microcanna architecture|Mikrokanálová architektura |Микроканална архитектура||||
+9510|48700000-5  ||1001|12094|Software packages for service purposes|Nástroje pro balíky programů |Софтуерни пакети за обслужващи цели||||
+9511|48710000-8  ||1001|9510|Software packages to back up or restore data|Balík programů pro zálohování a obnovu dat |Софтуерни пакети за създаване на резервни копия или за възстановяване на данни||||
+9512|48720000-1  ||1001|9510|Software packages for bar code coding|Balík programů pro tvorbu čárových kódů|Софтуерни пакети за кодиране с баркод||||
+9513|48730000-4  ||1001|9510|Software protection packages|Balík programů pro zabezpečení |Софтуерни пакети за защита||||
+9514|48731000-1  ||1001|9513|Software packages for file protection|Balík programů pro zabezpečení souborů |Софтуерни пакети за защита на файлове||||
+9515|48732000-8  ||1001|9513|Data protection software packages|Balík programů pro zabezpečení dat |Софтуерни пакети за защита на данни||||
+9516|48740000-7  ||1001|9510|Software packages for translation from foreign languages|Balík programů pro cizojazyčný překlad |Софтуерни пакети за превод от чужди езици||||
+9517|48750000-0  ||1001|9510|Software packages to load storage media|Balík programů pro ukládání na archivační média|Софтуерни пакети за зареждане на запаметяващи носители||||
+9518|48760000-3  ||1001|9510|Software packages for virus protection|Balík programů pro ochranu před viry |Софтуерни пакети за защита от вируси||||
+9519|48761000-0  ||1001|9518|Antivirus software packages|Balík antivirových programů|Антивирусни софтуерни пакети||||
+9520|48770000-6  ||1001|9510|Serving general purpose software packages, file compression and printing|Balík univerzálních obslužných programů a programů pro kompresi dat a tisk |Обслужващи софтуерни пакети с общо предназначение, за компресиране на файлове и за отпечатване||||
+9521|48771000-3  ||1001|9520|General purpose software packages|Balík univerzálních obslužných programů|Обслужващи софтуерни пакети с общо предназначение||||
+9522|48772000-0  ||1001|9520|Service computing programs for data compression|Nástroje pro kompresi dat|Обслужващи компютърни програми за компресиране на данни||||
+9523|48773000-7  ||1001|9520|Serving software packages for printing|Balík univerzálních obslužných programů pro tisk |Обслужващи софтуерни пакети за отпечатване||||
+9525|48780000-9  ||1001|9510|Software packages for system administration, data capture management and content management|Balík programů pro správu systému, ukládání a obsahu |Софтуерни пакети за администриране на системи, управление на записа на данни и управление на съдържание||||
+9526|48781000-6  ||1001|9525|Software packages for system administration|Balík programů pro správu systému|Софтуерни пакети за системно администриране||||
+9527|48782000-3  ||1001|9525|Software packages to manage data recording|Balík programů pro správu ukládání |Софтуерни пакети за управление на записа на данни||||
+9528|48783000-0  ||1001|9525|Content management software packages|Balík programů pro správu obsahu |Софтуерни пакети за управление на съдържание||||
+9529|48790000-2  ||1001|9510|Versions verification software packages|Balík programů pro kontrolu verzí|Софтуерни пакети за проверка на версиите||||
+9530|48800000-6  ||1001|12094|Information systems and servers|Informační systémy a servery |Информационни системи и сървъри||||
+9531|48810000-9  ||1001|9530|Information systems|Informační systémy |Информационни системи||||
+9532|48811000-6  ||1001|9531|Email system|Systémy pro elektronickou poštu|Система за електронна поща||||
+9533|48812000-3  ||1001|9531|Information systems in the financial field|Finanční informační systémy|Системи за информация във финансовата област||||
+9534|48813000-0  ||1001|9531|Passenger information systems|Informační systémy pro cestující |Системи за информиране на пътниците||||
+9537|48814000-7  ||1001|9531|Information systems in the field of medicine|Zdravotnické informační systémy|Системи за информация в областта на медицината||||
+9543|48820000-2  ||1001|9530|Servers|Servery|Сървъри||||
+9544|48821000-9  ||1001|9543|Network servers|Síťové servery |Мрежови сървъри||||
+10473|48822000-6  ||1001|9543|Computer servers|Počítačové servery |Компютърни сървъри||||
+10627|48823000-3  ||1001|9543|File servers|Souborové servery|Файлови сървъри||||
+10628|48824000-0  ||1001|9543|Printer servers|Obsluhy tisku|Принтерни сървъри||||
+10629|48825000-7  ||1001|9543|Web servers|Webové servery |Уебсървъри||||
+10630|48900000-7  ||1001|12094|Other software packages and operating systems|Různé balíky programů a počítačové systémy |Други софтуерни пакети и операционни системи||||
+10635|48920000-3  ||1001|10630|Software packages for office automation|Kancelářský automatizační balík programů |Софтуерни пакети за автоматизация в офиса||||
+10636|48921000-0  ||1001|10635|Automation system|Automatické systémy|Система за автоматизация||||
+10637|48930000-6  ||1001|10630|Software packages for training and entertainment|Balík školicích a zábavních programů |Софтуерни пакети за обучение и развлечение||||
+10638|48931000-3  ||1001|10637|Software training packages|Balík školicích programů |Софтуерни пакети за обучение||||
+10640|48940000-9  ||1001|10630|Software packages for designing templates and preparing calendars|Balík programů pro tvorbu vzorů a kalendářů|Софтуерни пакети за проектиране на шаблони и изготвяне на календари||||
+10641|48941000-6  ||1001|10640|Software templates for designing templates|Balík programů pro tvorbu vzorů|Софтуерни пакети за проектиране на шаблони||||
+10642|48942000-3  ||1001|10640|Software packages for the production of calendars|Balík programů pro tvorbu kalendářů|Софтуерни пакети за изготвяне на календари||||
+10643|48950000-2  ||1001|10630|Vessel positioning and messaging systems on loudspeaker systems|Systémy pro lokalizaci plavidel a systémy pro veřejný rozhlas|Системи за определяне местоположението на кораби и за съобщения по високоговорителни системи||||
+10644|48951000-9  ||1001|10643|Vessel positioning system|Systémy pro lokalizaci plavidel|Система за определяне местоположението на кораби||||
+10645|48952000-6  ||1001|10643|Message systems on speaker systems|Systémy pro veřejný rozhlas|Системи за съобщения по високоговорителни системи||||
+10646|48960000-5  ||1001|10630|Drivers and system software packages|Balík programů pro ovladače a systém |Драйверни и системни софтуерни пакети||||
+10647|48961000-2  ||1001|10646|Drivers for ethernet|Ovladače pro ethernet|Драйвери за еthernet||||
+10648|48962000-9  ||1001|10646|Graphic card drivers|Ovladače grafických karet|Драйвери за графични карти||||
+10649|48970000-8  ||1001|10630|Software packages for printers|Balík programů pro tiskárny|Софтуерни пакети за печатници||||
+10650|48971000-5  ||1001|10649|Software packages for address book creation|Balík programů pro tvorbu adresářů |Софтуерни пакети за съставяне на адресни книги||||
+10651|48972000-2  ||1001|10649|Software packages for labeling|Balík štítkovacích programů|Софтуерни пакети за етикетиране||||
+10652|48980000-1  ||1001|10630|Languages ​​and programming tools|Programovací jazyky a nástroje |Езици и средства за програмиране||||
+10653|48981000-8  ||1001|10652|Software packages for compilation|Balík kompilačních programů|Софтуерни пакети за компилиране||||
+10654|48982000-5  ||1001|10652|Configuration software packages|Balík programů pro správu konfigurace|Софтуерни пакети за конфигуриране||||
+10655|48983000-2  ||1001|10652|Development software packages|Balík vývojářských programů|Развойни софтуерни пакети||||
+10656|48984000-9  ||1001|10652|Tools with graphical user interface|Nástroje pro grafické uživatelské rozhraní (gui) |Средства с графичен потребителски интерфейс||||
+10657|48985000-6  ||1001|10652|Programming languages|Programovací jazyky|Езици за програмиране||||
+10658|48986000-3  ||1001|10652|Software packages for software testing|Balík programů pro testování programů|Софтуерни пакети за тестване на програми||||
+10659|48987000-0  ||1001|10652|Debugging software (debugging)|Balík programů pro odstraňování chyb |Софтуерни пакети за отстраняване на грешки (дебъгване)||||
+10660|48990000-4  ||1001|10630|Software spreadsheets for spreadsheets and to expand functionality|Balík programů pro tabulkové procesory a doplňky |Софтуерни пакети за електронни таблици и за разширяване на функционалните възможности||||
+10661|48991000-1  ||1001|10660|Spreadsheets software packages|Balík programů pro tabulkové procesory |Софтуерни пакети за електронни таблици||||
+12507|72000000-5  ||1001||It services: consulting, software development, internet and support|Informační technologie: poradenství, vývoj programového vybavení, internet a podpora |Ит услуги: консултации, разработване на софтуер, интернет и поддръжка||||
+12508|72100000-6  ||1001|12507|Hardware consultancy services|Poradenské služby v oblasti technického vybavení počítačů|Консултантски услуги по хардуер||||
+11698|72110000-9  ||1001|12508|Consultancy services related to hardware selection|Poradenské služby v oblasti výběru technického vybavení počítačů |Консултантски услуги, свързани с избор на хардуер||||
+11699|72120000-2  ||1001|12508|Hardware recovery consultancy services in case of cancellation|Poradenské služby v oblasti obnovy technického vybavení počítačů po havárii|Консултантски услуги по възстановяване на хардуер в случай на отказ||||
+9121|72130000-5  ||1001|12508|Computer room equipment consultancy services|Poradenské služby v oblasti plánování počítačových pracovišť |Консултантски услуги по оборудване на компютърни зали||||
+11105|72140000-8  ||1001|12508|Hardware acceptance testing consultancy services|Poradenské služby v oblasti akceptačních testů technického vybavení počítačů |Консултантски услуги по приемни изпитвания на хардуер||||
+11106|72150000-1  ||1001|12508|Computer audit and consultancy services in the field of hardware|Poradenské služby v oblasti počítačových auditů a technického vybavení počítačů|Консултантски услуги по компютърен одит и консултантски услуги по хардуер||||
+11107|72200000-7  ||1001|12507|Programming and software consultancy services|Programování programového vybavení a poradenské služby |Програмиране и софтуерни консултантски услуги||||
+11108|72210000-0  ||1001|11107|Software package programming services|Programování balíkových produktů programového vybavení |Услуги по програмиране на софтуерни пакети||||
+11109|72211000-7  ||1001|11108|System software programming and custom software|Programování systémového a uživatelského programového vybavení |Услуги по програмиране на системен софтуер и потребителски софтуерни средства||||
+11110|72212000-4  ||1001|11108|Application software programming services|Programování aplikačního programového vybavení |Услуги по програмиране на приложен софтуер||||
+10887|72220000-3  ||1001|11107|System and technical consulting services|Systémové a technické poradenské služby|Системни и технически консултантски услуги||||
+10888|72221000-0  ||1001|10887|Services of advisers on business analysis of system operation|Poradenské služby v oblasti obchodní analýzy |Консултантски услуги по бизнес анализи на експлоатацията на системата||||
+10889|72222000-7  ||1001|10887|Strategic analysis and planning of computer systems and information technologies|Informační systémy nebo technologické strategické revize a plánování |Услуги по стратегически анализ и планиране на компютърни системи и информационни технологии||||
+10893|72223000-4  ||1001|10887|Information technology analysis services|Hodnocení požadavků informačních technologií |Услуги по анализ на изискванията на информационните технологии||||
+10894|72224000-1  ||1001|10887|Computer project management consultancy services|Poradenské služby v oblasti řízení projektů|Консултантски услуги по управление на компютърни проекти||||
+10897|72225000-8  ||1001|10887|Evaluation and analysis of quality assurance procedures for systems|Hodnocení a posuzování systémů pro zajištění kvality |Услуги по оценяване и анализ на процедурите по осигуряване на качеството на системите||||
+10898|72226000-5  ||1001|10887|Consultancy services for system software acceptance tests|Poradenské služby v oblasti testování akceptace systémů programového vybavení|Консултантски услуги по приемни изпитвания на системен софтуер||||
+10899|72227000-2  ||1001|10887|Consultancy services relating to software integration|Poradenské služby v oblasti integrace programového vybavení|Консултантски услуги, свързани с интегриране на софтуер||||
+10900|72228000-9  ||1001|10887|Hardware integration consultancy services|Poradenské služby v oblasti integrace technického vybavení počítačů|Консултантски услуги, свързани с интегриране на хардуер||||
+10901|72230000-6  ||1001|11107|Custom software (client) software development services|Vývoj programového vybavení na zakázku |Услуги по разработване на поръчков (клиентски) софтуер||||
+10902|72231000-3  ||1001|10901|Software development for military applications|Vývoj programového vybavení pro vojenské použití |Разработване на софтуер за военни приложения||||
+10903|72232000-0  ||1001|10901|Development of transaction processing software and other customized (client) software|Vývoj programového vybavení pro zpracování transakcí a programového vybavení na zakázku|Разработване на софтуер за обработка на транзакции и друг поръчков (клиентски) софтуер||||
+10904|72240000-9  ||1001|11107|System analysis and programming services|Analýza systémů a programovací služby|Системен анализ и програмни услуги||||
+10905|72241000-6  ||1001|10904|Critical project specification services|Specifikace kritických cílů projektu |Услуги по специфициране на цели на критични проекти||||
+10906|72242000-3  ||1001|10904|Project modeling services|Poskytování výpočetních modelů |Услуги по моделиране на проекти||||
+10907|72243000-0  ||1001|10904|Programming services|Programování |Услуги по програмиране||||
+10908|72244000-7  ||1001|10904|Prototyping services|Prototypování|Услуги по изработване на прототип||||
+10909|72245000-4  ||1001|10904|Contract based services on system analysis and programming|Smluvní analýza systémů a programování |Услуги на договорна основа по системен анализ и програмиране||||
+10910|72246000-1  ||1001|10904|Computer system consultancy services|Systémové poradenství|Консултантски услуги по компютърни системи||||
+10911|72250000-2  ||1001|11107|Systems maintenance and assistance services|Systémové a podpůrné služby|Услуги по поддържане на системи и оказване на помощ||||
+10912|72251000-9  ||1001|10911|Software recovery services after failure|Obnova po havárii|Услуги по възстановяване на софтуер след отказ||||
+10913|72252000-6  ||1001|10911|Computer archiving services|Počítačová archivace |Услуги по компютърно архивиране||||
+10914|72253000-3  ||1001|10911|Consumer and maintenance services|Help desk a podpůrné služby|Услуги в помощ на потребителите и поддържане на системи||||
+10917|72254000-0  ||1001|10911|Software testing services|Testování programového vybavení|Услуги по тестване на софтуер||||
+10919|72260000-5  ||1001|11107|Software related services|Služby programového vybavení |Услуги, свързани със софтуерни продукти||||
+10920|72261000-2  ||1001|10919|Software assistance services|Podpora programového vybavení|Услуги по оказване на помощ, свързана със софтуерните продукти||||
+10921|72262000-9  ||1001|10919|Software development services|Vývoj programového vybavení|Услуги по разработване на софтуер||||
+10922|72263000-6  ||1001|10919|Installation services of software products|Implementace programového vybavení |Услуги по инсталиране на софтуерни продукти||||
+10923|72264000-3  ||1001|10919|Reproduction services of software products|Rozmnožování programového vybavení |Услуги по възпроизвеждане на софтуерни продукти||||
+10924|72265000-0  ||1001|10919|Configuration services of software products|Konfigurace programového vybavení|Услуги по конфигурация на софтуерни продукти||||
+10925|72266000-7  ||1001|10919|Software product consultancy services|Poradenství v oblasti programového vybavení|Консултантски услуги, свързани със софтуерни продукти||||
+10926|72267000-4  ||1001|10919|Software maintenance and repair services|Údržba a opravy programového vybavení|Услуги по поддържане и ремонт на софтуер||||
+10929|72268000-1  ||1001|10919|Software delivery services|Dodávka programového vybavení|Услуги по доставка на софтуерни продукти||||
+10930|72300000-8  ||1001|12507|Data transmission and processing services|Datové služby|Услуги по предаване и обработка на данни||||
+10931|72310000-1  ||1001|10930|Data processing services|Zpracování dat |Услуги по обработка на данни||||
+10932|72311000-8  ||1001|10931|Computerized tabular services|Počítačové sestavy |Компютърни услуги по табулиране||||
+10936|72312000-5  ||1001|10931|Computer data entry services|Zadávání dat |Услуги по компютърно въвеждане на данни||||
+9124|72313000-2  ||1001|10931|Data collection services|Sběr dat |Услуги по събиране на данни||||
+10941|72314000-9  ||1001|10931|Data collection and sorting services|Sběr a zařazování dat|Услуги по събиране и сортиране на данни||||
+10942|72315000-6  ||1001|10931|Data management and assistance services relating to data transmission networks|Správa a podpora datových sítí |Услуги по управление и оказване на помощ, свързана с мрежи за предаване на данни||||
+10945|72316000-3  ||1001|10931|Data analysis services|Analýza dat|Услуги по анализ на данни||||
+10946|72317000-0  ||1001|10931|Storage services|Ukládání dat |Услуги по съхраняване на данни||||
+10947|72318000-7  ||1001|10931|Data transmission services|Přenos dat |Услуги по предаване на данни||||
+10948|72319000-4  ||1001|10931|Data provision services|Poskytování dat|Услуги по доставка на данни||||
+10949|72320000-4  ||1001|10930|Database services|Databázové služby|Услуги, свързани с бази данни||||
+10950|72321000-1  ||1001|10949|Value-added database services|Databázové služby s přidanou hodnotou|Услуги, свързани с бази данни с добавена стойност||||
+10951|72322000-8  ||1001|10949|Data management services|Správa dat |Услуги по управление на данни||||
+10952|72330000-2  ||1001|10930|Standardization and classification of content and data services|Standardizace a klasifikace obsahu a dat |Услуги по стандартизация и класификация на съдържание и данни||||
+10953|72400000-4  ||1001|12507|Internet services|Internetové služby |Интернет услуги||||
+10954|72410000-7  ||1001|10953|Provider services|Poskytovatelé služeb |Услуги на доставчици||||
+10955|72411000-4  ||1001|10954|Internet service providers (isps)|Poskytovatelé internetových služeb (isp) |Доставчици на интернет услуги (isp)||||
+10956|72412000-1  ||1001|10954|An e-mail service provider|Poskytovatel služeb elektronické pošty |Доставчик на услуги за електронна поща||||
+10957|72413000-8  ||1001|10954|Webdesign services|Návrh webových (www) stránek |Услуги по уебдизайн||||
+10958|72414000-5  ||1001|10954|Providers of search engines on the internet|Poskytovatelé webových vyhledávačů |Доставчици на машини за търсене в интернет||||
+10959|72415000-2  ||1001|10954|Web site hosting services|Webová operační hostingové služby|Услуги за хостинг на уебстраници||||
+10960|72416000-9  ||1001|10954|Application service providers|Poskytovatelé aplikačních služeb |Доставчици на услуги с приложни програми||||
+10961|72417000-6  ||1001|10954|Internet domain names|Názvy internetových domén|Имена на интернет домейни||||
+10962|72420000-0  ||1001|10953|Internet development services|Vývojové internetové služby|Услуги по интернет разработка||||
+10963|72421000-7  ||1001|10962|Application development services for internet or intranet clients|Vývojové služby internetových nebo intranetových klientských aplikací|Услуги по разработване на приложения клиенти за интернет или интранет||||
+10964|72422000-4  ||1001|10962|Application development services for the internet or intranet|Vývojové služby internetových nebo intranetových serverových aplikací|Услуги по разработване на приложения сървъри за интернет или интранет||||
+10965|72500000-0  ||1001|12507|Computer-related services|Výpočetní služby |Услуги, свързани с използване на компютри||||
+10966|72510000-3  ||1001|10965|Management services relating to the use of computers|Počítačové řízení|Услуги по управление, свързани с използване на компютри||||
+10967|72511000-0  ||1001|10966|Network management software products|Programové vybavení pro správu sítě|Услуги, свързани със софтуерни продукти за управление на мрежа||||
+10968|72512000-7  ||1001|10966|Document management services|Řízení dokladů |Услуги по управление на документи||||
+10969|72513000-4  ||1001|10966|Office automation services|Automatizace administrativních prací |Услуги, свързани с офис автоматизацията||||
+10970|72514000-1  ||1001|10966|Computer system management services|Péče o počítačové zařízení |Услуги по управление на компютърни системи||||
+10974|72540000-2  ||1001|10965|Services related to enhancing the capabilities of computers|Modernizace počítačů |Услуги, свързани с увеличаване на възможностите на компютри||||
+10975|72541000-9  ||1001|10974|Services related to the expansion of computer configuration|Rozšiřování počítačů |Услуги, свързани с разширение на компютърна конфигурация||||
+10977|72590000-7  ||1001|10965|Professional computer services|Odborné počítačové služby|Професионални компютърни услуги||||
+10978|72591000-4  ||1001|10977|Development of service level contracts|Vypracování smluv o úrovni podpory |Разработка на договори за ниво на обслужване||||
+10979|72600000-6  ||1001|12507|Assistance and consultancy services in the field of computer systems|Výpočetní podpora a poradenské služby|Услуги по оказване на помощ и консултации в областта на компютърните системи||||
+10980|72610000-9  ||1001|10979|Computer assistance services in the field of computer systems|Výpočetní podpora|Услуги по оказване на помощ в областта на компютърните системи||||
+10981|72611000-6  ||1001|10980|Technical assistance services in the field of computer systems|Technická výpočetní podpora|Услуги по оказване на техническа помощ в областта на компютърните системи||||
+10982|72700000-7  ||1001|12507|Computer network services|Počítačové sítě|Услуги, свързани с компютърни мрежи||||
+10983|72710000-0  ||1001|10982|Local area network services|Místní počítačové sítě |Услуги, свързани с локални мрежи||||
+10984|72720000-3  ||1001|10982|Networking services extending over long distances|Dálkové počítačové sítě|Услуги, свързани с мрежи, разпростиращи се на голямо разстояние||||
+10985|72800000-8  ||1001|12507|Computer audit and computer testing services|Audity a testování počítačů|Услуги по компютърен одит и компютърно тестване||||
+10986|72810000-1  ||1001|10985|Computer audit services|Audity počítačů|Услуги по компютърен одит||||
+10987|72820000-4  ||1001|10985|Computer testing services|Testování počítačů |Услуги по тестване на компютри||||
+10988|72900000-9  ||1001|12507|Back-up services and catalog conversion services|Zálohování počítačů a zpracování počítačových katalogů |Услуги за създаване на резервни копия и услуги по конвертиране на каталози||||
+10989|72910000-2  ||1001|10988|Duplication of data related to their storage|Zálohování počítačů|Услуги по дублиране на данни, свързани със съхранението им||||
+10990|72920000-5  ||1001|10988|Catalog conversion information services|Zpracování počítačových katalogů |Информационни услуги по конвертиране на каталози||||
+###ebk|||||||||||
+1|52-01||1002||Acquiring computers and hardware|Získávání počítačů a hardwaru|Придобиване на компютри и хардуер||||
+2|53-01||1002||Acquisition of software products and licenses for software products|Získávání softwarových produktů a licencí pro softwarové produkty|Придобиване на програмни продукти и лицензи за програмни продукти||||
+3|10-00||1002||Maintenance|Údržba|Издръжка||||
+###funding|||||||||||
+1|AO||1004||Activities funded under the ao budget|Ao rozpočet|Дейности, финанси-рани в рамките на бюджета на ао||||
+2|EC||1004||Activities funded by the esis|Ecif rozpočet|Дейности, финанси-рани по есиф||||
+3|OT||1004||Activities funded by others. sources|Jiný rozpočet|Дейности, финанси-рани от др. източници||||
+###period|||||||||||
+1|2018-Q0||1011||2018-q0|2018-q0|2018-q0||||
+2|2019-Q0||1011||2019-q0|2019-q0|2019-q0||||
+3|2020-Q0||1011||2020-q0|2020-q0|2020-q0||||
+4|2017-Q0||1011||2017-q0|2017-q0|2017-q0||||
+5|2017-Q1||1011||2017-q1|2017-q1|2017-q1||||
+6|2017-Q2||1011||2017-q2|2017-q2|2017-q2||||
+7|2017-Q3||1011||2017-q3|2017-q3|2017-q3||||
+8|2017-Q4||1011||2017-q4|2017-q4|2017-q4||||
+9|2016-Q0||1011||2016-q0|2016-q0|2016-q0||||
+10|2015-Q0||1011||2015-q0|2015-q0|2015-q0||||
+11|2014-Q0||1011||2014-q0|2014-q0|2014-q0||||
+###form type|||||||||||
+1|FOR||1012||Forecast|Předpověď|Прогноза||||
+2|DRA||1012||Draft|Draft|Проект||||
+3|CUR||1012||Current|Současnost|Текущ||||
+4|PAS||1012||Past|Minulost|Минало||||
+###form state|||||||||||
+1|NEW||1013||New|Nový|Нов||||
+2|PRO||1013||Removed|Rozpracovaný|Недовършен||||
+3|TOA||1013||To approval|Ke schválení|Да одобрявам||||
+4|REM||1013||Removed|Odstraněný|Отстранен||||
+5|APP||1013||Approved|Schválený|Одобрен||||
+###item status|||||||||||
+1|IMP||1005||Imported|Importovaný|Внесен||||
+2|INS||1005||Inserted|Vložený|Добавя||||
+3|CNT||1005||Counted|Spočítaný|Преброени||||
+###currency|||||||||||
+1|CZK||1003||Czech crown|Česká koruna|Чешката корона||||
+2|EUR||1003||European euro|Evropské euro|Еврото||||
+3|USD||1003||Us dollar|Us americký dolar|Щатски долар||||
+4|UAH||1003||Ukraine hryvnia|Ukrajina hřivna|Украйна гривна||||
+5|KZT||1003||Kazakhstan tenge|Kazachstán tenge|Казахстан десет||||
+6|GEL||1003||Georgia lari|Gruzie lari|Джорджия||||
+7|BYR||1003||Belarus ruble|Bělorusko rubl|Белгийска рубла||||
+8|GBP||1003||British pound|Britská libra|Британски паунд||||
+9|BGN||1003||Bulgarian lev|Bulharský leva|Български лев||||
+10|HRK||1003||Chovatská kuna|Chovatská kuna|Chovatská куна||||
+11|DKK||1003||Danish krone|Dánská koruna|Датската крона||||
+12|HUF||1003||Hungarian forint|Maďarský forint|Унгарски форинт||||
+13|NOK||1003||Norwegian krone|Norská koruna|Норвежка крона||||
+14|PLN||1003||Polish zloty|Polský zlotý|Полска злота||||
+15|RON||1003||Romanian lei|Rumunský lei|Румънски леи||||
+16|RUB||1003||Russian ruble|Ruský rubl|Руска рубла||||
+17|SEK||1003||Swedish crown|Švédská koruna|Шведска корона||||
+18|CHF||1003||Swiss franc|Švýcarský frank|Швейцарски франк||||
+###organization region|||||||||||
+0|STA||1103||State|Stát|Страна||||
+51|BLA||1103||Blagoevgrad|Blagoevgrad| Благоевград            ||||
+52|BRG||1103||Bourgas|Bourgas|Бургас||||
+53|VAR||1103||Varna|Varna|Варна||||
+54|VET||1103||Veliko tarnovo|Veliko tarnovo|Велико търново||||
+55|VID||1103||Vidin|Vidin|Видин||||
+56|VRA||1103||Vratsa|Vratsa|Враца||||
+57|GAB||1103||Gabrovo|Gabrovo|Габрово||||
+58|DOB||1103||Dobrich|Dobrich|Добрич||||
+59|KAR||1103||Kardzhali|Kardzhali|Кърджали||||
+60|KYU||1103||Kyustendil|Kyustendil|Кюстендил||||
+61|LOV||1103||Lovech|Lovech|Ловеч||||
+62|MON||1103||Montana|Montana|Монтана||||
+63|PAZ||1103||Pazardzhik|Pazardzhik|Пазарджик||||
+64|PER||1103||Pernik|Pernik|Перник||||
+65|PLE||1103||Pleven|Pleven|Плевен||||
+66|PLO||1103||Plovdiv|Plovdiv|Пловдив||||
+67|RAZ||1103||Razgrad|Razgrad|Разград||||
+68|RUS||1103||Ruse|Ruse|Русе||||
+69|SIL||1103||Silistra|Silistra|Силистра||||
+70|SLI||1103||Sliven|Sliven|Сливен||||
+71|SMO||1103||Smolyan|Smoljan| Смолян||||
+72|SMA||1103||Sofia municipality and areas|Sofia obec a oblasti|Столична община и райони||||
+73|SOF||1103||Sofia|Sofia|София||||
+74|STZ||1103||Stara zagora|Stara zagora|Стара загора||||
+75|RGO||1103||Rgovitse|Rgovitse|Ърговище||||
+76|HAS||1103||Haskovo|Haskovo|Хасково||||
+77|SHU||1103||Shumen|Shumen|Шумен||||
+78|YAM||1103||Yambol|Yambol|Ямбол||||
+###organization type|||||||||||
+1000000|CEN||1101||Centrální|Централен|Central||||
+2000000|REG||1101||Regionální|Областен|Regional||||
+###organization category|||||||||||
+101|NAA||1102||National assembly|Národní shromáždění|Народно събрание|1101|1000000||
+102|AOP||1102||Administration of the presidency|Správa předsednictví|Администрация на председателството|1101|1000000||
+103|COM||1102||Council of ministers|Rada ministrů|Министерски съвет|1101|1000000||
+104|COC||1102||Constitutional court|Ústavní soud|Конституционен съд|1101|1000000||
+105|COA||1102||Court of auditors|Dvůr auditorů|Сметна палата|1101|1000000||
+106|SJC||1102||Supreme judicial council|Nejvyšší soudní rada|Висшия съдебен съвет|1101|1000000||
+107|MIN||1102||Ministry |Ministerstvo|Министерство|1101|1000000||
+108|SNA||1102||State/national agency |Státní / národní agentura|Държавна / национална агенция|1101|1000000||
+109|COM||1102||Commission |Komise|Комисионна|1101|1000000||
+110|NSS||1102||National security service|Národní bezpečnostní služba|Национална служба за сигурност|1101|1000000||
+111|OMB||1102||Ombudsman|Ombudsman|Омбудсман|1101|1000000||
+112|NAI||1102||National institute|Národní institut|Национален институт|1101|1000000||
+113|CCL||1102||Council |Rada|Съвет|1101|1000000||
+114|FUN||1102||Fund|Fond|Фонд|1101|1000000||
+115|NAO||1102||National office|Národní úřad|Национален офис|1101|1000000||
+116|CEB||1102||Central budget|Centrální rozpočet|Централен бюджет|1101|1000000||
+117|OTH||1102||Other|Ostatní|Друг|1101|1000000||
+201|ADC||1102||Administration centre|Administrační centrum|Административен център|1101|2000000||
+202|MUN||1102||Municipality|Obec|Община|1101|2000000||
+203|ARE||1102||Area|Oblast|Област|1101|2000000||
+###organization|||||||||||
+1010000|100||1014||National assembly|Národní shromáždění|Народно събрание|1102|101|1103|0
+1020000|200||1014||Administration of the presidency|Správa předsednictví|Администрация на президентството|1102|102|1103|0
+1030000|300||1014||Council of ministers|Rada ministrů|Министерски съвет |1102|103|1103|0
+1040000|400||1014||Constitutional court|Ústavní soud|Конституционен съд|1102|104|1103|0
+1050000|500||1014||Court of auditors|Účetní dvůr|Сметна палата|1102|105|1103|0
+1060000|600||1014||Supreme judicial council|Nejvyšší soudní rada|Висш съдебен съвет|1102|106|1103|0
+1100000|1000||1014||Ministry of finance|Ministerstvo financí|Министерство на финансите|1102|107|1103|0
+1110000|1100||1014||Ministry of foreign affairs|Ministerstvo zahraničních věcí|Министерство на външните работи|1102|107|1103|0
+1120000|1200||1014||Department of defense|Ministerstvo obrany|Министерство на отбраната|1102|107|1103|0
+1130000|1300||1014||Ministry of the interior|Ministerstvo vnitra|Министерство на вътрешните работи|1102|107|1103|0
+1140000|1400||1014||Department of justice|Ministerstvo spravedlnosti|Министерство на правосъдието|1102|107|1103|0
+1150000|1500||1014||Ministry of labor and social policy|Ministerstvo práce a sociální politiky|Министерство на труда и социалната политика|1102|107|1103|0
+1160000|1600||1014||Ministry of health|Ministerstvo zdravotnictví|Министерство на здравеопазването|1102|107|1103|0
+1170000|1700||1014||Ministry of education and science|Ministerstvo školství a vědy|Министерство на образованието и науката |1102|107|1103|0
+1180000|1800||1014||Ministry of culture|Ministerstvo kultury|Министерство на културата|1102|107|1103|0
+1190000|1900||1014||Ministry of environment and water|Ministerstvo životního prostředí a vody|Министерство на околната среда и водите|1102|107|1103|0
+1200000|2000||1014||Ministry of economy|Ministerstvo hospodářství|Министерство на икономиката|1102|107|1103|0
+1210000|2100||1014||Ministry of regional development and public works|Ministerstvo pro místní rozvoj a veřejné práce|Министерство на регионалното развитие и благоустройството|1102|107|1103|0
+1220000|2200||1014||Ministry of agriculture, food and forestry|Ministerstvo zemědělství, výživy a lesnictví|Министерство на земеделието, храните и горите|1102|107|1103|0
+1230000|2300||1014||Ministry of transport, information technology and communications|Ministerstvo dopravy, informačních technologií a komunikací|Министерство на транспорта, информационните технологии и съобщенията|1102|107|1103|0
+1240000|2400||1014||Ministry of energy|Ministerstvo energetiky|Министерство на енергетиката|1102|107|1103|0
+1250000|2500||1014||Ministry of youth and sports|Ministerstvo mládeže a sportu|Министерство на младежта и спорта|1102|107|1103|0
+1260000|2600||1014||Ministry of state administration and administrative reform|Ministerstvo pro státní správu a administrativní reformu|Министерство на държавната администрация и административната реформа|1102|107|1103|0
+1270000|2700||1014||Ministry of emergency situations|Ministerstvo pro mimořádné události|Министерство на извънредните ситуации|1102|107|1103|0
+1280000|2800||1014||Ministry of investment design|Ministerstvo investičního designu|Министерство на инвестиционното проектиране|1102|107|1103|0
+1710000|7100||1014||Ministry of tourism|Ministerstvo cestovního ruchu|Министерство на туризма|1102|107|1103|0
+1790000|7900||1014||Ministry for the bulgarian presidency of the council of the european union 2018|Ministerstvo pro bulharské předsednictví rady evropské unie 2018|Министерство за българското председателство на съвета на европейския съюз 2018|1102|107|1103|0
+1300000|3000||1014||"State agency for national security"""|Státní agentura pro národní bezpečnost|"Държавна агенция  ""национална сигурност"""|1102|108|1103|0
+1310000|3100||1014||State forestry agency|Státní lesnická agentura|Държавна агенция по горите|1102|108|1103|0
+1320000|3200||1014||"Commission for disclosure of documents and announcement of affiliation of bulgarian citizens to the state security and the intelligence services of the bulgarian people""s army"|Komise pro zpřístupnění dokumentů a oznámení o členství bulharských občanů státní bezpečnosti a zpravodajské služby bulharské lidové armády|Комисия за разкриване на документите и за обявяване на принадлежност на български граждани към държавна сигурност и разузнавателните служби на българската народна армия|1102|109|1103|0
+1330000|3300||1014||Commission on protection against discrimination|Komise pro ochranu před diskriminací|Комисия за защита от дискриминация|1102|109|1103|0
+1340000|3400||1014||Commission for personal data protection|Komise pro ochranu osobních údajů|Комисия за защита на личните данни|1102|109|1103|0
+1350000|3500||1014||State agency for egovernment|Státní agentura pro egovernment|"Държавна агенция ""електронно управление"""|1102|108|1103|0
+1360000|3600||1014||State agency for youth and sports|Státní agentura pro mládež a sport|Държавна агенция за младежта и спорта|1102|108|1103|0
+1370000|3700||1014||Commission for the forfeiture of unlawfully acquired property|Komise pro odnětí nezákonně pořízeného majetku|Комисия за отнемане на незаконно придобито имущество|1102|109|1103|0
+1380000|3800||1014||National security service|Národní bezpečnostní služba|Национална служба за охрана|1102|110|1103|0
+1390000|3900||1014||State agency for intelligence|Státní agentura pro zpravodajství|"Държавна агенция ""разузнаване"""|1102|108|1103|0
+1400000|4000||1014||Ombudsman|Veřejný ochránce práv|Омбудсман|1102|111|1103|0
+1410000|4100||1014||National statistical institute|Národní statistický ústav|Национален статистически институт|1102|112|1103|0
+1420000|4200||1014||Commission for the protection of competition|Komise pro ochranu hospodářské soutěže|Комисия за защита на конкуренцията|1102|109|1103|0
+1430000|4300||1014||Communications regulation commission|Komise pro regulaci komunikací|Комисия за регулиране на съобщенията|1102|109|1103|0
+1440000|4400||1014||Council for electronic media|Rada pro elektronická média|Съвет за електронни медии|1102|113|1103|0
+1450000|4500||1014||Energy and water regulatory commission|Komise pro energetiku a vodní hospodářství|Комисия за енергийно и водно регулиране|1102|109|1103|0
+1460000|4600||1014||Nuclear regulatory agency|Agentura pro jadernou regulaci|Агенция за ядрено регулиране|1102|108|1103|0
+1470000|4700||1014||Financial supervision commission|Komise pro finanční dohled|Комисия за финансов надзор|1102|109|1103|0
+1480000|4800||1014||State commission on information security|Státní komise pro bezpečnost informací|Държавна комисия по сигурността на информацията|1102|109|1103|0
+1490000|4900||1014||Commission for disclosure of documents and affiliation to former state security or former intelligence management of the general staff|Komise pro zpřístupnění dokumentů a příslušnost k bývalé státní bezpečnosti nebo bývalému zpravodajskému řízení generálního štábu|Комисия за разкриване на документи и установяване на принадлежност към бившата държавна сигурност или бившето разузнавателно управление на генералния щаб|1102|109|1103|0
+1510000|5100||1014||State tourism agency|Státní agentura pro cestovní ruch|Държавна агенция по туризъм|1102|108|1103|0
+1520000|5200||1014||National road infrastructure agency|Národní agentura pro silniční infrastrukturu|"Национална агенция ""пътна инфраструктура"""|1102|108|1103|0
+1530000|5300||1014||"State agency ""state reserve and wartime stocks"""|"Státní agentura ""státní rezerva a válečné zásoby"""|"Държавна агенция ""държавен резерв и военновременни запаси"""|1102|108|1103|0
+1540000|5400||1014||Aviation 28|Letectví 28|Авиоотряд 28|1102|117|1103|0
+1570000|5700||1014||Vocational qualification and unemployment fund|Fond odborné způsobilosti a nezaměstnanosti|"Фонд ""професионална квалификация и безработица"""|1102|114|1103|0
+1610000|6100||1014||Bulgarian national television|Bulharská národní televize|Българска национална телевизия|1102|117|1103|0
+1620000|6200||1014||Bulgarian national radio|Bulharské národní rádio|Българско национално радио|1102|117|1103|0
+1630000|6300||1014||Bulgarian telegraph agency|Bulharská telegrafní agentura|Българска телеграфна агенция|1102|117|1103|0
+1810000|8100||1014||Commission to prevent and establish a conflict of interest|Komise předcházet a nastolit střet zájmů|Комисия за предотвратяване и установяване на конфликт на интереси|1102|109|1103|0
+1820000|8200||1014||Central election commission|Ústřední volební komise|Централна избирателна комисия|1102|109|1103|0
+1830000|8300||1014||Commission for public oversight of registered auditors|Komise pro veřejný dohled nad registrovanými auditory|Комисия за публичен надзор над регистрираните одитори|1102|109|1103|0
+1840000|8400||1014||"State fund agriculture"""|"Státní fond ""zemědělství"""|"Държавен фонд ""земеделие"""|1102|114|1103|0
+1850000|8500||1014||National office for the control of special intelligence means|Národní úřad pro kontrolu zvláštních zpravodajských prostředků|Национално бюро за контрол на специалните разузнавателни средства|1102|115|1103|0
+1860000|8600||1014||"State agency ""technical operations"""|"Státní agentura ""technické operace"""|Държавна агенция „технически операции”|1102|108|1103|0
+1990000|9900||1014||Central budget|Centrální rozpočet|Централен бюджет|1102|116|1103|0
+2510000|51хх||1014||Municipalities from district blagoevgrad|Obce z okresu blagoevgrad|Общини от област с администр център благоевград            |1102|201|1103|51
+2520000|52хх||1014||Municipalities from administrative district. center - burgas|Obce z administrativního obvodu. centrum - burgas|Общини от област с администр. център - бургас|1102|201|1103|52
+2530000|53хх||1014||Municipalities from administrative district. center - varna|Obce z administrativního obvodu. centrum - varna|Общини от област с администр. център - варна|1102|201|1103|53
+2540000|54хх||1014||Municipalities with district administration center - veliko tarnovo|Obce s okresní správou centrum - veliko tarnovo|Общини от област с адм. център - велико търново|1102|201|1103|54
+2550000|55хх||1014||Municipalities from administrative district. center - vidin|Obce z administrativního obvodu. centrum - vidin|Общини от област с администр. център - видин|1102|201|1103|55
+2560000|56хх||1014||Municipalities from administrative district. center - vratsa|Obce z administrativního obvodu. centrum - vratsa|Общини от област с администр. център - враца|1102|201|1103|56
+2570000|57хх||1014||Municipalities from administrative district. center - gabrovo|Obce z administrativního obvodu. centrum - gabrovo|Общини от област с администр. център - габрово|1102|201|1103|57
+2580000|58хх||1014||Municipalities from administrative district. center - dobrich|Obce z administrativního obvodu. centrum - dobřich|Общини от област с администр. център - добрич|1102|201|1103|58
+2590000|59хх||1014||Municipalities from administrative district. center - kardzhali|Obce z administrativního obvodu. centrum - kardzhali|Общини от област с администр. център - кърджали|1102|201|1103|59
+2600000|60хх||1014||Municipalities from administrative district. center - kyustendil|Obce z administrativního obvodu. centrum - kyustendil|Общини от област с администр. център - кюстендил|1102|201|1103|60
+2610000|61хх||1014||Municipalities from administrative district. center - lovech|Obce z administrativního obvodu. centrum - lovech|Общини от област с администр. център - ловеч|1102|201|1103|61
+2620000|62хх||1014||Municipalities from administrative district. center - montana|Obce z administrativního obvodu. centrum - montana|Общини от област с администр. център - монтана|1102|201|1103|62
+2630000|63хх||1014||Municipalities from administrative district. center - pazardzhik|Obce z administrativního obvodu. centrum - pazardžik|Общини от област с администр. център - пазарджик|1102|201|1103|63
+2640000|64хх||1014||Municipalities from administrative district. center - pernik|Obce z administrativního obvodu. centrum - perník|Общини от област с администр. център - перник|1102|201|1103|64
+2650000|65хх||1014||Municipalities from administrative district. center - pleven|Obce z administrativního obvodu. centrum - pleven|Общини от област с администр. център - плевен|1102|201|1103|65
+2660000|66хх||1014||Municipalities from administrative district. center - plovdiv|Obce z administrativního obvodu. centrum - plovdiv|Общини от област с администр. център - пловдив|1102|201|1103|66
+2670000|67хх||1014||Municipalities from administrative district. center - razgrad|Obce z administrativního obvodu. centrum - razgrad|Общини от област с администр. център - разград|1102|201|1103|67
+2680000|68хх||1014||Municipalities from district with administrative center - rousse|Obce z okresu s administrativním centrem - rousse|Общини от област с административен център - русе|1102|201|1103|68
+2690000|69хх||1014||Municipalities from administrative district. center - silistra|Obce z administrativního obvodu. centrum - silistra|Общини от област с администр. център - силистра|1102|201|1103|69
+2700000|70хх||1014||Municipalities from administrative district. center - sliven|Obce z administrativního obvodu. centrum - sliven|Общини от област с администр. център - сливен|1102|201|1103|70
+2710000|71хх||1014||Municipalities from administrative district. center - smolyan|Obce z administrativního obvodu. centrum - smolyan|Общини от област с администр. център - смолян|1102|201|1103|71
+2720000|72хх||1014||Sofia - city district - sofia municipality and regions|Sofie - městská část - sofie a regiony|Област софия - град - столична община и райони|1102|201|1103|72
+2730000|73хх||1014||Municipalities from administrative district. center - sofia|Obce z administrativního obvodu. centrum - sofie|Общини от област с администр. център - софия|1102|201|1103|73
+2740000|74хх||1014||Municipalities with an administrative district. center - stara zagora|Obce s administrativním obvodem. centrum - stara zagora|Общини от област с админ. център - стара загора|1102|201|1103|74
+2750000|75хх||1014||Municipalities from administrative district. center - targovishte|Obce z administrativního obvodu. centrum - targovishte|Общини от област с администр. център - търговище|1102|201|1103|75
+2760000|76хх||1014||Municipalities from administrative district. center - haskovo|Obce z administrativního obvodu. centrum - haskovo|Общини от област с администр. център - хасково|1102|201|1103|76
+2770000|77хх||1014||Municipalities from administrative district. center - shumen|Obce z administrativního obvodu. centrum - šumen|Общини от област с администр. център - шумен|1102|201|1103|77
+2780000|78хх||1014||Municipalities from administrative district. Center - yambol|Obce z administrativního obvodu. Centrum - yambol|Общини от област с администр. център - ямбол|1102|201|1103|78
+2510100|5101||1014|2510000|Bansko|Bansko|Банско|1102|202|1103|51
+2510200|5102||1014|2510000|Belitsa|Belitsa|Белица|1102|202|1103|51
+2510300|5103||1014|2510000|Blagoevgrad|Blagoevgrad|Благоевград|1102|202|1103|51
+2510400|5104||1014|2510000|Gotse delčev|Gotse delčev|Гоце делчев|1102|202|1103|51
+2510500|5105||1014|2510000|Garmen|Garmen|Гърмен|1102|202|1103|51
+2510600|5106||1014|2510000|Kresna|Kresna|Кресна|1102|202|1103|51
+2510700|5107||1014|2510000|Petrich|Petrich|Петрич|1102|202|1103|51
+2510800|5108||1014|2510000|Razlog|Razlog|Разлог|1102|202|1103|51
+2510900|5109||1014|2510000|Sandanski|Sandanski|Сандански|1102|202|1103|51
+2511000|5110||1014|2510000|Satovcha|Satovcha|Сатовча|1102|202|1103|51
+2511100|5111||1014|2510000|Simitli|Simitli|Симитли|1102|202|1103|51
+2511200|5112||1014|2510000|Strumiani|Strumiani|Струмяни|1102|202|1103|51
+2511300|5113||1014|2510000|Hadjidimovo|Hadjidimovo|Хаджидимово|1102|202|1103|51
+2511400|5114||1014|2510000|Yakoruda|Yakoruda|Якоруда|1102|202|1103|51
+2520100|5201||1014|2520000|Aytos|Aytos|Айтос|1102|202|1103|52
+2520200|5202||1014|2520000|Bourgas|Bourgas|Бургас |1102|202|1103|52
+2520300|5203||1014|2520000|Stone|Stone|Камено|1102|202|1103|52
+2520400|5204||1014|2520000|Karnobat|Karnobat|Карнобат|1102|202|1103|52
+2520500|5205||1014|2520000|Malko tarnovo|Malko tarnovo|Малко търново|1102|202|1103|52
+2520600|5206||1014|2520000|Nessebar|Nessebar|Несебър|1102|202|1103|52
+2520700|5207||1014|2520000|Pomorie|Pomorie|Поморие|1102|202|1103|52
+2520800|5208||1014|2520000|Primorsko|Primorsko|Приморско|1102|202|1103|52
+2520900|5209||1014|2520000|Ruen|Ruen|Руен|1102|202|1103|52
+2521000|5210||1014|2520000|Sozopol|Sozopol|Созопол|1102|202|1103|52
+2521100|5211||1014|2520000|Sredets|Sredets|Средец|1102|202|1103|52
+2521200|5212||1014|2520000|Sungurlare|Sungurlare|Сунгурларе|1102|202|1103|52
+2521300|5213||1014|2520000|Tsarevo|Tsarevo|Царево|1102|202|1103|52
+2530100|5301||1014|2530000|Avren|Avren|Аврен|1102|202|1103|53
+2530200|5302||1014|2530000|Aksakovo|Aksakovo|Аксаково|1102|202|1103|53
+2530300|5303||1014|2530000|Beloslav|Beloslav|Белослав|1102|202|1103|53
+2530400|5304||1014|2530000|Byala|Byala|Бяла|1102|202|1103|53
+2530500|5305||1014|2530000|Varna|Varna|Варна|1102|202|1103|53
+2530600|5306||1014|2530000|Vetrino|Vetrino|Ветрино|1102|202|1103|53
+2530700|5307||1014|2530000|Valchidol|Valchidol|Вълчидол|1102|202|1103|53
+2530800|5308||1014|2530000|Devnya|Devnya|Девня|1102|202|1103|53
+2530900|5309||1014|2530000|Dolni chiflik|Dolni chiflik|Долни чифлик|1102|202|1103|53
+2531000|5310||1014|2530000|Dalgopol|Dalgopol|Дългопол|1102|202|1103|53
+2531100|5311||1014|2530000|Provadia|Provadia|Провадия|1102|202|1103|53
+2531200|5312||1014|2530000|Suvorovo|Suvorovo|Суворово|1102|202|1103|53
+2540100|5401||1014|2540000|Veliko tarnovo|Veliko tarnovo|Велико търново|1102|202|1103|54
+2540200|5402||1014|2540000|Gorna oryahovitsa|Gorna oryahovitsa|Горна оряховица|1102|202|1103|54
+2540300|5403||1014|2540000|Elena|Elena|Елена|1102|202|1103|54
+2540400|5404||1014|2540000|Zlataritsa|Zlataritsa|Златарица|1102|202|1103|54
+2540500|5405||1014|2540000|Lyaskovec|Lyaskovec|Лясковец|1102|202|1103|54
+2540600|5406||1014|2540000|Pavlikeni|Pavlikeni|Павликени|1102|202|1103|54
+2540700|5407||1014|2540000|Polski trambesh|Polski trambesh|Полски тръмбеш|1102|202|1103|54
+2540800|5408||1014|2540000|Svishtov|Svishtov|Свищов|1102|202|1103|54
+2540900|5409||1014|2540000|Strazhitsa|Strazhitsa|Стражица|1102|202|1103|54
+2541000|5410||1014|2540000|Suhindol|Suhindol|Сухиндол|1102|202|1103|54
+2550100|5501||1014|2550000|Belogradchik|Belogradchik|Белоградчик|1102|202|1103|55
+2550200|5502||1014|2550000|Bojnitsa|Bojnitsa|Бойница|1102|202|1103|55
+2550300|5503||1014|2550000|Bregovo|Bregovo|Брегово|1102|202|1103|55
+2550400|5504||1014|2550000|Vidin|Vidin|Видин|1102|202|1103|55
+2550500|5505||1014|2550000|Gramada|Gramada|Грамада|1102|202|1103|55
+2550600|5506||1014|2550000|Dimovo|Dimovo|Димово|1102|202|1103|55
+2550700|5507||1014|2550000|Kula|Kula|Кула|1102|202|1103|55
+2550800|5508||1014|2550000|Makresh|Makresh|Макреш|1102|202|1103|55
+2550900|5509||1014|2550000|Novo celo|Novo celo|Ново село|1102|202|1103|55
+2551000|5510||1014|2550000|Ruzhintsi|Ruzhintsi|Ружинци|1102|202|1103|55
+2551100|5511||1014|2550000|Chupren|Chupren|Чупрене|1102|202|1103|55
+2560100|5601||1014|2560000|Borovan|Borovan|Борован|1102|202|1103|56
+2560200|5602||1014|2560000|Byala slatina|Byala slatina|Бяла слатина|1102|202|1103|56
+2560300|5603||1014|2560000|Vratsa|Vratsa|Враца|1102|202|1103|56
+2560500|5605||1014|2560000|Kozloduj|Kozloduj|Козлодуй|1102|202|1103|56
+2560600|5606||1014|2560000|Krivodol|Krivodol|Криводол|1102|202|1103|56
+2560700|5607||1014|2560000|Mezdra|Mezdra|Мездра|1102|202|1103|56
+2560800|5608||1014|2560000|Miziya|Miziya|Мизия|1102|202|1103|56
+2560900|5609||1014|2560000|Oryahovo|Oryahovo|Оряхово|1102|202|1103|56
+2561000|5610||1014|2560000|Roman|Roman|Роман|1102|202|1103|56
+2561100|5611||1014|2560000|Hayredin|Hayredin|Хайредин|1102|202|1103|56
+2570100|5701||1014|2570000|Gabrovo|Gabrovo|Габрово|1102|202|1103|57
+2570200|5702||1014|2570000|Dryanovo|Dryanovo|Дряново|1102|202|1103|57
+2570300|5703||1014|2570000|Sevlievo|Sevlievo|Севлиево|1102|202|1103|57
+2570400|5704||1014|2570000|Tryavna|Tryavna|Трявна|1102|202|1103|57
+2580100|5801||1014|2580000|Balchik|Balchik|Балчик|1102|202|1103|58
+2580200|5802||1014|2580000|General toshevo|General toshevo|Генерал тошево|1102|202|1103|58
+2580300|5803||1014|2580000|Dobrich|Dobrich|Добрич|1102|202|1103|58
+2580400|5804||1014|2580000|Dobrichka|Dobrichka|Добричка|1102|202|1103|58
+2580500|5805||1014|2580000|Kavarna|Kavarna|Каварна|1102|202|1103|58
+2580600|5806||1014|2580000|Krushari|Krushari|Крушари|1102|202|1103|58
+2580700|5807||1014|2580000|Tervel|Tervel|Тервел|1102|202|1103|58
+2580800|5808||1014|2580000|Shavla|Shavla|Шабла|1102|202|1103|58
+2590100|5901||1014|2590000|Ardino|Ardino|Ардино|1102|202|1103|59
+2590200|5902||1014|2590000|Jebel|Jebel|Джебел|1102|202|1103|59
+2590300|5903||1014|2590000|Kirkovo|Kirkovo|Кирково|1102|202|1103|59
+2590400|5904||1014|2590000|Krumovgrad|Krumovgrad|Крумовград|1102|202|1103|59
+2590500|5905||1014|2590000|Kardzhali|Kardzhali|Кърджали|1102|202|1103|59
+2590600|5906||1014|2590000|Momchilgrad|Momchilgrad|Момчилград|1102|202|1103|59
+2590700|5907||1014|2590000|Chernoochene|Chernoochene|Черноочене|1102|202|1103|59
+2600100|6001||1014|2600000|Bobovdol|Bobovdol|Бобовдол|1102|202|1103|60
+2600200|6002||1014|2600000|Boboshevo|Boboshevo|Бобошево|1102|202|1103|60
+2600300|6003||1014|2600000|Dupnitsa|Dupnitsa|Дупница|1102|202|1103|60
+2600400|6004||1014|2600000|Kocherinovo|Kocherinovo|Кочериново|1102|202|1103|60
+2600500|6005||1014|2600000|Kyustendil|Kyustendil|Кюстендил|1102|202|1103|60
+2600600|6006||1014|2600000|Nevestino|Nevestino|Невестино|1102|202|1103|60
+2600700|6007||1014|2600000|Rila|Rila|Рила|1102|202|1103|60
+2600800|6008||1014|2600000|Sapareva banya|Sapareva banya|Сапарева баня|1102|202|1103|60
+2600900|6009||1014|2600000|Treklyano|Treklyano|Трекляно|1102|202|1103|60
+2610100|6101||1014|2610000|Apriltsi|Apriltsi|Априлци|1102|202|1103|61
+2610200|6102||1014|2610000|Letnitsa|Letnitsa|Летница|1102|202|1103|61
+2610300|6103||1014|2610000|Lovech|Lovech|Ловеч|1102|202|1103|61
+2610400|6104||1014|2610000|Lukovit|Lukovit|Луковит|1102|202|1103|61
+2610500|6105||1014|2610000|Teteven|Teteven|Тетевен|1102|202|1103|61
+2610600|6106||1014|2610000|Troyan|Troyan|Троян|1102|202|1103|61
+2610700|6107||1014|2610000|Ugarchin|Ugarchin|Угърчин|1102|202|1103|61
+2610800|6108||1014|2610000|Yablanitsa|Yablanitsa|Ябланица|1102|202|1103|61
+2620100|6201||1014|2620000|Berkovitsa|Berkovitsa|Берковица|1102|202|1103|62
+2620200|6202||1014|2620000|Boychinovtsi|Boychinovtsi|Бойчиновци|1102|202|1103|62
+2620300|6203||1014|2620000|Brusartzi|Brusartzi|Брусарци|1102|202|1103|62
+2620400|6204||1014|2620000|Vulchedrum|Vulchedrum|Вълчедръм|1102|202|1103|62
+2620500|6205||1014|2620000|Varshets|Varshets|Вършец|1102|202|1103|62
+2620600|6206||1014|2620000|Georgi damyanovo|Georgi damyanovo|Георги дамяново|1102|202|1103|62
+2620700|6207||1014|2620000|Lom|Lom|Лом|1102|202|1103|62
+2620800|6208||1014|2620000|Medkovec|Medkovec|Медковец|1102|202|1103|62
+2620900|6209||1014|2620000|Montana|Montana|Монтана|1102|202|1103|62
+2621000|6210||1014|2620000|Chiprovtsi|Chiprovtsi|Чипровци|1102|202|1103|62
+2621100|6211||1014|2620000|Yakimovo|Yakimovo|Якимово|1102|202|1103|62
+2630100|6301||1014|2630000|Batak|Batak|Батак|1102|202|1103|63
+2630200|6302||1014|2630000|Belovo|Belovo|Белово|1102|202|1103|63
+2630300|6303||1014|2630000|Bratsigovo|Bratsigovo|Брацигово|1102|202|1103|63
+2630400|6304||1014|2630000|Velingrad|Velingrad|Велинград|1102|202|1103|63
+2630500|6305||1014|2630000|Lesichovo|Lesichovo|Лесичово|1102|202|1103|63
+2630600|6306||1014|2630000|Pazardzhik|Pazardzhik|Пазарджик|1102|202|1103|63
+2630700|6307||1014|2630000|Panagyurishte|Panagyurishte|Панагюрище|1102|202|1103|63
+2630800|6308||1014|2630000|Peshtera|Peshtera|Пещера|1102|202|1103|63
+2630900|6309||1014|2630000|Rakitovo|Rakitovo|Ракитово|1102|202|1103|63
+2631000|6310||1014|2630000|Septemvri|Septemvri|Септември|1102|202|1103|63
+2631100|6311||1014|2630000|Strelcha|Strelcha|Стрелча|1102|202|1103|63
+2631200|6312||1014|2630000|Surnitsa|Surnitsa|Сърница|1102|202|1103|63
+2640100|6401||1014|2640000|Breznik|Breznik|Брезник|1102|202|1103|64
+2640200|6402||1014|2640000|Zemen|Zemen|Земен|1102|202|1103|64
+2640300|6403||1014|2640000|Kovachevtsi|Kovachevtsi|Ковачевци|1102|202|1103|64
+2640400|6404||1014|2640000|Pernik|Pernik|Перник|1102|202|1103|64
+2640500|6405||1014|2640000|Radomir|Radomir|Радомир|1102|202|1103|64
+2640600|6406||1014|2640000|Tran|Tran|Трън|1102|202|1103|64
+2650100|6501||1014|2650000|Belene|Belene|Белене|1102|202|1103|65
+2650200|6502||1014|2650000|Gulyantsi|Gulyantsi|Гулянци|1102|202|1103|65
+2650300|6503||1014|2650000|Dolní mitropoliya|Dolní mitropoliya|Долна митрополия|1102|202|1103|65
+2650400|6504||1014|2650000|Dolní dubník|Dolní dubník|Долни дъбник|1102|202|1103|65
+2650500|6505||1014|2650000|Iskar|Iskar|Искър|1102|202|1103|65
+2650600|6506||1014|2650000|Levski|Levski|Левски|1102|202|1103|65
+2650700|6507||1014|2650000|Nikopol|Nikopol|Никопол|1102|202|1103|65
+2650800|6508||1014|2650000|Pleven|Pleven|Плевен|1102|202|1103|65
+2650900|6509||1014|2650000|Pordim|Pordim|Пордим|1102|202|1103|65
+2651000|6510||1014|2650000|Cherven bryag|Cherven bryag|Червен бряг|1102|202|1103|65
+2651100|6511||1014|2650000|Knezha|Knezha|Кнежа|1102|202|1103|65
+2660100|6601||1014|2660000|Asenovgrad|Asenovgrad|Асеновград|1102|202|1103|66
+2660200|6602||1014|2660000|Brezovo|Brezovo|Брезово|1102|202|1103|66
+2660300|6603||1014|2660000|Kaloyanovo|Kaloyanovo|Калояново|1102|202|1103|66
+2660400|6604||1014|2660000|Karlovo|Karlovo|Карлово|1102|202|1103|66
+2660500|6605||1014|2660000|Krichim|Krichim|Кричим|1102|202|1103|66
+2660600|6606||1014|2660000|Laki|Laki|Лъки|1102|202|1103|66
+2660700|6607||1014|2660000|Maritsa|Maritsa|Марица|1102|202|1103|66
+2660800|6608||1014|2660000|Perushtitsa|Perushtitsa|Перущица|1102|202|1103|66
+2660900|6609||1014|2660000|Plovdiv|Plovdiv|Пловдив|1102|202|1103|66
+2661000|6610||1014|2660000|Parvomay|Parvomay|Първомай|1102|202|1103|66
+2661100|6611||1014|2660000|Rakovski|Rakovski|Раковски|1102|202|1103|66
+2661200|6612||1014|2660000|Rodopi|Rodopi|Родопи|1102|202|1103|66
+2661300|6613||1014|2660000|Sadovo|Sadovo|Садово|1102|202|1103|66
+2661400|6614||1014|2660000|Stamboliiski|Stamboliiski|Стамболийски|1102|202|1103|66
+2661500|6615||1014|2660000|Sedienie|Sedienie|Съединение|1102|202|1103|66
+2661600|6616||1014|2660000|Hisariya|Hisariya|Хисаря|1102|202|1103|66
+2661700|6617||1014|2660000|Kuklen|Kuklen|Куклен|1102|202|1103|66
+2661800|6618||1014|2660000|Sopot|Sopot|Сопот|1102|202|1103|66
+2670100|6701||1014|2670000|Zavet|Zavet|Завет|1102|202|1103|67
+2670200|6702||1014|2670000|Icprerih|Icprerih|Исперих|1102|202|1103|67
+2670300|6703||1014|2670000|Kubrat|Kubrat|Кубрат|1102|202|1103|67
+2670400|6704||1014|2670000|Loznica|Loznica|Лозница|1102|202|1103|67
+2670500|6705||1014|2670000|Razgrad|Razgrad|Разград|1102|202|1103|67
+2670600|6706||1014|2670000|Samuel|Samuel|Самуил|1102|202|1103|67
+2670700|6707||1014|2670000|Tsar kaloyan|Tsar kaloyan|Цар калоян|1102|202|1103|67
+2680100|6801||1014|2680000|Borovo|Borovo|Борово|1102|202|1103|68
+2680200|6802||1014|2680000|Byala|Byala|Бяла|1102|202|1103|68
+2680300|6803||1014|2680000|Vetovo|Vetovo|Ветово|1102|202|1103|68
+2680400|6804||1014|2680000|Dve mogili|Dve mogili|Две могили|1102|202|1103|68
+2680500|6805||1014|2680000|Ivanovo|Ivanovo|Иваново|1102|202|1103|68
+2680600|6806||1014|2680000|Ruse|Ruse|Русе|1102|202|1103|68
+2680700|6807||1014|2680000|Slivo pole|Slivo pole|Сливо поле|1102|202|1103|68
+2680800|6808||1014|2680000|Cenovo|Cenovo|Ценово|1102|202|1103|68
+2690100|6901||1014|2690000|Alfatar|Alfatar|Алфатар|1102|202|1103|69
+2690200|6902||1014|2690000|Glavinitsa|Glavinitsa|Главиница|1102|202|1103|69
+2690300|6903||1014|2690000|Dulovo|Dulovo|Дулово|1102|202|1103|69
+2690400|6904||1014|2690000|Kaynardja|Kaynardja|Кайнарджа|1102|202|1103|69
+2690500|6905||1014|2690000|Silistra|Silistra|Силистра|1102|202|1103|69
+2690600|6906||1014|2690000|Sitovo|Sitovo|Ситово|1102|202|1103|69
+2690700|6907||1014|2690000|Tutrakan|Tutrakan|Тутракан|1102|202|1103|69
+2700100|7001||1014|2700000|Kotel|Kotel|Котел|1102|202|1103|70
+2700200|7002||1014|2700000|Nova zagora|Nova zagora|Нова загора|1102|202|1103|70
+2700300|7003||1014|2700000|Sliven|Sliven|Сливен|1102|202|1103|70
+2700400|7004||1014|2700000|Tvarditsa|Tvarditsa|Твърдица|1102|202|1103|70
+2710100|7101||1014|2710000|Banite|Banite|Баните|1102|202|1103|71
+2710200|7102||1014|2710000|Borino|Borino|Борино|1102|202|1103|71
+2710300|7103||1014|2710000|Devin|Devin|Девин|1102|202|1103|71
+2710400|7104||1014|2710000|Dospat|Dospat|Доспат|1102|202|1103|71
+2710500|7105||1014|2710000|Zlatograd|Zlatograd|Златоград|1102|202|1103|71
+2710600|7106||1014|2710000|Madan|Madan|Мадан|1102|202|1103|71
+2710700|7107||1014|2710000|Nedelino|Nedelino|Неделино|1102|202|1103|71
+2710800|7108||1014|2710000|Rudozem|Rudozem|Рудозем|1102|202|1103|71
+2710900|7109||1014|2710000|Smolyan|Smolyan|Смолян|1102|202|1103|71
+2711000|7110||1014|2710000|Chepelare|Chepelare|Чепеларе|1102|202|1103|71
+2720100|7201||1014|2720000|Bankya|Bankya|Район банкя|1102|202|1103|72
+2720200|7202||1014|2720000|Area vitosha|Oblast vitosha|Район витоша|1102|203|1103|72
+2720300|7203||1014|2720000|Area vazrazhdane|Oblast vazrazhdane|Район възраждане |1102|203|1103|72
+2720400|7204||1014|2720000|Area vrabnitsa|Oblast vrabnitsa|Район връбница|1102|203|1103|72
+2720500|7205||1014|2720000|Area ilinden|Oblast ilinden|Район илинден|1102|203|1103|72
+2720600|7206||1014|2720000|Area iskar|Oblast iskar|Район искър|1102|203|1103|72
+2720700|7207||1014|2720000|Area izgrev|Oblast izgrev|Район изгрев|1102|203|1103|72
+2720800|7208||1014|2720000|Area krasna polyana|Oblast krasna polyana|Район красна поляна|1102|203|1103|72
+2720900|7209||1014|2720000|Areakrasno celo|Oblast krasno celo|Район красно село|1102|203|1103|72
+2721000|7210||1014|2720000|Area kremikovtzi|Oblast kremikovtzi|Район кремиковци|1102|203|1103|72
+2721100|7211||1014|2720000|Area lozenec|Oblast lozenec|Район лозенец|1102|203|1103|72
+2721200|7212||1014|2720000|Area lyulin|Oblast lyulin|Район люлин|1102|203|1103|72
+2721300|7213||1014|2720000|Area mladost|Oblast mladost|Район младост|1102|203|1103|72
+2721400|7214||1014|2720000|Area nadezhna|Oblast nadezhna|Район надежда|1102|203|1103|72
+2721500|7215||1014|2720000|Area novi iskar|Oblast novi iskar|Район нови искър|1102|203|1103|72
+2721600|7216||1014|2720000|Area oborishte|Oblast oborishte|Район оборище|1102|203|1103|72
+2721700|7217||1014|2720000|Area ovcha kupel|Oblast ovcha kupel|Район овча купел|1102|203|1103|72
+2721800|7218||1014|2720000|Area pancharevo|Oblast pancharevo|Район панчарево|1102|203|1103|72
+2721900|7219||1014|2720000|Area poduyane|Oblast poduyane|Район подуяне|1102|203|1103|72
+2722000|7220||1014|2720000|Area serdika|Oblast serdika|Район сердика|1102|203|1103|72
+2722100|7221||1014|2720000|Area slatina|Oblast slatina|Район слатина|1102|203|1103|72
+2722200|7222||1014|2720000|Area sredets|Oblast sredets|Район средец|1102|203|1103|72
+2722300|7223||1014|2720000|Area studentska|Oblast studentska|Район студентска|1102|203|1103|72
+2722400|7224||1014|2720000|Area triadica|Oblast triadica|Район триадица|1102|203|1103|72
+2722500|7225||1014|2720000|Capital|Hlavní město|Столична община|1102|203|1103|72
+2730100|7301||1014|2730000|Anton|Anton|Антон|1102|202|1103|73
+2730200|7302||1014|2730000|Bozhurishte|Bozhurishte|Божурище|1102|202|1103|73
+2730300|7303||1014|2730000|Botevgrad|Botevgrad|Ботевград|1102|202|1103|73
+2730400|7304||1014|2730000|Godech|Godech|Годеч|1102|202|1103|73
+2730500|7305||1014|2730000|Horna malina|Horna malina|Горна малина|1102|202|1103|73
+2730600|7306||1014|2730000|Dolna banya|Dolna banya|Долна баня|1102|202|1103|73
+2730700|7307||1014|2730000|Dragoman|Dragoman|Драгоман |1102|202|1103|73
+2730800|7308||1014|2730000|Elin pelin|Elin pelin|Елин пелин|1102|202|1103|73
+2730900|7309||1014|2730000|Etropole|Etropole|Етрополе|1102|202|1103|73
+2731000|7310||1014|2730000|Zlatitsa|Zlatitsa|Златица|1102|202|1103|73
+2731100|7311||1014|2730000|Ihtiman|Ihtiman|Ихтиман|1102|202|1103|73
+2731200|7312||1014|2730000|Koprivshtitsa|Koprivshtitsa|Копривщица|1102|202|1103|73
+2731300|7313||1014|2730000|Kostenets|Kostenets|Костенец|1102|202|1103|73
+2731400|7314||1014|2730000|Kostinbrod|Kostinbrod|Костинброд|1102|202|1103|73
+2731500|7315||1014|2730000|Mirkovo|Mirkovo|Мирково|1102|202|1103|73
+2731600|7316||1014|2730000|Pirdop|Pirdop|Пирдоп|1102|202|1103|73
+2731700|7317||1014|2730000|Pravets|Pravets|Правец|1102|202|1103|73
+2731800|7318||1014|2730000|Samokov|Samokov|Самоков|1102|202|1103|73
+2731900|7319||1014|2730000|Svoge|Svoge|Своге|1102|202|1103|73
+2732000|7320||1014|2730000|Slivnitsa|Slivnitsa|Сливница|1102|202|1103|73
+2732100|7321||1014|2730000|Chavdare|Chavdare|Чавдар|1102|202|1103|73
+2732200|7322||1014|2730000|Chelopech|Chelopech|Челопеч|1102|202|1103|73
+2740100|7401||1014|2740000|Bratya daskalovi|Bratya daskalovi|Братя даскалови|1102|202|1103|74
+2740200|7402||1014|2740000|Gurkovo|Gurkovo|Гурково|1102|202|1103|74
+2740300|7403||1014|2740000|Galabovo|Galabovo|Гълъбово|1102|202|1103|74
+2740400|7404||1014|2740000|Kazanlak|Kazanlak|Казанлък|1102|202|1103|74
+2740500|7405||1014|2740000|Maglizh|Maglizh|Мъглиж|1102|202|1103|74
+2740600|7406||1014|2740000|Nikolaevo|Nikolaevo|Николаево|1102|202|1103|74
+2740700|7407||1014|2740000|Opan|Opan|Опан|1102|202|1103|74
+2740800|7408||1014|2740000|Pavel banya|Pavel banya|Павел баня|1102|202|1103|74
+2740900|7409||1014|2740000|Radnevo|Radnevo|Раднево|1102|202|1103|74
+2741000|7410||1014|2740000|Stara zagora|Stara zagora|Стара загора|1102|202|1103|74
+2741100|7411||1014|2740000|Chirpan|Chirpan|Чирпан|1102|202|1103|74
+2750100|7501||1014|2750000|Antonov|Antonov|Антоново|1102|202|1103|75
+2750200|7502||1014|2750000|Omurtag|Omurtag|Омуртаг|1102|202|1103|75
+2750300|7503||1014|2750000|Opaka|Opaka|Опака|1102|202|1103|75
+2750400|7504||1014|2750000|Popovo|Popovo|Попово|1102|202|1103|75
+2750500|7505||1014|2750000|Targovishte|Targovishte|Търговище|1102|202|1103|75
+2760100|7601||1014|2760000|Dimitrovgrad|Dimitrovgrad|Димитровград|1102|202|1103|76
+2760200|7602||1014|2760000|Ivailovgrad|Ivailovgrad|Ивайловград|1102|202|1103|76
+2760300|7603||1014|2760000|Ljubinets|Ljubinets|Любимец|1102|202|1103|76
+2760400|7604||1014|2760000|Madjarovo|Madjarovo|Маджарово|1102|202|1103|76
+2760500|7605||1014|2760000|Mineralni banji|Mineralni banji|Минерални бани|1102|202|1103|76
+2760600|7606||1014|2760000|Svilengrad|Svilengrad|Свиленград|1102|202|1103|76
+2760700|7607||1014|2760000|Simeonovgrad|Simeonovgrad|Симеоновград|1102|202|1103|76
+2760800|7608||1014|2760000|Stambolovo|Stambolovo|Стамболово|1102|202|1103|76
+2760900|7609||1014|2760000|Topolovgrad|Topolovgrad|Тополовград|1102|202|1103|76
+2761000|7610||1014|2760000|Harmanli|Harmanli|Харманли|1102|202|1103|76
+2761100|7611||1014|2760000|Haskovo|Haskovo|Хасково|1102|202|1103|76
+2770100|7701||1014|2770000|Veliki preslav|Veliki preslav|Велики преслав|1102|202|1103|77
+2770200|7702||1014|2770000|Venets|Venets|Венец|1102|202|1103|77
+2770300|7703||1014|2770000|Varbitza|Varbitza|Върбица|1102|202|1103|77
+2770400|7704||1014|2770000|Kaolinovo|Kaolinovo|Каолиново|1102|202|1103|77
+2770500|7705||1014|2770000|Kaspichan|Kaspichan|Каспичан|1102|202|1103|77
+2770600|7706||1014|2770000|Nikola kozlevo|Nikola kozlevo|Никола козлево|1102|202|1103|77
+2770700|7707||1014|2770000|Novi pazar|Novi pazar|Нови пазар|1102|202|1103|77
+2770800|7708||1014|2770000|Cmyadovo|Cmyadovo|Смядово|1102|202|1103|77
+2770900|7709||1014|2770000|Hitrino|Hitrino|Хитрино|1102|202|1103|77
+2771000|7710||1014|2770000|Shumen|Shumen|Шумен|1102|202|1103|77
+2780100|7801||1014|2780000|Bolyarovo|Bolyarovo|Болярово|1102|202|1103|78
+2780200|7802||1014|2780000|Elhovo|Elhovo|Елхово|1102|202|1103|78
+2780300|7803||1014|2780000|Straldzha|Straldzha|Стралджа|1102|202|1103|78
+2780400|7804||1014|2780000|Tundja|Tundja|Тунджа|1102|202|1103|78
+2780500|7805||1014|2780000|Yambol|Yambol|Ямбол|1102|202|1103|78
+###fact|||||||||||
+0|FMET||1||Fact metadata|Metadata faktu|Метаданни на факта||||
+1|FBUF||1||Budget form|Rozpočtový formulář|Формуляр за бюджет||||
+11|FBUI||1||Budget item|Rozpočtová položka|бюджетна позиция||||
+21|FCRR||1||Currency rate|Kurz měny|валутен курс||||

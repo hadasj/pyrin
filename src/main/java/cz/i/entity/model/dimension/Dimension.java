@@ -2,7 +2,7 @@ package cz.i.entity.model.dimension;
 
 import cz.i.common.DimensionMode;
 import cz.i.common.DimensionStructure;
-import cz.i.entity.CodedEntity;
+import cz.i.entity.model.CodedEntity;
 
 /**
  * @author jan.hadas@i.cz

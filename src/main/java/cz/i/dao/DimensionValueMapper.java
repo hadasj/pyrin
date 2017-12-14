@@ -5,6 +5,7 @@ import java.util.List;
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.One;
+import org.apache.ibatis.annotations.Options;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Result;
 import org.apache.ibatis.annotations.Results;
@@ -19,7 +20,7 @@ import cz.i.entity.db.dimension.DimensionValueDb;
  */
 public interface DimensionValueMapper {
     @Results(@Result(property = "idExt", column = "ID_EXT"))
-    @Select("select * from DIMENSION where ID_EXT = #{id,jdbcType=INTEGER}")
+    @Select("select * from DIMENSION where ID = #{id,jdbcType=INTEGER}")
     DimensionDb dimensionById(@Param("id") Long id);
 
     @Results(value = {
@@ -35,6 +36,10 @@ public interface DimensionValueMapper {
     })
     @Select("select * from DIMENSION_VALUE where dimension_id = #{dimensionId} order by id")
     List<DimensionValueDb> allByDimension(Long dimensionId);
+
+    @Results(@Result(property = "idExt", column = "ID_EXT"))
+    @Select("select * from DIMENSION_VALUE where id_ext = #{idExt}")
+    DimensionValueDb oneByIdExt(Long idExt);
 
     @Results(value = {
         @Result(property = "idExt", column = "ID_EXT"),
@@ -57,6 +62,7 @@ public interface DimensionValueMapper {
     @Select("select * from DIMENSION_VALUE where code = #{code}")
     DimensionValueDb oneByCode(String code);
 
+    @Options(useGeneratedKeys = true, keyProperty = "id")
     @Insert("insert into DIMENSION_VALUE(ID_EXT, CODE, ALIAS, DIMENSION_ID, PARENT_ID, TEXT_CS, TEXT_EN, TEXT_BG) " +
         "values(#{idExt}, #{code}, #{alias}, #{dimensionId}, #{parentId}, #{textCs}, #{textEn}, #{textBg})")
     void insert(DimensionValueDb dimensionValue);

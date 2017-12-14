@@ -2,12 +2,12 @@ package cz.i.entity.db.dimension;
 
 import java.util.List;
 
-import cz.i.entity.CodedEntity;
+import cz.i.entity.db.CodedEntityDb;
 
 /**
  * @author jan.hadas@i.cz
  */
-public class DimensionValueDb extends CodedEntity {
+public class DimensionValueDb extends CodedEntityDb {
     // dimenze = definice ciselniku
     private Long dimensionId;
 

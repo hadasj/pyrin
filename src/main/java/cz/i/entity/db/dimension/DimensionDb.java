@@ -3,12 +3,12 @@ package cz.i.entity.db.dimension;
 import cz.i.common.DimensionMode;
 import cz.i.common.DimensionStructure;
 import cz.i.common.ValueType;
-import cz.i.entity.CodedEntity;
+import cz.i.entity.db.CodedEntityDb;
 
 /**
  * @author jan.hadas@i.cz
  */
-public class DimensionDb extends CodedEntity {
+public class DimensionDb extends CodedEntityDb {
 
     private DimensionStructure structure;
     private DimensionMode mode;

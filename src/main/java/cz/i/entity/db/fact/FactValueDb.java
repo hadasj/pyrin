@@ -1,11 +1,11 @@
 package cz.i.entity.db.fact;
 
-import cz.i.entity.CodedEntity;
+import cz.i.entity.db.CodedEntityDb;
 
 /**
  * @author jan.hadas@i.cz
  */
-public class FactValueDb extends CodedEntity {
+public class FactValueDb extends CodedEntityDb {
     private Long factId;
     private Long dimensionId;
     private String value;

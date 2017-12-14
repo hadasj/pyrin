@@ -1,9 +1,9 @@
-package cz.i.entity;
+package cz.i.entity.db;
 
 /**
  * @author jan.hadas@i.cz
  */
-public class CodedEntity extends Entity {
+public class CodedEntityDb extends EntityDb {
     private String alias;
     private String code;
 
