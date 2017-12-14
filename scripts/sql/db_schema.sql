@@ -56,6 +56,7 @@ create table FACT (
   CODE varchar(50),
   ALIAS varchar(50),
   NAME varchar(255),
+  FACT_TYPE varchar(5);
   PARENT_ID int,
   primary key (ID)
 );
@@ -70,8 +71,8 @@ create table FACT_VALUE (
   DIMENSION_ID int,
   FACT_ID int,
   DIMENSION_VALUE_ID int,
-  VALUE_VALUE varchar(50),
-  TYPE varchar(15) not null
+  VALUE varchar(50),
+  VALUE_TYPE varchar(15) not null
 );
 ALTER TABLE FACT_VALUE ADD CONSTRAINT "C_FACT_VALUE_TYPE" CHECK (TYPE IN ('DIMENSION_VALUE', 'TIMESTAMP', 'STRING', 'INT', 'LONG', 'BIG_DECIMAL', 'DOUBLE'));
 ALTER TABLE FACT_VALUE ADD CONSTRAINT "F_DIMENSION_ID" FOREIGN KEY(DIMENSION_ID) REFERENCES DIMENSION(ID_EXT);

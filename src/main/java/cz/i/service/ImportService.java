@@ -16,10 +16,13 @@ import cz.i.common.ValueType;
 import cz.i.dao.DimensionMapper;
 import cz.i.dao.DimensionValueLinkMapper;
 import cz.i.dao.DimensionValueMapper;
+import cz.i.dao.FactMapper;
+import cz.i.dao.FactValueMapper;
 import cz.i.entity.db.dimension.DimensionDb;
 import cz.i.entity.db.dimension.DimensionValueDb;
 import cz.i.entity.db.dimension.DimensionValueLinkDb;
 import cz.i.entity.db.fact.FactDb;
+import cz.i.entity.db.fact.FactValueDb;
 
 /**
  * @author jan.hadas@i.cz
@@ -31,6 +34,7 @@ public class ImportService {
     private static final String COMMENT = "###";
     private static final String ENTITY = "@";
     private static final String SEPARATOR = "\\|";
+    private static final String DIMENSION_OF_FACTS_CODE = "DFAC";
 
     @Autowired
     private DimensionMapper dimensionMapper;
@@ -40,6 +44,12 @@ public class ImportService {
 
     @Autowired
     private DimensionValueLinkMapper dimensionValueLinkMapper;
+
+    @Autowired
+    private FactMapper factMapper;
+
+    @Autowired
+    private FactValueMapper factValueMapper;
 
     public void importData(String csv) {
         if (StringUtils.isEmpty(csv)) {
@@ -95,6 +105,12 @@ public class ImportService {
             case FACT:
                 FactDb fact = createFact(columns);
                 LOG.debug("insert fact: {}", fact);
+                factMapper.insert(fact);
+
+            case FACT_VALUE:
+                FactValueDb factValue = createFactValue(columns);
+                LOG.debug("insert fact value: {}", factValue);
+                factValueMapper.insert(factValue);
 
             default:
                 LOG.warn("Unknown entity: {}", entity);
@@ -145,10 +161,54 @@ public class ImportService {
 
     private FactDb createFact(String[] columns) {
         FactDb fact = new FactDb();
-        //TODO:
-        fact.setId(Long.parseLong(columns[0]));
+        fact.setIdExt(Long.parseLong(columns[0]));
+        fact.setFactType(findFactType(columns));
+        fact.setAlias(columns[2]);
+        fact.setName(columns[3]);
+        fact.setParentId(getFactParent(columns));
 
         return fact;
+    }
+
+    private FactValueDb createFactValue(String[] columns) {
+        FactValueDb factValue = new FactValueDb();
+        factValue.setIdExt(Long.parseLong(columns[0]));
+        factValue.setAlias(columns[1]);
+        factValue.setDimensionId(getFactValueDimension(columns));
+        factValue.setValue(columns[3]);
+
+        return factValue;
+    }
+
+    private Long getFactValueDimension(String[] columns) {
+        try {
+              return Long.parseLong(columns[2]);
+        } catch (NumberFormatException e) {
+            LOG.warn("FactValueDimensionIdExt: {} is not number", columns[2]);
+        }
+        return null;
+    }
+
+    private Long getFactParent(String[] columns) {
+        try {
+            if (columns.length > 4 && !StringUtils.isEmpty(columns[4]))
+                return Long.parseLong(columns[4]);
+        } catch (NumberFormatException e) {
+            LOG.warn("FactParentIdExt: {} is not number", columns[4]);
+        }
+        return null;
+    }
+
+    private String findFactType(String[] columns) {
+        try {
+            Long valueId = Long.valueOf(columns[1]);
+            DimensionValueDb type = dimensionValueMapper.oneByDimensionAndIdExt(DIMENSION_OF_FACTS_CODE, valueId);
+            if (type != null)
+                return type.getCode();
+        } catch (NumberFormatException e) {
+            LOG.warn("DimensionValueIdExt: {} is not number", columns[1]);
+        }
+        return null;
     }
 
     /**

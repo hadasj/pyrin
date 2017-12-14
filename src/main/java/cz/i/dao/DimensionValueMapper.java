@@ -11,45 +11,51 @@ import org.apache.ibatis.annotations.Results;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 
+import cz.i.entity.db.dimension.DimensionDb;
 import cz.i.entity.db.dimension.DimensionValueDb;
-import cz.i.entity.model.dimension.Dimension;
-import cz.i.entity.model.dimension.DimensionValue;
 
 /**
  * @author jan.hadas@i.cz
  */
 public interface DimensionValueMapper {
     @Results(@Result(property = "idExt", column = "ID_EXT"))
-    @Select("select * from DIMENSION where id = #{id,jdbcType=INTEGER}")
-    Dimension dimensionById(@Param("id") Long id);
+    @Select("select * from DIMENSION where ID_EXT = #{id,jdbcType=INTEGER}")
+    DimensionDb dimensionById(@Param("id") Long id);
 
     @Results(value = {
         @Result(property = "idExt", column = "ID_EXT"),
-        @Result(property = "dimension", column = "dimension_id", javaType = Dimension.class, one = @One(select = "dimensionById"))
+        @Result(property = "dimension", column = "dimension_id", javaType = DimensionDb.class, one = @One(select = "dimensionById"))
     })
     @Select("select * from DIMENSION_VALUE order by id")
-    List<DimensionValue> all();
+    List<DimensionValueDb> all();
 
     @Results(value = {
         @Result(property = "idExt", column = "ID_EXT"),
-        @Result(property = "dimension", column = "dimension_id", javaType = Dimension.class, one = @One(select = "dimensionById"))
+        @Result(property = "dimension", column = "dimension_id", javaType = DimensionDb.class, one = @One(select = "dimensionById"))
     })
     @Select("select * from DIMENSION_VALUE where dimension_id = #{dimensionId} order by id")
-    List<DimensionValue> allByDimension(Long dimensionId);
+    List<DimensionValueDb> allByDimension(Long dimensionId);
 
     @Results(value = {
         @Result(property = "idExt", column = "ID_EXT"),
-        @Result(property = "dimension", column = "dimension_id", javaType = Dimension.class, one = @One(select = "dimensionById"))
+        @Result(property = "dimension", column = "dimension_id", javaType = DimensionDb.class, one = @One(select = "dimensionById"))
     })
-    @Select("select * from DIMENSION_VALUE where id = #{id}")
-    DimensionValue oneById(Long id);
+    @Select("select * from DIMENSION_VALUE where ID_EXT = #{id}")
+    DimensionValueDb oneById(Long id);
+
+    @Results(value = {
+        @Result(property = "idExt", column = "ID_EXT")
+    })
+    @Select("select * from DIMENSION_VALUE where DIMENSION_ID in (select ID_EXT from dimension where code = #{dimensionCode}) " +
+        "and ID_EXT = #{valueIdExt}")
+    DimensionValueDb oneByDimensionAndIdExt(String dimensionCode, Long valueIdExt);
 
     @Results(value = {
         @Result(property = "idExt", column = "ID_EXT"),
-        @Result(property = "dimension", column = "dimension_id", javaType = Dimension.class, one = @One(select = "dimensionById"))
+        @Result(property = "dimension", column = "dimension_id", javaType = DimensionDb.class, one = @One(select = "dimensionById"))
     })
     @Select("select * from DIMENSION_VALUE where code = #{code}")
-    DimensionValue oneByCode(String code);
+    DimensionValueDb oneByCode(String code);
 
     @Insert("insert into DIMENSION_VALUE(ID_EXT, CODE, ALIAS, DIMENSION_ID, PARENT_ID, TEXT_CS, TEXT_EN, TEXT_BG) " +
         "values(#{idExt}, #{code}, #{alias}, #{dimensionId}, #{parentId}, #{textCs}, #{textEn}, #{textBg})")
