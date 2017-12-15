@@ -16,6 +16,8 @@ import cz.i.entity.db.dimension.DimensionDb;
  * @author jan.hadas@i.cz
  */
 public interface DimensionMapper {
+    public static final String DIMENSION_OF_FACTS_CODE = "DFAC";
+
     @Results(@Result(property = "idExt", column = "ID_EXT"))
     @Select("select * from DIMENSION order by id_ext, id")
     List<DimensionDb> all();

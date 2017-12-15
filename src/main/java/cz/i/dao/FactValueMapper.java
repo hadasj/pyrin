@@ -20,20 +20,31 @@ import cz.i.entity.db.fact.FactValueDb;
  * @author jan.hadas@i.cz
  */
 public interface FactValueMapper {
-    @Select("select * from FACT where id = #{id,jdbcType=INTEGER}")
-    FactDb oneFactById(@Param("id") Long id);
 
+    @Results(@Result(property = "idExt", column = "ID_EXT"))
     @Select("select * from DIMENSION where id = #{id,jdbcType=INTEGER}")
     DimensionDb oneDimensionById(@Param("id") Long id);
 
+    @Results({
+        @Result(property = "idExt", column = "ID_EXT"),
+        @Result(property = "dimension", column = "DIMENSION_ID", javaType = DimensionDb.class, one = @One(select = "oneDimensionById")),
+    })
     @Select("select * from DIMENSION_VALUE where id = #{id,jdbcType=INTEGER}")
     DimensionValueDb oneDimensionValueById(@Param("id") Long id);
 
     @Results({
-        @Result(property = "valueValue", column = "VALUE_VALUE"),
+        @Result(property = "idExt", column = "ID_EXT"),
+        @Result(property = "factType", column = "FACT_TYPE_ID", javaType = DimensionValueDb.class, one = @One(select = "oneDimensionValueById"))
+    })
+    @Select("select * from FACT where id = #{id,jdbcType=INTEGER}")
+    FactDb oneFactById(@Param("id") Long id);
+
+    @Results({
+        @Result(property = "idExt", column = "ID_EXT"),
         @Result(property = "fact", column = "FACT_ID", javaType = FactDb.class, one = @One(select = "oneFactById")),
         @Result(property = "dimension", column = "DIMENSION_ID", javaType = DimensionDb.class, one = @One(select = "oneDimensionById")),
-        @Result(property = "dimensionValue", column = "DIMENSION_VALUE_ID", javaType = DimensionValueDb.class, one = @One(select = "oneDimensionValueById"))
+        @Result(property = "dimensionValue", column = "DIMENSION_VALUE_ID", javaType = DimensionValueDb.class, one = @One(select = "oneDimensionValueById")),
+        @Result(property = "valueType", column = "VALUE_TYPE")
     })
     @Select("select * from FACT_VALUE order by id")
     List<FactValueDb> all();

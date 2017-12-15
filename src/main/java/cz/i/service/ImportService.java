@@ -1,6 +1,7 @@
 package cz.i.service;
 
 import static cz.i.Util.parseLong;
+import static cz.i.dao.DimensionMapper.DIMENSION_OF_FACTS_CODE;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -38,7 +39,6 @@ public class ImportService {
     private static final String COMMENT = "###";
     private static final String ENTITY = "@";
     private static final String SEPARATOR = "\\|";
-    private static final String DIMENSION_OF_FACTS_CODE = "DFAC";
 
     @Autowired
     private DimensionMapper dimensionMapper;

@@ -9,9 +9,10 @@ import cz.i.entity.model.CodedEntity;
  */
 public class Fact extends CodedEntity {
     private String name;
+    // ? fact type??
+    private Fact metadata;
     private List<FactValue> values;
     private List<Fact> children;
-    private Fact parent;
 
     public String getName() {
         return name;
@@ -37,11 +38,17 @@ public class Fact extends CodedEntity {
         this.children = children;
     }
 
-    public Fact getParent() {
-        return parent;
+    public Fact getMetadata() {
+        return metadata;
     }
 
-    public void setParent(Fact parent) {
-        this.parent = parent;
+    public void setMetadata(Fact metadata) {
+        this.metadata = metadata;
+    }
+
+    @Override
+    public String toString() {
+        return  "id=" + getId() + ", idExternal=" + getIdExternal() + ", code=" + getCode() + ", alias=" + getAlias() +
+            ", name=" + name  + ", metadata=" + metadata + ", values=" + values + ", children=" + children;
     }
 }

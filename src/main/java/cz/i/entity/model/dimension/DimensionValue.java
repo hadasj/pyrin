@@ -29,11 +29,17 @@ public class DimensionValue extends CodedEntity {
         this.links = links;
     }
 
+    public List<DimensionValue> getChildren() {
+        return children;
+    }
+
+    public void setChildren(List<DimensionValue> children) {
+        this.children = children;
+    }
+
     @Override
     public String toString() {
-        String string = "id=" + getId() + ", code=" + getCode() + ", alias=" + getAlias();
-        if (dimension != null)
-            string +=  ", dimension={" + dimension.toString() + "}";
-        return string;
+        return  "id=" + getId() + ", idExternal=" + getIdExternal() + ", code=" + getCode() + ", alias=" + getAlias() +
+            ", children=" + children + ", dimension=" + dimension;
     }
 }

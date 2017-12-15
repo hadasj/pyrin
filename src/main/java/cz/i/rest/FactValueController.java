@@ -5,13 +5,13 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import cz.i.dao.FactValueMapper;
 import cz.i.entity.model.fact.FactValue;
 import cz.i.service.FactValueCrudService;
 
@@ -25,26 +25,23 @@ public class FactValueController {
     @Autowired
     private FactValueCrudService factValueCrudService;
 
-    @Autowired
-    private FactValueMapper factValueMapper;
-
     @RequestMapping(value = "/fact-value", method = RequestMethod.GET)
     public List<FactValue> findAll(@RequestParam(required = false) Long id, @RequestParam(required = false) String code) {
-        List<FactValue> facts = null;
-        /*
+        List<FactValue> factValues = null;
+
         if (id != null) {
             LOG.info("Searching factValue by id: {}", id);
-            facts = asList(factValueCrudService.oneById(id));
+            throw new IllegalStateException("Unimplemented");
         } else if (!StringUtils.isEmpty(code)) {
             LOG.info("Searching factValue by code: {}", code);
-            facts = factValueCrudService.allByCode(code);
+            throw new IllegalStateException("Unimplemented");
         } else {
             LOG.info("Searching all factValues..");
-            facts = factValueCrudService.all();
-        } */
+            factValues = factValueCrudService.readAllFactValues();
+        }
 
-        LOG.info("Found factValues: {}", facts);
-        return facts;
+        LOG.info("Found factValues: {}", factValues);
+        return factValues;
     }
 
     @RequestMapping(value = "/fact-value", method = RequestMethod.POST)

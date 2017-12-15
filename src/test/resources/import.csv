@@ -394,8 +394,8 @@
 77|SHU||1103||Shumen|Shumen|Шумен||||
 78|YAM||1103||Yambol|Yambol|Ямбол||||
 ###organization type|||||||||||
-1000000|CEN||1101||Centrální|Централен|Central||||
-2000000|REG||1101||Regionální|Областен|Regional||||
+1000000|CEN||1101||Central|Centrální|Централен||||
+2000000|REG||1101||Regional|Regionální|Областен||||
 ###organization category|||||||||||
 101|NAA||1102||National assembly|Národní shromáždění|Народно събрание|1101|1000000||
 102|AOP||1102||Administration of the presidency|Správa předsednictví|Администрация на председателството|1101|1000000||

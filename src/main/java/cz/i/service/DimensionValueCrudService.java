@@ -39,6 +39,7 @@ public class DimensionValueCrudService {
     private DimensionValue mapDimensionValueDeep(DimensionValueDb dimensionValueDb) {
         DimensionValue dimensionValue = mapDimensionValue(dimensionValueDb);
         dimensionValue.setLinks(mapDimensionValues(dimensionValueLinkMapper.allByOwner(dimensionValueDb)));
+        dimensionValue.setChildren(mapDimensionValues(dimensionValueMapper.allByParent(dimensionValueDb)));
         return dimensionValue;
     }
 
@@ -54,7 +55,7 @@ public class DimensionValueCrudService {
         return result;
     }
 
-    private DimensionValue mapDimensionValue(DimensionValueDb dimensionValueDb) {
+    public DimensionValue mapDimensionValue(DimensionValueDb dimensionValueDb) {
         DimensionValue dimensionValue = new DimensionValue();
         dimensionValue.setId(dimensionValueDb.getId().toString());
         dimensionValue.setIdExternal(dimensionValueDb.getIdExt());

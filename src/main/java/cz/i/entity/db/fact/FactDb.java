@@ -1,6 +1,9 @@
 package cz.i.entity.db.fact;
 
+import java.util.List;
+
 import cz.i.entity.db.CodedEntityDb;
+import cz.i.entity.db.dimension.DimensionValueDb;
 
 /**
  * @author jan.hadas@i.cz
@@ -10,8 +13,9 @@ public class FactDb extends CodedEntityDb {
     private Long parentId;
     private Long factTypeId;
 
-    /** children - FK PARENT_ID*/
-    private FactDb metadata;
+    private List<FactDb> children;
+    private List<FactValueDb> values;
+    private DimensionValueDb factType;
 
     public Long getFactTypeId() {
         return factTypeId;
@@ -37,11 +41,27 @@ public class FactDb extends CodedEntityDb {
         this.parentId = parentId;
     }
 
-    public FactDb getMetadata() {
-        return metadata;
+    public List<FactDb> getChildren() {
+        return children;
     }
 
-    public void setMetadata(FactDb metadata) {
-        this.metadata = metadata;
+    public void setChildren(List<FactDb> children) {
+        this.children = children;
+    }
+
+    public List<FactValueDb> getValues() {
+        return values;
+    }
+
+    public void setValues(List<FactValueDb> values) {
+        this.values = values;
+    }
+
+    public DimensionValueDb getFactType() {
+        return factType;
+    }
+
+    public void setFactType(DimensionValueDb factType) {
+        this.factType = factType;
     }
 }

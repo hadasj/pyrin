@@ -37,6 +37,13 @@ public interface DimensionValueMapper {
     @Select("select * from DIMENSION_VALUE where dimension_id = #{dimensionId} order by id")
     List<DimensionValueDb> allByDimension(Long dimensionId);
 
+    @Results(value = {
+        @Result(property = "idExt", column = "ID_EXT"),
+        @Result(property = "dimension", column = "dimension_id", javaType = DimensionDb.class, one = @One(select = "dimensionById"))
+    })
+    @Select("select * from DIMENSION_VALUE where parent_id = #{id}")
+    List<DimensionValueDb> allByParent(DimensionValueDb parent);
+
     @Results(@Result(property = "idExt", column = "ID_EXT"))
     @Select("select * from DIMENSION_VALUE where id_ext = #{idExt}")
     DimensionValueDb oneByIdExt(Long idExt);

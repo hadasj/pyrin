@@ -1,9 +1,10 @@
 package cz.i.entity.model.fact;
 
+import java.util.List;
+
 import cz.i.common.ValueType;
 import cz.i.entity.model.CodedEntity;
 import cz.i.entity.model.dimension.Dimension;
-import cz.i.entity.model.dimension.DimensionValue;
 
 /**
  * @author jan.hadas@i.cz
@@ -12,15 +13,9 @@ public class FactValue extends CodedEntity {
 
     private Dimension dimension;
 
-    private Fact fact;
+    private List<Object> values;
 
-    private DimensionValue dimensionValue;
-
-    private Object value;
-
-    private String valueValue;
-
-    private ValueType type;
+    private ValueType valueType;
 
     public Dimension getDimension() {
         return dimension;
@@ -30,43 +25,25 @@ public class FactValue extends CodedEntity {
         this.dimension = dimension;
     }
 
-    public Object getValue() {
-        return value;
+    public List<Object> getValues() {
+        return values;
     }
 
-    public void setValue(Object value) {
-        this.value = value;
+    public void setValues(List<Object> values) {
+        this.values = values;
     }
 
-    public String getValueValue() {
-        return valueValue;
+    public ValueType getValueType() {
+        return valueType;
     }
 
-    public void setValueValue(String valueValue) {
-        this.valueValue = valueValue;
+    public void setValueType(ValueType valueType) {
+        this.valueType = valueType;
     }
 
-    public ValueType getType() {
-        return type;
-    }
-
-    public void setType(ValueType type) {
-        this.type = type;
-    }
-
-    public DimensionValue getDimensionValue() {
-        return dimensionValue;
-    }
-
-    public void setDimensionValue(DimensionValue dimensionValue) {
-        this.dimensionValue = dimensionValue;
-    }
-
-    public Fact getFact() {
-        return fact;
-    }
-
-    public void setFact(Fact fact) {
-        this.fact = fact;
+    @Override
+    public String toString() {
+        return  "id=" + getId() + ", idExternal=" + getIdExternal() + ", code=" + getCode() + ", alias=" + getAlias() +
+            ", dimension=" + dimension + ", values=" + values + ", valuetype=" + valueType;
     }
 }

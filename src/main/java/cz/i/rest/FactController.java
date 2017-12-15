@@ -5,14 +5,15 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import cz.i.dao.FactMapper;
 import cz.i.entity.model.fact.Fact;
+import cz.i.service.FactCrudService;
 
 /**
  * @author jan.hadas@i.cz
@@ -23,22 +24,22 @@ public class FactController {
     private static final Logger LOG = LoggerFactory.getLogger(FactController.class);
 
     @Autowired
-    private FactMapper factMapper;
+    private FactCrudService factCrudService;
 
     @RequestMapping(value = "/fact", method = RequestMethod.GET)
     public List<Fact> findAll(@RequestParam(required = false) Long id, @RequestParam(required = false) String code) {
         List<Fact> facts = null;
-        /*
+
         if (id != null) {
             LOG.info("Searching fact by id: {}", id);
-            facts = asList(factMapper.oneById(id));
+            throw new IllegalStateException("Unimplemented");
         } else if (!StringUtils.isEmpty(code)) {
             LOG.info("Searching fact by code: {}", code);
-            facts = factMapper.allByCode(code);
+            throw new IllegalStateException("Unimplemented");
         } else {
             LOG.info("Searching all facts..");
-            facts = factMapper.all();
-        }  */
+            facts = factCrudService.readAllFacts();
+        }
 
         LOG.info("Found facts: {}", facts);
         return facts;

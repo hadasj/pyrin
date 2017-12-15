@@ -30,7 +30,7 @@ public class Dimension extends CodedEntity {
 
     @Override
     public String toString() {
-        return "id=" + getId() + ", code=" + getCode() + ", alias=" + getAlias() + ", mode=" + mode + ", structure=" +
-            structure;
+        return "id=" + getId() + ", idExternal=" + getIdExternal() + ", code=" + getCode() + ", alias=" + getAlias() +
+            ", mode=" + mode + ", structure=" + structure;
     }
 }
