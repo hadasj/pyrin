@@ -58,7 +58,7 @@ public interface FactMapper {
     @Results(value = {
         @Result(property = "id", column = "ID", id = true),
         @Result(property = "idExt", column = "ID_EXT"),
-        @Result(property = "children", column = "PARENT_ID", javaType = List.class, many = @Many(select = "allByParentId")),
+        @Result(property = "children", column = "ID", javaType = List.class, many = @Many(select = "allByParentId")),
         @Result(property = "values", column = "ID", javaType = List.class, many = @Many(select = "valuesByFactId")),
         @Result(property = "factType", column = "FACT_TYPE_ID", javaType = DimensionValueDb.class, one = @One(select = "oneDimensionValueById"))
     })
