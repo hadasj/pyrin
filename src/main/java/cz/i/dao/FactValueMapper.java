@@ -41,6 +41,12 @@ public interface FactValueMapper {
 
     @Results({
         @Result(property = "idExt", column = "ID_EXT"),
+        @Result(property = "valueTimestamp", column = "VALUE_TIMESTAMP"),
+        @Result(property = "valueString", column = "VALUE_STRING"),
+        @Result(property = "valueInt", column = "VALUE_INT"),
+        @Result(property = "valueLong", column = "VALUE_LONG"),
+        @Result(property = "valueDouble", column = "VALUE_DOUBLE"),
+        @Result(property = "valueBigdecimal", column = "VALUE_BIGDECIMAL"),
         @Result(property = "fact", column = "FACT_ID", javaType = FactDb.class, one = @One(select = "oneFactById")),
         @Result(property = "dimension", column = "DIMENSION_ID", javaType = DimensionDb.class, one = @One(select = "oneDimensionById")),
         @Result(property = "dimensionValue", column = "DIMENSION_VALUE_ID", javaType = DimensionValueDb.class, one = @One(select = "oneDimensionValueById")),
@@ -50,25 +56,39 @@ public interface FactValueMapper {
     List<FactValueDb> all();
 
     @Results({
-        @Result(property = "valueValue", column = "VALUE_VALUE"),
+        @Result(property = "idExt", column = "ID_EXT"),
+        @Result(property = "valueTimestamp", column = "VALUE_TIMESTAMP"),
+        @Result(property = "valueString", column = "VALUE_STRING"),
+        @Result(property = "valueInt", column = "VALUE_INT"),
+        @Result(property = "valueLong", column = "VALUE_LONG"),
+        @Result(property = "valueDouble", column = "VALUE_DOUBLE"),
+        @Result(property = "valueBigdecimal", column = "VALUE_BIGDECIMAL"),
         @Result(property = "fact", column = "FACT_ID", javaType = FactDb.class, one = @One(select = "oneFactById")),
         @Result(property = "dimension", column = "DIMENSION_ID", javaType = DimensionDb.class, one = @One(select = "oneDimensionById")),
-        @Result(property = "dimensionValue", column = "DIMENSION_VALUE_ID", javaType = DimensionValueDb.class, one = @One(select = "oneDimensionValueById"))
+        @Result(property = "dimensionValue", column = "DIMENSION_VALUE_ID", javaType = DimensionValueDb.class, one = @One(select = "oneDimensionValueById")),
+        @Result(property = "valueType", column = "VALUE_TYPE")
     })
     @Select("select * from FACT_VALUE where id = #{id,jdbcType=INTEGER}")
     FactValueDb oneById(@Param("id") Long id);
 
     @Results({
-        @Result(property = "valueValue", column = "VALUE_VALUE"),
+        @Result(property = "idExt", column = "ID_EXT"),
+        @Result(property = "valueTimestamp", column = "VALUE_TIMESTAMP"),
+        @Result(property = "valueString", column = "VALUE_STRING"),
+        @Result(property = "valueInt", column = "VALUE_INT"),
+        @Result(property = "valueLong", column = "VALUE_LONG"),
+        @Result(property = "valueDouble", column = "VALUE_DOUBLE"),
+        @Result(property = "valueBigdecimal", column = "VALUE_BIGDECIMAL"),
         @Result(property = "fact", column = "FACT_ID", javaType = FactDb.class, one = @One(select = "oneFactById")),
         @Result(property = "dimension", column = "DIMENSION_ID", javaType = DimensionDb.class, one = @One(select = "oneDimensionById")),
-        @Result(property = "dimensionValue", column = "DIMENSION_VALUE_ID", javaType = DimensionValueDb.class, one = @One(select = "oneDimensionValueById"))
+        @Result(property = "dimensionValue", column = "DIMENSION_VALUE_ID", javaType = DimensionValueDb.class, one = @One(select = "oneDimensionValueById")),
+        @Result(property = "valueType", column = "VALUE_TYPE")
     })
     @Select("select * from FACT_VALUE where code = #{code,jdbcType=VARCHAR} order by id")
     List<FactValueDb> allByCode(@Param("code") String code);
 
-    @Insert("insert into FACT_VALUE(ID_EXT, CODE, ALIAS, DIMENSION_ID, FACT_ID, DIMENSION_VALUE_ID, VALUE, VALUE_TYPE) " +
-            "values(#{idExt}, #{code}, #{alias}, #{dimensionId}, #{factId}, #{dimensionValueId}, #{value}, #{valueType})")
+    @Insert("insert into FACT_VALUE(ID_EXT, CODE, ALIAS, DIMENSION_ID, FACT_ID, DIMENSION_VALUE_ID, VALUE_TIMESTAMP, VALUE_STRING, VALUE_INT, VALUE_LONG, VALUE_DOUBLE, VALUE_BIGDECIMAL, VALUE_TYPE) " +
+            "values(#{idExt}, #{code}, #{alias}, #{dimensionId}, #{factId}, #{dimensionValueId}, #{valueTimestamp}, #{valueidString}, #{valueInt}, #{valueLong}, #{valueDouble}, #{valueBigdecimal}, #{valueType})")
     int insert(FactValueDb factValue);
 
     @Update("update FACT_VALUE set ID_EXT = #{idExt}, CODE = #{code}, ALIAS = #{alias}, DIMENSION_ID = #{dimension.id}, FACT_ID = #{fact.id}, " +

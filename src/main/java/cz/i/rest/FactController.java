@@ -1,5 +1,6 @@
 package cz.i.rest;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.slf4j.Logger;
@@ -28,11 +29,13 @@ public class FactController {
 
     @RequestMapping(value = "/fact", method = RequestMethod.GET)
     public List<Fact> findAll(@RequestParam(required = false) Long id, @RequestParam(required = false) String code) {
-        List<Fact> facts = null;
+        List<Fact> facts = new ArrayList<>();
 
         if (id != null) {
             LOG.info("Searching fact by id: {}", id);
-            throw new IllegalStateException("Unimplemented");
+            Fact fact = factCrudService.readOneFact(id);
+            if (fact != null)
+                facts.add(fact);
         } else if (!StringUtils.isEmpty(code)) {
             LOG.info("Searching fact by code: {}", code);
             throw new IllegalStateException("Unimplemented");
@@ -48,7 +51,7 @@ public class FactController {
     @RequestMapping(value = "/fact", method = RequestMethod.POST)
     public void insertEntity(@RequestBody Fact fact) {
         LOG.info("Insert new fact: {}", fact);
-        //factMapper.insert(fact);
+        factCrudService.insert(fact);
     }
 
     @RequestMapping(value = "/fact", method = RequestMethod.PUT)

@@ -55,6 +55,9 @@ public class ImportService {
     @Autowired
     private FactValueMapper factValueMapper;
 
+    @Autowired
+    private FactValueCrudService factValueCrudService;
+
     public void importData(String csv) {
         if (StringUtils.isEmpty(csv)) {
             LOG.warn("Csv is empty");
@@ -187,10 +190,7 @@ public class ImportService {
         factValue.setAlias(columns[1]);
         factValue.setDimensionId(getEntityIdByIdExt(columns[2], dimensionMapper::oneByIdExt));
         factValue.setValueType(getValueType(columns[4]));
-        if (factValue.getValueType() != null && factValue.getValueType().equals(ValueType.DIMENSION_VALUE))
-            factValue.setDimensionValueId(getDimensionValue(factValue.getDimensionId(), columns[3]));
-        else
-            factValue.setValue(columns[3]);
+        factValueCrudService.setFactValue(factValue, columns[3]);
 
         return factValue;
     }
@@ -227,16 +227,6 @@ public class ImportService {
             return ValueType.valueOf(name);
         } catch (Exception e) {
             LOG.warn("Unknown value type: {}", name);
-        }
-        return null;
-    }
-
-    private Long getDimensionValue(Long dimensionId, String idExt) {
-        Long dimensionValueIdExt = parseLong(idExt);
-        if (dimensionValueIdExt != null) {
-            DimensionValueDb value = dimensionValueMapper.oneByDimensionIdAndIdExt(dimensionId, dimensionValueIdExt);
-            if (value != null)
-                return value.getId();
         }
         return null;
     }

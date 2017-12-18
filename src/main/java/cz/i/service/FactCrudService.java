@@ -1,20 +1,15 @@
 package cz.i.service;
 
-import static java.util.Arrays.asList;
-
 import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import cz.i.common.ValueType;
 import cz.i.dao.DimensionMapper;
 import cz.i.dao.FactMapper;
 import cz.i.entity.db.fact.FactDb;
-import cz.i.entity.db.fact.FactValueDb;
 import cz.i.entity.model.fact.Fact;
-import cz.i.entity.model.fact.FactValue;
 
 /**
  * @author jan.hadas@i.cz
@@ -31,6 +26,9 @@ public class FactCrudService {
     @Autowired
     private DimensionValueCrudService dimensionValueCrudService;
 
+    @Autowired
+    private FactValueCrudService factValueCrudService;
+
     public List<Fact> readAllFacts() {
         List<FactDb> dbRecords = factMapper.all();
         List<Fact> results = new ArrayList<>();
@@ -42,6 +40,23 @@ public class FactCrudService {
         return results;
     }
 
+    public Fact readOneFact(Long id) {
+        FactDb factDb = factMapper.oneById(id);
+        if (factDb == null)
+            return null;
+        return mapFactDeep(factMapper.oneById(id));
+    }
+
+    public void insert(Fact fact) {
+        FactDb factDb = new FactDb();
+        factDb.setIdExt(fact.getIdExternal());
+        factDb.setCode(fact.getCode());
+        factDb.setAlias(fact.getAlias());
+        factDb.setName(fact.getName());
+
+        factMapper.insert(factDb);
+    }
+
     private Fact mapFactDeep(FactDb factDb) {
         Fact fact = new Fact();
         fact.setId(factDb.getId().toString());
@@ -50,7 +65,7 @@ public class FactCrudService {
         fact.setAlias(factDb.getAlias());
         fact.setName(factDb.getName());
         fact.setChildren(mapFacts(factDb.getChildren()));
-        fact.setValues(mapValues(factDb.getValues()));
+        fact.setValues(factValueCrudService.mapFactValues(factDb.getValues()));
         fact.setMetadata(getFirstMeta(factDb.getChildren()));
 
         return fact;
@@ -76,39 +91,9 @@ public class FactCrudService {
         fact.setCode(factDb.getCode());
         fact.setAlias(factDb.getAlias());
         fact.setName(factDb.getName());
-        fact.setValues(mapValues(factDb.getValues()));
+        fact.setValues(factValueCrudService.mapFactValues(factDb.getValues()));
 
         return fact;
-    }
-
-
-    private List<FactValue> mapValues(List<FactValueDb> values) {
-        if (values == null)
-            return null;
-
-        List<FactValue> results = new ArrayList<>();
-
-        for (FactValueDb factValueDb : values) {
-            FactValue factValue = new FactValue();
-            factValue.setId(factValueDb.getId().toString());
-            factValue.setIdExternal(factValueDb.getIdExt());
-            factValue.setCode(factValueDb.getCode());
-            factValue.setAlias(factValueDb.getAlias());
-            factValue.setDimension(dimensionCrudService.mapDimension(factValueDb.getDimension()));
-            factValue.setValueType(factValueDb.getValueType());
-
-            // TODO: MULTIPLE values
-            Object value;
-            if (ValueType.DIMENSION_VALUE == factValueDb.getValueType())
-                // TODO: DIMENSION_VALUE - use code or localized text??
-                value = dimensionValueCrudService.mapDimensionValue(factValueDb.getDimensionValue());
-            else
-                value = factValueDb.getValue();
-            factValue.setValues(asList(value));
-
-            results.add(factValue);
-        }
-        return results;
     }
 
     private Fact getFirstMeta(List<FactDb> children) {

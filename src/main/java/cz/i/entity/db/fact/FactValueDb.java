@@ -1,5 +1,8 @@
 package cz.i.entity.db.fact;
 
+import java.math.BigDecimal;
+import java.time.ZonedDateTime;
+
 import cz.i.common.ValueType;
 import cz.i.entity.db.CodedEntityDb;
 import cz.i.entity.db.dimension.DimensionDb;
@@ -12,7 +15,12 @@ public class FactValueDb extends CodedEntityDb {
     private Long factId;
     private Long dimensionId;
     private Long dimensionValueId;
-    private String value;
+    private String valueString;
+    private ZonedDateTime valueTimestamp;
+    private Integer valueInt;
+    private Long valueLong;
+    private Double valueDouble;
+    private BigDecimal valueBigdecimal;
     private ValueType valueType;
     private FactDb fact;
     private DimensionDb dimension;
@@ -36,12 +44,52 @@ public class FactValueDb extends CodedEntityDb {
         this.dimensionId = dimensionId;
     }
 
-    public String getValue() {
-        return value;
+    public String getValueString() {
+        return valueString;
     }
 
-    public void setValue(String value) {
-        this.value = value;
+    public void setValueString(String valueString) {
+        this.valueString = valueString;
+    }
+
+    public ZonedDateTime getValueTimestamp() {
+        return valueTimestamp;
+    }
+
+    public void setValueTimestamp(ZonedDateTime valueTimestamp) {
+        this.valueTimestamp = valueTimestamp;
+    }
+
+    public Integer getValueInt() {
+        return valueInt;
+    }
+
+    public void setValueInt(Integer valueInt) {
+        this.valueInt = valueInt;
+    }
+
+    public Long getValueLong() {
+        return valueLong;
+    }
+
+    public void setValueLong(Long valueLong) {
+        this.valueLong = valueLong;
+    }
+
+    public Double getValueDouble() {
+        return valueDouble;
+    }
+
+    public void setValueDouble(Double valueDouble) {
+        this.valueDouble = valueDouble;
+    }
+
+    public BigDecimal getValueBigdecimal() {
+        return valueBigdecimal;
+    }
+
+    public void setValueBigdecimal(BigDecimal valueBigdecimal) {
+        this.valueBigdecimal = valueBigdecimal;
     }
 
     public ValueType getValueType() {

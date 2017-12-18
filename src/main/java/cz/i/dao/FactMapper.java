@@ -48,6 +48,12 @@ public interface FactMapper {
 
     @Results({
         @Result(property = "idExt", column = "ID_EXT"),
+        @Result(property = "valueTimestamp", column = "VALUE_TIMESTAMP"),
+        @Result(property = "valueString", column = "VALUE_STRING"),
+        @Result(property = "valueInt", column = "VALUE_INT"),
+        @Result(property = "valueLong", column = "VALUE_LONG"),
+        @Result(property = "valueDouble", column = "VALUE_DOUBLE"),
+        @Result(property = "valueBigdecimal", column = "VALUE_BIGDECIMAL"),
         @Result(property = "dimension", column = "DIMENSION_ID", javaType = DimensionDb.class, one = @One(select = "oneDimensionById")),
         @Result(property = "dimensionValue", column = "DIMENSION_VALUE_ID", javaType = DimensionValueDb.class, one = @One(select = "oneDimensionValueById")),
         @Result(property = "valueType", column = "VALUE_TYPE")
@@ -66,9 +72,13 @@ public interface FactMapper {
     List<FactDb> all();
 
     @Results(value = {
-        @Result(property = "id", column = "id", id = true),
-        @Result(property = "idExt", column = "ID_EXT"),})
-    @Select("select * from FACT where id = #{id,jdbcType=INTEGER}")
+        @Result(property = "id", column = "ID", id = true),
+        @Result(property = "idExt", column = "ID_EXT"),
+        @Result(property = "children", column = "ID", javaType = List.class, many = @Many(select = "allByParentId")),
+        @Result(property = "values", column = "ID", javaType = List.class, many = @Many(select = "valuesByFactId")),
+        @Result(property = "factType", column = "FACT_TYPE_ID", javaType = DimensionValueDb.class, one = @One(select = "oneDimensionValueById"))
+    })
+    @Select("select * from FACT where id = #{id}")
     FactDb oneById(@Param("id") Long id);
 
     @Results(value = {
