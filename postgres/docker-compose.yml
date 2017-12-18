@@ -1,7 +1,7 @@
 version: '2'
 services:
   primary:
-    image: reg-5.i.cz:5000/postgres
+    image: reg-5.i.cz:5000/postgres:latest
     hostname: primary
     ports:
     - "5432:5432"
@@ -14,3 +14,10 @@ services:
 #    hostname: standby
 #    ports:
 #    - "5433:5432"
+  crud:
+    image: reg-5.i.cz:5000/pyrin-crud:latest
+    hostname: crud
+    ports:
+    - "9001:9000"
+    volumes:
+    - /app/app_logs:/app/app_logs

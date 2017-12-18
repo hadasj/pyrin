@@ -21,7 +21,7 @@
         <start-class>cz.i.Crud</start-class>
         <maven.build.timestamp.format>yyyy-MM-dd HH:mm:ss</maven.build.timestamp.format>
         <default.profile>default</default.profile>
-        <docker.image.name>pyrin</docker.image.name>
+        <docker.image.name>reg-5.i.cz:5000/pyrin-crud</docker.image.name>
         <docker.image.tag>latest</docker.image.tag>
         <appname>pyrin</appname>
     </properties>
