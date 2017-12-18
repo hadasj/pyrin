@@ -88,7 +88,7 @@ public interface FactValueMapper {
     List<FactValueDb> allByCode(@Param("code") String code);
 
     @Insert("insert into FACT_VALUE(ID_EXT, CODE, ALIAS, DIMENSION_ID, FACT_ID, DIMENSION_VALUE_ID, VALUE_TIMESTAMP, VALUE_STRING, VALUE_INT, VALUE_LONG, VALUE_DOUBLE, VALUE_BIGDECIMAL, VALUE_TYPE) " +
-            "values(#{idExt}, #{code}, #{alias}, #{dimensionId}, #{factId}, #{dimensionValueId}, #{valueTimestamp}, #{valueidString}, #{valueInt}, #{valueLong}, #{valueDouble}, #{valueBigdecimal}, #{valueType})")
+            "values(#{idExt}, #{code}, #{alias}, #{dimensionId}, #{factId}, #{dimensionValueId}, #{valueTimestamp}, #{valueString}, #{valueInt}, #{valueLong}, #{valueDouble}, #{valueBigdecimal}, #{valueType})")
     int insert(FactValueDb factValue);
 
     @Update("update FACT_VALUE set ID_EXT = #{idExt}, CODE = #{code}, ALIAS = #{alias}, DIMENSION_ID = #{dimension.id}, FACT_ID = #{fact.id}, " +
