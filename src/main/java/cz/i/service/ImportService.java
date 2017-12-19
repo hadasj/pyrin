@@ -22,12 +22,14 @@ import cz.i.dao.DimensionValueLinkMapper;
 import cz.i.dao.DimensionValueMapper;
 import cz.i.dao.FactMapper;
 import cz.i.dao.FactValueMapper;
+import cz.i.dao.ValueMapper;
 import cz.i.entity.db.EntityDb;
 import cz.i.entity.db.dimension.DimensionDb;
 import cz.i.entity.db.dimension.DimensionValueDb;
 import cz.i.entity.db.dimension.DimensionValueLinkDb;
 import cz.i.entity.db.fact.FactDb;
 import cz.i.entity.db.fact.FactValueDb;
+import cz.i.entity.db.fact.ValueDb;
 
 /**
  * @author jan.hadas@i.cz
@@ -57,6 +59,9 @@ public class ImportService {
 
     @Autowired
     private FactValueCrudService factValueCrudService;
+
+    @Autowired
+    private ValueMapper valueMapper;
 
     public void importData(String csv) {
         if (StringUtils.isEmpty(csv)) {
@@ -119,6 +124,9 @@ public class ImportService {
                 FactValueDb factValue = createFactValue(columns);
                 LOG.debug("insert fact value: {}", factValue);
                 factValueMapper.insert(factValue);
+
+                ValueDb valuedb = createValue(columns, factValue.getDimensionId(), factValue.getId());
+                valueMapper.insert(valuedb);
                 break;
 
             default:
@@ -189,10 +197,23 @@ public class ImportService {
         factValue.setFactId(getEntityIdByIdExt(columns[0], factMapper::parentByIdExt));
         factValue.setAlias(columns[1]);
         factValue.setDimensionId(getEntityIdByIdExt(columns[2], dimensionMapper::oneByIdExt));
-        factValue.setValueType(getValueType(columns[4]));
-        factValueCrudService.setFactValue(factValue, columns[3]);
 
         return factValue;
+    }
+
+    private ValueDb createValue(String[] columns, Long dimensionId, Long factValueId) {
+        ValueType valueType = getValueType(columns[4]);
+        // find dimension value by ext-id
+        Object value;
+        if (ValueType.DIMENSION_VALUE == valueType) {
+            value = getDimensionValue(dimensionId, columns[3]);
+        } else {
+            value = columns[3];
+        }
+        ValueDb valueDb = new ValueDb();
+        valueDb.setValue(value, valueType);
+        valueDb.setFactValueId(factValueId);
+        return valueDb;
     }
 
     private <E extends EntityDb>Long getEntityIdByIdExt(String idExt, Function<Long, E> entityByIdExt) {
@@ -218,6 +239,16 @@ public class ImportService {
             DimensionValueDb type = dimensionValueMapper.oneByDimensionCodeAndIdExt(DIMENSION_OF_FACTS_CODE, dimensionValueIdExt);
             if (type != null)
                 return type.getId();
+        }
+        return null;
+    }
+
+    private Long getDimensionValue(Long dimensionId, String idExt) {
+        Long dimensionValueIdExt = parseLong(idExt);
+        if (dimensionValueIdExt != null) {
+            DimensionValueDb value = dimensionValueMapper.oneByDimensionIdAndIdExt(dimensionId, dimensionValueIdExt);
+            if (value != null)
+                return value.getId();
         }
         return null;
     }

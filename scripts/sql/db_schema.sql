@@ -1,4 +1,5 @@
-﻿drop table FACT_VALUE;
+﻿drop table VALUE;
+drop table FACT_VALUE;
 drop table FACT;
 drop table DIMENSION_VALUE_LINK;
 drop table DIMENSION_VALUE;

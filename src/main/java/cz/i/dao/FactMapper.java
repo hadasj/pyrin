@@ -16,6 +16,7 @@ import cz.i.entity.db.dimension.DimensionDb;
 import cz.i.entity.db.dimension.DimensionValueDb;
 import cz.i.entity.db.fact.FactDb;
 import cz.i.entity.db.fact.FactValueDb;
+import cz.i.entity.db.fact.ValueDb;
 
 /**
  * @author jan.hadas@i.cz
@@ -47,16 +48,23 @@ public interface FactMapper {
     List<FactDb> allByParentId(@Param("id") Long id);
 
     @Results({
-        @Result(property = "idExt", column = "ID_EXT"),
         @Result(property = "valueTimestamp", column = "VALUE_TIMESTAMP"),
         @Result(property = "valueString", column = "VALUE_STRING"),
         @Result(property = "valueInt", column = "VALUE_INT"),
         @Result(property = "valueLong", column = "VALUE_LONG"),
         @Result(property = "valueDouble", column = "VALUE_DOUBLE"),
         @Result(property = "valueBigdecimal", column = "VALUE_BIGDECIMAL"),
-        @Result(property = "dimension", column = "DIMENSION_ID", javaType = DimensionDb.class, one = @One(select = "oneDimensionById")),
         @Result(property = "dimensionValue", column = "DIMENSION_VALUE_ID", javaType = DimensionValueDb.class, one = @One(select = "oneDimensionValueById")),
         @Result(property = "valueType", column = "VALUE_TYPE")
+    })
+    @Select("select * from VALUE where FACT_VALUE_ID = #{factValueId}")
+    List<ValueDb> allValuesByFactValueId(Long factValueId);
+
+    @Results({
+        @Result(property = "id", column = "ID"),
+        @Result(property = "idExt", column = "ID_EXT"),
+        @Result(property = "dimension", column = "DIMENSION_ID", javaType = DimensionDb.class, one = @One(select = "oneDimensionById")),
+        @Result(property = "values", column = "ID", javaType = List.class, many = @Many(select = "allValuesByFactValueId"))
     })
     @Select("select * from FACT_VALUE where fact_id = #{factId} order by id")
     List<FactValueDb> valuesByFactId(Long factId);
