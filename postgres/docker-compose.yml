@@ -5,6 +5,8 @@ services:
     hostname: primary
     ports:
     - "5432:5432"
+    restart: always
+
 #   TODO: acces rights for user postgress, selinux !!
 #    volumes:
 #    - /app/pg_logs:/var/lib/pgsql/data/pg_log
@@ -14,6 +16,7 @@ services:
 #    hostname: standby
 #    ports:
 #    - "5433:5432"
+
   crud:
     image: reg-5.i.cz:5000/pyrin-crud:latest
     hostname: crud
@@ -21,3 +24,6 @@ services:
     - "9001:9000"
     volumes:
     - /app/app_logs:/app/app_logs
+    depends_on:
+    - primary
+    restart: always
