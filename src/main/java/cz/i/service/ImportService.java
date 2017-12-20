@@ -5,6 +5,7 @@ import static cz.i.dao.DimensionMapper.DIMENSION_OF_FACTS_CODE;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.BiFunction;
 import java.util.function.Function;
 
 import org.slf4j.Logger;
@@ -154,9 +155,10 @@ public class ImportService {
         dimensionValue.setIdExt(parseLong(columns[0]));
         dimensionValue.setCode(columns[1]);
         dimensionValue.setAlias(columns[2]);
-        dimensionValue.setDimensionId(getEntityIdByIdExt(columns[3], dimensionMapper::oneByIdExt));
-        // TODO: ID EXT is not unique!! ADD DIMENSION ID!
-        dimensionValue.setParentId(getEntityIdByIdExt(columns[4], dimensionValueMapper::oneByIdExt));
+        Long dimensionId = getEntityIdByIdExt(columns[3], dimensionMapper::oneByIdExt);
+        dimensionValue.setDimensionId(dimensionId);
+        dimensionValue.setParentId(getEntityIdByDimensionAndIdExt(dimensionId, columns[4],
+            dimensionValueMapper::oneByDimensionIdAndIdExt));
         dimensionValue.setTextEn(columns[5]);
         dimensionValue.setTextCs(columns[6]);
         dimensionValue.setTextBg(columns[7]);
@@ -168,7 +170,8 @@ public class ImportService {
         List<DimensionValueLinkDb> links = new ArrayList<>();
         for (int index = 8; index < columns.length; index +=2) {
             Long dimensionId = getEntityIdByIdExt(columns[index], dimensionMapper::oneByIdExt);
-            Long valueId = getEntityIdByIdExt(columns[index + 1], dimensionValueMapper::oneByIdExt);
+            Long valueId = getEntityIdByDimensionAndIdExt(dimensionId, columns[index + 1],
+                dimensionValueMapper::oneByDimensionIdAndIdExt);
 
             if (dimensionId != null && valueId != null) {
                 DimensionValueLinkDb link = new DimensionValueLinkDb();
@@ -220,6 +223,17 @@ public class ImportService {
         Long parsedIdExt = parseLong(idExt);
         if(parsedIdExt != null) {
             EntityDb entity = entityByIdExt.apply(parsedIdExt);
+            if (entity != null)
+                return entity.getId();
+        }
+        return null;
+    }
+
+    private <E extends EntityDb>Long getEntityIdByDimensionAndIdExt(Long dimensionId, String idExt,
+                                                                 BiFunction<Long, Long, E> entityByDimensionAndIdExt) {
+        Long parsedIdExt = parseLong(idExt);
+        if(dimensionId != null && parsedIdExt != null) {
+            EntityDb entity = entityByDimensionAndIdExt.apply(dimensionId, parsedIdExt);
             if (entity != null)
                 return entity.getId();
         }
