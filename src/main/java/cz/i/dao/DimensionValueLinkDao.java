@@ -15,7 +15,7 @@ import cz.i.entity.db.dimension.DimensionValueLinkDb;
 /**
  * @author jan.hadas@i.cz
  */
-public interface DimensionValueLinkMapper {
+public interface DimensionValueLinkDao {
 
     @Results(@Result(property = "idExt", column = "ID_EXT"))
     @Select("select * from DIMENSION where ID = #{id}")

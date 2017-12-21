@@ -1,9 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
     <include resource="org/springframework/boot/logging/logback/defaults.xml" />
-    <property name="LOG_FILE" value="${LOG_FILE:-${LOG_PATH:-${LOG_TEMP:-${java.io.tmpdir:-/tmp}}/}spring.log}"/>
     <include resource="org/springframework/boot/logging/logback/file-appender.xml" />
-    <root level="INFO">
-        <appender-ref ref="FILE" />
-    </root>
+    <include resource="org/springframework/boot/logging/logback/console-appender.xml" />
+
+    <property name="LOG_FILE" value="/app/app_logs/pyrin-crud.log"/>
+
+    <springProfile name="default">
+        <logger name="cz.i" additivity="false">
+            <level value="info" />
+            <appender-ref ref="CONSOLE" />
+        </logger>
+
+        <root level="info">
+            <appender-ref ref="CONSOLE" />
+        </root>
+    </springProfile>
+
+    <springProfile name="development">
+        <logger name="cz.i" additivity="false">
+            <level value="info" />
+            <appender-ref ref="FILE" />
+        </logger>
+
+        <root level="warn">
+            <appender-ref ref="FILE" />
+        </root>
+    </springProfile>
 </configuration>

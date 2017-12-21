@@ -1,9 +1,9 @@
 package cz.i.entity.db.dimension;
 
-import cz.i.common.DimensionMode;
-import cz.i.common.DimensionStructure;
 import cz.i.common.ValueType;
 import cz.i.entity.db.CodedEntityDb;
+import cz.i.pirin.model.entity.dimension.DimensionMode;
+import cz.i.pirin.model.entity.dimension.DimensionStructure;
 
 /**
  * @author jan.hadas@i.cz

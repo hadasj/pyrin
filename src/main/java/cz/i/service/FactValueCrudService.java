@@ -1,18 +1,20 @@
 package cz.i.service;
 
-import static cz.i.Util.parseLong;
+import static cz.i.util.Util.parseLong;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 
 import cz.i.common.ValueType;
-import cz.i.dao.FactValueMapper;
+import cz.i.dao.FactValueDao;
 import cz.i.entity.db.fact.FactValueDb;
 import cz.i.entity.db.fact.ValueDb;
 import cz.i.entity.model.fact.FactValue;
+import cz.i.mapper.DimensionMapper;
 
 
 /**
@@ -22,10 +24,10 @@ import cz.i.entity.model.fact.FactValue;
 public class FactValueCrudService {
 
     @Autowired
-    private FactValueMapper factValueMapper;
+    private FactValueDao factValueDao;
 
     @Autowired
-    private DimensionCrudService dimensionCrudService;
+    private DimensionMapper dimensionMapper;
 
     @Autowired
     private DimensionValueCrudService dimensionValueCrudService;
@@ -34,11 +36,11 @@ public class FactValueCrudService {
     private ValueCrudService valueCrudService;
 
     public List<FactValue> readAllFactValues() {
-        return mapFactValues(factValueMapper.all());
+        return mapFactValues(factValueDao.all());
     }
 
     public FactValue readOneFactValue(Long id) {
-        FactValueDb factValueDb = factValueMapper.oneById(id);
+        FactValueDb factValueDb = factValueDao.oneById(id);
         if (factValueDb == null)
             return null;
         return mapFactValue(factValueDb);
@@ -53,6 +55,7 @@ public class FactValueCrudService {
         return result;
     }
 
+    @Transactional
     public void insert(FactValue factValue, Long factId) {
         FactValueDb factValueDb = new FactValueDb();
         factValueDb.setIdExt(factValue.getIdExternal());
@@ -62,7 +65,7 @@ public class FactValueCrudService {
             factValueDb.setDimensionId(parseLong(factValue.getDimension().getId()));
         factValueDb.setFactId(factId);
 
-        factValueMapper.insert(factValueDb);
+        factValueDao.insert(factValueDb);
         for (Object value : factValue.getValues())
             valueCrudService.insert(value, factValue.getValueType(), factValueDb.getId());
     }
@@ -73,7 +76,7 @@ public class FactValueCrudService {
         factValue.setIdExternal(factValueDb.getIdExt());
         factValue.setCode(factValueDb.getCode());
         factValue.setAlias(factValueDb.getAlias());
-        factValue.setDimension(dimensionCrudService.mapDimension(factValueDb.getDimension()));
+        factValue.setDimension(dimensionMapper.mapDimension(factValueDb.getDimension()));
 
         ValueType valueType = null;
         List<Object> values = new ArrayList<>();

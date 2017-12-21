@@ -5,9 +5,10 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 
-import cz.i.dao.DimensionMapper;
-import cz.i.dao.FactMapper;
+import cz.i.dao.DimensionDao;
+import cz.i.dao.FactDao;
 import cz.i.entity.db.fact.FactDb;
 import cz.i.entity.model.fact.Fact;
 
@@ -18,7 +19,7 @@ import cz.i.entity.model.fact.Fact;
 public class FactCrudService {
 
     @Autowired
-    private FactMapper factMapper;
+    private FactDao factDao;
 
     @Autowired
     private DimensionCrudService dimensionCrudService;
@@ -30,7 +31,7 @@ public class FactCrudService {
     private FactValueCrudService factValueCrudService;
 
     public List<Fact> readAllFacts() {
-        List<FactDb> dbRecords = factMapper.all();
+        List<FactDb> dbRecords = factDao.all();
         List<Fact> results = new ArrayList<>();
 
         for (FactDb factDb : dbRecords) {
@@ -41,12 +42,13 @@ public class FactCrudService {
     }
 
     public Fact readOneFact(Long id) {
-        FactDb factDb = factMapper.oneById(id);
+        FactDb factDb = factDao.oneById(id);
         if (factDb == null)
             return null;
-        return mapFactDeep(factMapper.oneById(id));
+        return mapFactDeep(factDao.oneById(id));
     }
 
+    @Transactional
     public void insert(Fact fact) {
         FactDb factDb = new FactDb();
         factDb.setIdExt(fact.getIdExternal());
@@ -54,7 +56,7 @@ public class FactCrudService {
         factDb.setAlias(fact.getAlias());
         factDb.setName(fact.getName());
 
-        factMapper.insert(factDb);
+        factDao.insert(factDb);
     }
 
     private Fact mapFactDeep(FactDb factDb) {
@@ -100,7 +102,7 @@ public class FactCrudService {
         if (children != null)
             for (FactDb child : children) {
                 if (child.getFactType() != null && child.getFactType().getDimension() != null &&
-                        child.getFactType().getDimension().getCode().equals(DimensionMapper.DIMENSION_OF_FACTS_CODE)) {
+                        child.getFactType().getDimension().getCode().equals(DimensionDao.DIMENSION_OF_FACTS_CODE)) {
                     return mapFact(child);
                 }
             }

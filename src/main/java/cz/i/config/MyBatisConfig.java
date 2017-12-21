@@ -12,12 +12,12 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.ClassPathResource;
 
-import cz.i.dao.DimensionMapper;
-import cz.i.dao.DimensionValueLinkMapper;
-import cz.i.dao.DimensionValueMapper;
-import cz.i.dao.FactMapper;
-import cz.i.dao.FactValueMapper;
-import cz.i.dao.ValueMapper;
+import cz.i.dao.DimensionDao;
+import cz.i.dao.DimensionValueDao;
+import cz.i.dao.DimensionValueLinkDao;
+import cz.i.dao.FactDao;
+import cz.i.dao.FactValueDao;
+import cz.i.dao.ValueDao;
 
 /**
  * @author jan.hadas@i.cz
@@ -47,38 +47,38 @@ public class MyBatisConfig {
     }
 
     @Bean
-    public DimensionMapper dimensionMapper() throws Exception {
+    public DimensionDao dimensionDao() throws Exception {
         SqlSessionTemplate sessionTemplate = new SqlSessionTemplate(sqlSessionFactory());
-        return sessionTemplate.getMapper(DimensionMapper.class);
+        return sessionTemplate.getMapper(DimensionDao.class);
     }
 
     @Bean
-    public DimensionValueMapper dimensionValueMapper() throws Exception {
+    public DimensionValueDao dimensionValueDao() throws Exception {
         SqlSessionTemplate sessionTemplate = new SqlSessionTemplate(sqlSessionFactory());
-        return sessionTemplate.getMapper(DimensionValueMapper.class);
+        return sessionTemplate.getMapper(DimensionValueDao.class);
     }
 
     @Bean
-    public DimensionValueLinkMapper dimensionValueLinkMapper() throws Exception {
+    public DimensionValueLinkDao dimensionValueLinkDao() throws Exception {
         SqlSessionTemplate sessionTemplate = new SqlSessionTemplate(sqlSessionFactory());
-        return sessionTemplate.getMapper(DimensionValueLinkMapper.class);
+        return sessionTemplate.getMapper(DimensionValueLinkDao.class);
     }
 
     @Bean
-    public FactMapper factMapper() throws Exception {
+    public FactDao factDao() throws Exception {
         SqlSessionTemplate sessionTemplate = new SqlSessionTemplate(sqlSessionFactory());
-        return sessionTemplate.getMapper(FactMapper.class);
+        return sessionTemplate.getMapper(FactDao.class);
     }
 
     @Bean
-    public FactValueMapper factValueMapper() throws Exception {
+    public FactValueDao factValueDao() throws Exception {
         SqlSessionTemplate sessionTemplate = new SqlSessionTemplate(sqlSessionFactory());
-        return sessionTemplate.getMapper(FactValueMapper.class);
+        return sessionTemplate.getMapper(FactValueDao.class);
     }
 
     @Bean
-    public ValueMapper valueMapper() throws Exception {
+    public ValueDao valueDao() throws Exception {
         SqlSessionTemplate sessionTemplate = new SqlSessionTemplate(sqlSessionFactory());
-        return sessionTemplate.getMapper(ValueMapper.class);
+        return sessionTemplate.getMapper(ValueDao.class);
     }
 }

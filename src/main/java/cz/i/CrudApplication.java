@@ -7,9 +7,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @author jan.hadas@i.cz
  */
 @SpringBootApplication
-public class Crud {
+public class CrudApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(Crud.class, args);
+        SpringApplication.run(CrudApplication.class, args);
     }
 }

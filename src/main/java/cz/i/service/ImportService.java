@@ -1,7 +1,7 @@
 package cz.i.service;
 
-import static cz.i.Util.parseLong;
-import static cz.i.dao.DimensionMapper.DIMENSION_OF_FACTS_CODE;
+import static cz.i.dao.DimensionDao.DIMENSION_OF_FACTS_CODE;
+import static cz.i.util.Util.parseLong;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,18 +12,17 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.StringUtils;
 
-import cz.i.common.DimensionMode;
-import cz.i.common.DimensionStructure;
 import cz.i.common.Entities;
 import cz.i.common.ValueType;
-import cz.i.dao.DimensionMapper;
-import cz.i.dao.DimensionValueLinkMapper;
-import cz.i.dao.DimensionValueMapper;
-import cz.i.dao.FactMapper;
-import cz.i.dao.FactValueMapper;
-import cz.i.dao.ValueMapper;
+import cz.i.dao.DimensionDao;
+import cz.i.dao.DimensionValueDao;
+import cz.i.dao.DimensionValueLinkDao;
+import cz.i.dao.FactDao;
+import cz.i.dao.FactValueDao;
+import cz.i.dao.ValueDao;
 import cz.i.entity.db.EntityDb;
 import cz.i.entity.db.dimension.DimensionDb;
 import cz.i.entity.db.dimension.DimensionValueDb;
@@ -31,6 +30,8 @@ import cz.i.entity.db.dimension.DimensionValueLinkDb;
 import cz.i.entity.db.fact.FactDb;
 import cz.i.entity.db.fact.FactValueDb;
 import cz.i.entity.db.fact.ValueDb;
+import cz.i.pirin.model.entity.dimension.DimensionMode;
+import cz.i.pirin.model.entity.dimension.DimensionStructure;
 
 /**
  * @author jan.hadas@i.cz
@@ -44,26 +45,27 @@ public class ImportService {
     private static final String SEPARATOR = "\\|";
 
     @Autowired
-    private DimensionMapper dimensionMapper;
+    private DimensionDao dimensionDao;
 
     @Autowired
-    private DimensionValueMapper dimensionValueMapper;
+    private DimensionValueDao dimensionValueDao;
 
     @Autowired
-    private DimensionValueLinkMapper dimensionValueLinkMapper;
+    private DimensionValueLinkDao dimensionValueLinkDao;
 
     @Autowired
-    private FactMapper factMapper;
+    private FactDao factDao;
 
     @Autowired
-    private FactValueMapper factValueMapper;
+    private FactValueDao factValueDao;
 
     @Autowired
     private FactValueCrudService factValueCrudService;
 
     @Autowired
-    private ValueMapper valueMapper;
+    private ValueDao valueDao;
 
+    @Transactional
     public void importData(String csv) {
         if (StringUtils.isEmpty(csv)) {
             LOG.warn("Csv is empty");
@@ -100,34 +102,34 @@ public class ImportService {
             case DIMENSION:
                 DimensionDb dimension = createDimension(columns);
                 LOG.debug("insert dimension: {}", dimension);
-                dimensionMapper.insert(dimension);
+                dimensionDao.insert(dimension);
                 break;
 
             case DIMENSION_VALUE:
                 DimensionValueDb dimensionValue = createDimensionValue(columns);
                 LOG.debug("insert dimension value: {}", dimensionValue);
-                dimensionValueMapper.insert(dimensionValue);
+                dimensionValueDao.insert(dimensionValue);
 
                 List<DimensionValueLinkDb> links = createLinks(columns, dimensionValue.getId());
                 for (DimensionValueLinkDb link : links) {
                     LOG.debug("insert dimension value link: {}", links);
-                    dimensionValueLinkMapper.insert(link);
+                    dimensionValueLinkDao.insert(link);
                 }
                 break;
 
             case FACT:
                 FactDb fact = createFact(columns);
                 LOG.debug("insert fact: {}", fact);
-                factMapper.insert(fact);
+                factDao.insert(fact);
                 break;
 
             case FACT_VALUE:
                 FactValueDb factValue = createFactValue(columns);
                 LOG.debug("insert fact value: {}", factValue);
-                factValueMapper.insert(factValue);
+                factValueDao.insert(factValue);
 
                 ValueDb valuedb = createValue(columns, factValue.getDimensionId(), factValue.getId());
-                valueMapper.insert(valuedb);
+                valueDao.insert(valuedb);
                 break;
 
             default:
@@ -155,10 +157,10 @@ public class ImportService {
         dimensionValue.setIdExt(parseLong(columns[0]));
         dimensionValue.setCode(columns[1]);
         dimensionValue.setAlias(columns[2]);
-        Long dimensionId = getEntityIdByIdExt(columns[3], dimensionMapper::oneByIdExt);
+        Long dimensionId = getEntityIdByIdExt(columns[3], dimensionDao::oneByIdExt);
         dimensionValue.setDimensionId(dimensionId);
         dimensionValue.setParentId(getEntityIdByDimensionAndIdExt(dimensionId, columns[4],
-            dimensionValueMapper::oneByDimensionIdAndIdExt));
+            dimensionValueDao::oneByDimensionIdAndIdExt));
         dimensionValue.setTextEn(columns[5]);
         dimensionValue.setTextCs(columns[6]);
         dimensionValue.setTextBg(columns[7]);
@@ -169,9 +171,9 @@ public class ImportService {
     private List<DimensionValueLinkDb> createLinks(String[] columns, Long ownerId) {
         List<DimensionValueLinkDb> links = new ArrayList<>();
         for (int index = 8; index < columns.length; index +=2) {
-            Long dimensionId = getEntityIdByIdExt(columns[index], dimensionMapper::oneByIdExt);
+            Long dimensionId = getEntityIdByIdExt(columns[index], dimensionDao::oneByIdExt);
             Long valueId = getEntityIdByDimensionAndIdExt(dimensionId, columns[index + 1],
-                dimensionValueMapper::oneByDimensionIdAndIdExt);
+                dimensionValueDao::oneByDimensionIdAndIdExt);
 
             if (dimensionId != null && valueId != null) {
                 DimensionValueLinkDb link = new DimensionValueLinkDb();
@@ -197,9 +199,9 @@ public class ImportService {
 
     private FactValueDb createFactValue(String[] columns) {
         FactValueDb factValue = new FactValueDb();
-        factValue.setFactId(getEntityIdByIdExt(columns[0], factMapper::parentByIdExt));
+        factValue.setFactId(getEntityIdByIdExt(columns[0], factDao::parentByIdExt));
         factValue.setAlias(columns[1]);
-        factValue.setDimensionId(getEntityIdByIdExt(columns[2], dimensionMapper::oneByIdExt));
+        factValue.setDimensionId(getEntityIdByIdExt(columns[2], dimensionDao::oneByIdExt));
 
         return factValue;
     }
@@ -242,7 +244,7 @@ public class ImportService {
 
     private Long getFactParent(String[] columns) {
         if (columns.length > 4) {
-            return getEntityIdByIdExt(columns[4], factMapper::parentByIdExt);
+            return getEntityIdByIdExt(columns[4], factDao::parentByIdExt);
         }
         return null;
     }
@@ -250,7 +252,7 @@ public class ImportService {
     private Long getFactType(String extId) {
         Long dimensionValueIdExt = parseLong(extId);
         if (dimensionValueIdExt != null) {
-            DimensionValueDb type = dimensionValueMapper.oneByDimensionCodeAndIdExt(DIMENSION_OF_FACTS_CODE, dimensionValueIdExt);
+            DimensionValueDb type = dimensionValueDao.oneByDimensionCodeAndIdExt(DIMENSION_OF_FACTS_CODE, dimensionValueIdExt);
             if (type != null)
                 return type.getId();
         }
@@ -260,7 +262,7 @@ public class ImportService {
     private Long getDimensionValue(Long dimensionId, String idExt) {
         Long dimensionValueIdExt = parseLong(idExt);
         if (dimensionValueIdExt != null) {
-            DimensionValueDb value = dimensionValueMapper.oneByDimensionIdAndIdExt(dimensionId, dimensionValueIdExt);
+            DimensionValueDb value = dimensionValueDao.oneByDimensionIdAndIdExt(dimensionId, dimensionValueIdExt);
             if (value != null)
                 return value.getId();
         }

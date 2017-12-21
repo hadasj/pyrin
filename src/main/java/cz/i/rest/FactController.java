@@ -6,7 +6,6 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -36,9 +35,6 @@ public class FactController {
             Fact fact = factCrudService.readOneFact(id);
             if (fact != null)
                 facts.add(fact);
-        } else if (!StringUtils.isEmpty(code)) {
-            LOG.info("Searching fact by code: {}", code);
-            throw new IllegalStateException("Unimplemented");
         } else {
             LOG.info("Searching all facts..");
             facts = factCrudService.readAllFacts();
@@ -54,15 +50,4 @@ public class FactController {
         factCrudService.insert(fact);
     }
 
-    @RequestMapping(value = "/fact", method = RequestMethod.PUT)
-    public void update(@RequestBody Fact fact) {
-        LOG.info("update fact: {}", fact);
-        //factMapper.update(fact);
-    }
-
-    @RequestMapping(value = "/fact", method = RequestMethod.DELETE)
-    public void delete(@RequestBody Fact fact) {
-        LOG.info("delete fact: {}", fact);
-        //factMapper.delete(fact);
-    }
 }

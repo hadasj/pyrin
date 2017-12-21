@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import cz.i.common.ValueType;
-import cz.i.dao.ValueMapper;
+import cz.i.dao.ValueDao;
 import cz.i.entity.db.fact.ValueDb;
 
 /**
@@ -14,13 +14,13 @@ import cz.i.entity.db.fact.ValueDb;
 public class ValueCrudService {
 
     @Autowired
-    private ValueMapper valueMapper;
+    private ValueDao valueDao;
 
     public void insert(Object value, ValueType valueType, Long factValueId) {
         ValueDb valueDb = new ValueDb();
         valueDb.setValue(value, valueType);
         valueDb.setFactValueId(factValueId);
 
-        valueMapper.insert(valueDb);
+        valueDao.insert(valueDb);
     }
 }

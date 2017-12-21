@@ -1,15 +1,15 @@
 package cz.i.service;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import cz.i.dao.DimensionValueLinkMapper;
-import cz.i.dao.DimensionValueMapper;
+import cz.i.dao.DimensionValueDao;
+import cz.i.dao.DimensionValueLinkDao;
 import cz.i.entity.db.dimension.DimensionValueDb;
-import cz.i.entity.model.dimension.DimensionValue;
+import cz.i.mapper.DimensionValueMapper;
+import cz.i.pirin.model.entity.dimension.DimensionValue;
 
 /**
  * @author jan.hadas@i.cz
@@ -18,51 +18,23 @@ import cz.i.entity.model.dimension.DimensionValue;
 public class DimensionValueCrudService {
 
     @Autowired
+    private DimensionValueDao dimensionValueDao;
+
+    @Autowired
+    private DimensionValueLinkDao dimensionValueLinkDao;
+
+    @Autowired
     private DimensionValueMapper dimensionValueMapper;
 
-    @Autowired
-    private DimensionValueLinkMapper dimensionValueLinkMapper;
-
-    @Autowired
-    private DimensionCrudService dimensionCrudService;
-
-    public List<DimensionValue> readAllDimensionValues() {
-        List<DimensionValueDb> dimensionValues = dimensionValueMapper.all();
-        List<DimensionValue> result = new ArrayList<>();
-
-        for (DimensionValueDb dimensionValueDb : dimensionValues) {
-            result.add(mapDimensionValueDeep(dimensionValueDb));
-        }
-        return result;
+    public List<DimensionValue> readAllDimensionValuesFlat() {
+        List<DimensionValueDb> dimensionValues = dimensionValueDao.all();
+        return dimensionValueMapper.mapDimensionValues(dimensionValues);
     }
 
-    private DimensionValue mapDimensionValueDeep(DimensionValueDb dimensionValueDb) {
-        DimensionValue dimensionValue = mapDimensionValue(dimensionValueDb);
-        dimensionValue.setLinks(mapDimensionValues(dimensionValueLinkMapper.allByOwner(dimensionValueDb)));
-        dimensionValue.setChildren(mapDimensionValues(dimensionValueMapper.allByParent(dimensionValueDb)));
-        return dimensionValue;
-    }
-
-    private List<DimensionValue> mapDimensionValues(List<DimensionValueDb> links) {
-        if (links == null)
-            return null;
-
-        List<DimensionValue> result = new ArrayList<>();
-        for(DimensionValueDb linkDb : links) {
-            result.add(mapDimensionValue(linkDb));
-        }
-
-        return result;
-    }
-
-    public DimensionValue mapDimensionValue(DimensionValueDb dimensionValueDb) {
-        DimensionValue dimensionValue = new DimensionValue();
-        dimensionValue.setId(dimensionValueDb.getId().toString());
-        dimensionValue.setIdExternal(dimensionValueDb.getIdExt());
-        dimensionValue.setCode(dimensionValueDb.getCode());
-        dimensionValue.setAlias(dimensionValueDb.getAlias());
-        dimensionValue.setDimension(dimensionCrudService.mapDimension(dimensionValueDb.getDimension()));
-
-        return dimensionValue;
+    public DimensionValue readDimensionValueWithChilds(Long id) {
+        DimensionValueDb dimensionValueDb = dimensionValueDao.oneById(id);
+        dimensionValueDb.setLinks(dimensionValueLinkDao.allByOwner(dimensionValueDb));
+        dimensionValueDb.setChildren(dimensionValueDao.allByParent(dimensionValueDb));
+        return dimensionValueMapper.mapDimensionValue(dimensionValueDb);
     }
 }

@@ -4,7 +4,7 @@ import java.util.List;
 
 import cz.i.common.ValueType;
 import cz.i.entity.model.CodedEntity;
-import cz.i.entity.model.dimension.Dimension;
+import cz.i.pirin.model.entity.dimension.Dimension;
 
 /**
  * @author jan.hadas@i.cz

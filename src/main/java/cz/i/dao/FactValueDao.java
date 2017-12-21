@@ -6,6 +6,7 @@ import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Many;
 import org.apache.ibatis.annotations.One;
+import org.apache.ibatis.annotations.Options;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Result;
 import org.apache.ibatis.annotations.Results;
@@ -21,11 +22,7 @@ import cz.i.entity.db.fact.ValueDb;
 /**
  * @author jan.hadas@i.cz
  */
-public interface FactMapper {
-
-    @Results(@Result(property = "idExt", column = "ID_EXT"))
-    @Select("select * from FACT where id_ext = #{idExt}")
-    FactDb parentByIdExt(Long idExt);
+public interface FactValueDao {
 
     @Results(@Result(property = "idExt", column = "ID_EXT"))
     @Select("select * from DIMENSION where id = #{id,jdbcType=INTEGER}")
@@ -39,13 +36,11 @@ public interface FactMapper {
     DimensionValueDb oneDimensionValueById(@Param("id") Long id);
 
     @Results({
-        @Result(property = "id", column = "ID", id = true),
         @Result(property = "idExt", column = "ID_EXT"),
-        @Result(property = "values", column = "ID", javaType = List.class, many = @Many(select = "valuesByFactId")),
         @Result(property = "factType", column = "FACT_TYPE_ID", javaType = DimensionValueDb.class, one = @One(select = "oneDimensionValueById"))
     })
-    @Select("select * from FACT where PARENT_ID = #{id,jdbcType=INTEGER}")
-    List<FactDb> allByParentId(@Param("id") Long id);
+    @Select("select * from FACT where id = #{id,jdbcType=INTEGER}")
+    FactDb oneFactById(@Param("id") Long id);
 
     @Results({
         @Result(property = "valueTimestamp", column = "VALUE_TIMESTAMP"),
@@ -63,45 +58,42 @@ public interface FactMapper {
     @Results({
         @Result(property = "id", column = "ID"),
         @Result(property = "idExt", column = "ID_EXT"),
+        @Result(property = "fact", column = "FACT_ID", javaType = FactDb.class, one = @One(select = "oneFactById")),
         @Result(property = "dimension", column = "DIMENSION_ID", javaType = DimensionDb.class, one = @One(select = "oneDimensionById")),
         @Result(property = "values", column = "ID", javaType = List.class, many = @Many(select = "allValuesByFactValueId"))
     })
-    @Select("select * from FACT_VALUE where fact_id = #{factId} order by id")
-    List<FactValueDb> valuesByFactId(Long factId);
+    @Select("select * from FACT_VALUE order by id")
+    List<FactValueDb> all();
 
-    @Results(value = {
-        @Result(property = "id", column = "ID", id = true),
+    @Results({
+        @Result(property = "id", column = "ID"),
         @Result(property = "idExt", column = "ID_EXT"),
-        @Result(property = "children", column = "ID", javaType = List.class, many = @Many(select = "allByParentId")),
-        @Result(property = "values", column = "ID", javaType = List.class, many = @Many(select = "valuesByFactId")),
-        @Result(property = "factType", column = "FACT_TYPE_ID", javaType = DimensionValueDb.class, one = @One(select = "oneDimensionValueById"))
+        @Result(property = "fact", column = "FACT_ID", javaType = FactDb.class, one = @One(select = "oneFactById")),
+        @Result(property = "dimension", column = "DIMENSION_ID", javaType = DimensionDb.class, one = @One(select = "oneDimensionById")),
+        @Result(property = "values", column = "ID", javaType = List.class, many = @Many(select = "allValuesByFactValueId"))
     })
-    @Select("select * from FACT order by id")
-    List<FactDb> all();
+    @Select("select * from FACT_VALUE where id = #{id,jdbcType=INTEGER}")
+    FactValueDb oneById(@Param("id") Long id);
 
-    @Results(value = {
-        @Result(property = "id", column = "ID", id = true),
+    @Results({
+        @Result(property = "id", column = "ID"),
         @Result(property = "idExt", column = "ID_EXT"),
-        @Result(property = "children", column = "ID", javaType = List.class, many = @Many(select = "allByParentId")),
-        @Result(property = "values", column = "ID", javaType = List.class, many = @Many(select = "valuesByFactId")),
-        @Result(property = "factType", column = "FACT_TYPE_ID", javaType = DimensionValueDb.class, one = @One(select = "oneDimensionValueById"))
+        @Result(property = "fact", column = "FACT_ID", javaType = FactDb.class, one = @One(select = "oneFactById")),
+        @Result(property = "dimension", column = "DIMENSION_ID", javaType = DimensionDb.class, one = @One(select = "oneDimensionById")),
+        @Result(property = "values", column = "ID", javaType = List.class, many = @Many(select = "allValuesByFactValueId"))
     })
-    @Select("select * from FACT where id = #{id}")
-    FactDb oneById(@Param("id") Long id);
+    @Select("select * from FACT_VALUE where code = #{code,jdbcType=VARCHAR} order by id")
+    List<FactValueDb> allByCode(@Param("code") String code);
 
-    @Results(value = {
-        @Result(property = "id", column = "id", id = true),
-        @Result(property = "idExt", column = "ID_EXT")})
-    @Select("select * from FACT where code = #{code,jdbcType=VARCHAR} order by id")
-    List<FactDb> allByCode(@Param("code") String code);
+    @Options(useGeneratedKeys = true, keyProperty = "id")
+    @Insert("insert into FACT_VALUE(ID_EXT, CODE, ALIAS, DIMENSION_ID, FACT_ID) " +
+            "values(#{idExt}, #{code}, #{alias}, #{dimensionId}, #{factId})")
+    int insert(FactValueDb factValue);
 
-    @Insert("insert into FACT(ID_EXT, CODE, ALIAS, NAME, FACT_TYPE_ID, PARENT_ID) " +
-        "values(#{idExt}, #{code}, #{alias}, #{name}, #{factTypeId}, #{parentId})")
-    void insert(FactDb fact);
+    @Update("update FACT_VALUE set ID_EXT = #{idExt}, CODE = #{code}, ALIAS = #{alias}, DIMENSION_ID = #{dimension.id}, FACT_ID = #{fact.id}, " +
+            "DIMENSION_VALUE_ID = #{dimensionValue.id}, VALUE_VALUE = #{valueValue}, TYPE = #{type} where ID = #{id}")
+    int update(FactValueDb factValue);
 
-    @Update("update FACT set ID_EXT = #{idExt}, CODE = #{code}, ALIAS = #{alias}, NAME=#{name}, PARENT_ID=#{parent.id} where ID = #{id}")
-    void update(FactDb fact);
-
-    @Delete("delete from FACT where ID = #{id}")
-    void delete(FactDb fact);
+    @Delete("delete from FACT_VALUE where ID = #{id}")
+    int delete(FactValueDb factValue);
 }

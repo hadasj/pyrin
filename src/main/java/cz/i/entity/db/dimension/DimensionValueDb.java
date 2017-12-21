@@ -17,6 +17,8 @@ public class DimensionValueDb extends CodedEntityDb {
     // souvisejici hodnoty dimenzi - napr. kategorie organizace, region ve kterym org. sidli
     private List<DimensionValueDb> links;
 
+    private List<DimensionValueDb> children;
+
     private DimensionDb dimension;
 
     private DimensionValueDb parentValue;
@@ -87,6 +89,14 @@ public class DimensionValueDb extends CodedEntityDb {
         return textBg;
     }
 
+    public List<DimensionValueDb> getChildren() {
+        return children;
+    }
+
+    public void setChildren(List<DimensionValueDb> children) {
+        this.children = children;
+    }
+
     public void setTextBg(String textBg) {
         this.textBg = textBg;
     }
@@ -94,7 +104,7 @@ public class DimensionValueDb extends CodedEntityDb {
     @Override
     public String toString() {
         return "id=" + getId() + ", code=" + getCode() + ", alias=" + getAlias() +
-            ", dimensionId=" + dimensionId + ", parentId=" + parentId + ", links=" + links +
+            ", dimensionId=" + dimensionId + ", parentId=" + parentId + ", links=" + links + ", children=" + children +
             ", textCs=" + textCs + ", textEn=" + textEn + ", textBg=" + textBg;
     }
 }
