@@ -8,11 +8,11 @@
         <setting name="logImpl" value="SLF4J" />
     </settings>
     <mappers>
-        <mapper class="cz.i.dao.DimensionDao"/>
-        <mapper class="cz.i.dao.DimensionValueDao"/>
-        <mapper class="cz.i.dao.DimensionValueLinkDao"/>
-        <mapper class="cz.i.dao.FactDao"/>
-        <mapper class="cz.i.dao.FactValueDao"/>
-        <mapper class="cz.i.dao.ValueDao"/>
+        <mapper class="cz.i.pirin.dao.DimensionDao"/>
+        <mapper class="cz.i.pirin.dao.DimensionValueDao"/>
+        <mapper class="cz.i.pirin.dao.DimensionValueLinkDao"/>
+        <mapper class="cz.i.pirin.dao.FactDao"/>
+        <mapper class="cz.i.pirin.dao.FactValueDao"/>
+        <mapper class="cz.i.pirin.dao.ValueDao"/>
     </mappers>
 </configuration>
